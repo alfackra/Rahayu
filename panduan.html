@@ -1,0 +1,2463 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Panduan Umrah Mandiri | Rahayu</title>
+
+  <meta
+    name="description"
+    content="Panduan menggunakan layanan Rahayu untuk kebutuhan Umrah mandiri: visa, hotel, transportasi, muthawwif dan estimasi biaya."
+  >
+
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+  >
+
+  <link rel="stylesheet" href="style.css">
+
+
+  <style>
+
+    /* =====================================================
+       GUIDE HERO
+    ===================================================== */
+
+    .guide-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+
+      margin-top: 25px;
+    }
+
+    .guide-hero-button {
+      min-height: 40px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+
+      padding: 0 15px;
+
+      border-radius: 8px;
+
+      background: #08665d;
+
+      color: white;
+
+      font-size: 8px;
+      font-weight: 700;
+    }
+
+    .guide-hero-button:hover {
+      background: #064d47;
+    }
+
+    .guide-hero-button.secondary {
+      border: 1px solid #dfe8e6;
+
+      background: white;
+
+      color: #526164;
+    }
+
+    .guide-hero-button.secondary:hover {
+      border-color: #08665d;
+
+      color: #08665d;
+    }
+
+
+    /* =====================================================
+       QUICK NAVIGATION
+    ===================================================== */
+
+    .guide-navigation {
+      padding: 28px 0;
+
+      border-bottom: 1px solid #edf0ef;
+
+      background: white;
+    }
+
+    .guide-navigation-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(5,1fr);
+
+      gap: 9px;
+    }
+
+    .guide-nav-card {
+      min-height: 83px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      gap: 8px;
+
+      padding: 12px;
+
+      border: 1px solid #e4e8e7;
+      border-radius: 10px;
+
+      background: white;
+
+      color: #526164;
+
+      text-align: center;
+
+      transition: .2s ease;
+    }
+
+    .guide-nav-card:hover {
+      border-color: rgba(8,102,93,.35);
+
+      background: #f8fcfb;
+
+      color: #08665d;
+
+      transform: translateY(-2px);
+    }
+
+    .guide-nav-card i {
+      color: #08665d;
+
+      font-size: 15px;
+    }
+
+    .guide-nav-card strong {
+      font-size: 8px;
+    }
+
+
+    /* =====================================================
+       MAIN GUIDE
+    ===================================================== */
+
+    .guide-main {
+      padding: 75px 0 90px;
+
+      background: #f7f8f7;
+    }
+
+    .guide-layout {
+      display: grid;
+
+      grid-template-columns:
+        minmax(0,1.3fr)
+        minmax(280px,.7fr);
+
+      gap: 24px;
+
+      align-items: start;
+    }
+
+
+    /* =====================================================
+       GUIDE CARD
+    ===================================================== */
+
+    .guide-card {
+      overflow: hidden;
+
+      margin-bottom: 17px;
+
+      border: 1px solid #e4e8e7;
+      border-radius: 15px;
+
+      background: white;
+
+      box-shadow:
+        0 8px 25px rgba(18,40,39,.04);
+    }
+
+    .guide-card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      padding: 21px 23px;
+
+      border-bottom: 1px solid #edf0ef;
+    }
+
+    .guide-card-icon {
+      width: 40px;
+      height: 40px;
+
+      flex: 0 0 40px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 10px;
+
+      background: #eaf5f3;
+
+      color: #08665d;
+
+      font-size: 14px;
+    }
+
+    .guide-card-header span {
+      display: block;
+
+      margin-bottom: 3px;
+
+      color: #08665d;
+
+      font-size: 7px;
+      font-weight: 800;
+
+      letter-spacing: .8px;
+    }
+
+    .guide-card-header h2 {
+      color: #172326;
+
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .guide-card-body {
+      padding: 22px 23px;
+    }
+
+    .guide-card-body > p {
+      margin-bottom: 18px;
+
+      color: #647174;
+
+      font-size: 9px;
+      line-height: 1.8;
+    }
+
+
+    /* =====================================================
+       STEPS
+    ===================================================== */
+
+    .guide-steps {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .guide-step {
+      position: relative;
+
+      display: grid;
+
+      grid-template-columns:
+        36px 1fr;
+
+      gap: 12px;
+
+      padding-bottom: 20px;
+    }
+
+    .guide-step:last-child {
+      padding-bottom: 0;
+    }
+
+    .guide-step:not(:last-child)::before {
+      content: "";
+
+      position: absolute;
+
+      left: 17px;
+      top: 36px;
+      bottom: 0;
+
+      width: 1px;
+
+      background: #dfe8e6;
+    }
+
+    .guide-step-number {
+      position: relative;
+      z-index: 2;
+
+      width: 36px;
+      height: 36px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+
+      background: #08665d;
+
+      color: white;
+
+      font-size: 9px;
+      font-weight: 800;
+    }
+
+    .guide-step-content {
+      padding-top: 3px;
+    }
+
+    .guide-step-content h3 {
+      margin-bottom: 4px;
+
+      color: #172326;
+
+      font-size: 10px;
+    }
+
+    .guide-step-content p {
+      color: #778386;
+
+      font-size: 8px;
+      line-height: 1.7;
+    }
+
+
+    /* =====================================================
+       SERVICE GUIDE
+    ===================================================== */
+
+    .service-guide-grid {
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 10px;
+    }
+
+    .service-guide-item {
+      padding: 15px;
+
+      border: 1px solid #e4e8e7;
+      border-radius: 10px;
+
+      background: #fbfcfc;
+    }
+
+    .service-guide-top {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      margin-bottom: 9px;
+    }
+
+    .service-guide-top i {
+      width: 29px;
+      height: 29px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 7px;
+
+      background: #eaf5f3;
+
+      color: #08665d;
+
+      font-size: 10px;
+    }
+
+    .service-guide-top strong {
+      color: #172326;
+
+      font-size: 9px;
+    }
+
+    .service-guide-item p {
+      margin-bottom: 11px;
+
+      color: #778386;
+
+      font-size: 7px;
+      line-height: 1.7;
+    }
+
+    .service-guide-item a {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+
+      color: #08665d;
+
+      font-size: 7px;
+      font-weight: 800;
+    }
+
+
+    /* =====================================================
+       CHECKLIST
+    ===================================================== */
+
+    .checklist {
+      display: flex;
+      flex-direction: column;
+
+      gap: 9px;
+    }
+
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+
+      padding: 11px 12px;
+
+      border: 1px solid #edf0ef;
+      border-radius: 9px;
+
+      background: #fbfcfc;
+    }
+
+    .checklist-icon {
+      width: 25px;
+      height: 25px;
+
+      flex: 0 0 25px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+
+      background: #eaf5f3;
+
+      color: #159669;
+
+      font-size: 8px;
+    }
+
+    .checklist-item strong {
+      display: block;
+
+      margin-bottom: 2px;
+
+      color: #172326;
+
+      font-size: 8px;
+    }
+
+    .checklist-item span {
+      display: block;
+
+      color: #778386;
+
+      font-size: 7px;
+      line-height: 1.6;
+    }
+
+
+    /* =====================================================
+       NOTICE
+    ===================================================== */
+
+    .guide-notice {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+
+      margin-top: 16px;
+
+      padding: 13px;
+
+      border-radius: 9px;
+
+      background: #fcfaf5;
+
+      color: #756b58;
+
+      font-size: 7px;
+      line-height: 1.7;
+    }
+
+    .guide-notice i {
+      margin-top: 2px;
+
+      color: #a98645;
+    }
+
+
+    /* =====================================================
+       SIDEBAR
+    ===================================================== */
+
+    .guide-sidebar {
+      position: sticky;
+
+      top: 95px;
+
+      display: flex;
+      flex-direction: column;
+
+      gap: 15px;
+    }
+
+    .guide-sidebar-card {
+      padding: 21px;
+
+      border: 1px solid #e4e8e7;
+      border-radius: 14px;
+
+      background: white;
+
+      box-shadow:
+        0 8px 25px rgba(18,40,39,.04);
+    }
+
+    .guide-sidebar-card h3 {
+      margin-bottom: 5px;
+
+      color: #172326;
+
+      font-size: 11px;
+    }
+
+    .guide-sidebar-card > p {
+      margin-bottom: 16px;
+
+      color: #778386;
+
+      font-size: 8px;
+      line-height: 1.65;
+    }
+
+
+    /* =====================================================
+       COST CARD
+    ===================================================== */
+
+    .guide-price-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .guide-price-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+
+      padding: 10px 0;
+
+      border-bottom: 1px solid #edf0ef;
+    }
+
+    .guide-price-row:last-child {
+      border-bottom: 0;
+    }
+
+    .guide-price-row span {
+      color: #778386;
+
+      font-size: 8px;
+    }
+
+    .guide-price-row strong {
+      color: #08665d;
+
+      font-size: 8px;
+
+      text-align: right;
+    }
+
+
+    /* =====================================================
+       SIDEBAR LINKS
+    ===================================================== */
+
+    .guide-links {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .guide-links a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 10px 0;
+
+      border-bottom: 1px solid #edf0ef;
+
+      color: #526164;
+
+      font-size: 8px;
+      font-weight: 600;
+    }
+
+    .guide-links a:last-child {
+      border-bottom: 0;
+    }
+
+    .guide-links a:hover {
+      color: #08665d;
+    }
+
+    .guide-links-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .guide-links-left i {
+      width: 17px;
+
+      color: #08665d;
+    }
+
+    .guide-links > a > i {
+      color: #b5bcbc;
+
+      font-size: 7px;
+    }
+
+
+    /* =====================================================
+       FAQ
+    ===================================================== */
+
+    .guide-faq {
+      padding: 90px 0;
+
+      background: white;
+    }
+
+    .guide-faq-list {
+      max-width: 780px;
+
+      margin: 35px auto 0;
+    }
+
+    .guide-faq-item {
+      overflow: hidden;
+
+      margin-bottom: 9px;
+
+      border: 1px solid #e4e8e7;
+      border-radius: 10px;
+
+      background: white;
+    }
+
+    .guide-faq-question {
+      width: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+
+      padding: 15px 17px;
+
+      border: 0;
+
+      background: white;
+
+      color: #172326;
+
+      font-family: inherit;
+      font-size: 9px;
+      font-weight: 700;
+
+      text-align: left;
+
+      cursor: pointer;
+    }
+
+    .guide-faq-question i {
+      color: #08665d;
+
+      transition: .2s ease;
+    }
+
+    .guide-faq-answer {
+      display: none;
+
+      padding: 0 17px 16px;
+
+      color: #778386;
+
+      font-size: 8px;
+      line-height: 1.8;
+    }
+
+    .guide-faq-item.active
+    .guide-faq-answer {
+      display: block;
+    }
+
+    .guide-faq-item.active
+    .guide-faq-question i {
+      transform: rotate(180deg);
+    }
+
+
+    /* =====================================================
+       RESPONSIVE
+    ===================================================== */
+
+    @media(max-width:900px) {
+
+      .guide-navigation-grid {
+        grid-template-columns:
+          repeat(3,1fr);
+      }
+
+      .guide-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .guide-sidebar {
+        position: static;
+      }
+
+    }
+
+
+    @media(max-width:600px) {
+
+      .guide-navigation-grid {
+        grid-template-columns:
+          1fr 1fr;
+      }
+
+      .guide-main {
+        padding: 50px 0 65px;
+      }
+
+      .service-guide-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .guide-card-header,
+      .guide-card-body {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .guide-hero-actions {
+        flex-direction: column;
+      }
+
+      .guide-hero-button {
+        width: 100%;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header
+  class="main-header"
+  id="mainHeader"
+>
+
+  <div class="container navbar">
+
+
+    <a
+      href="index.html"
+      class="brand"
+    >
+
+      <div class="brand-logo">
+        R
+      </div>
+
+      <div class="brand-name">
+
+        <strong>
+          rahayu
+        </strong>
+
+        <small>
+          Umrah Services
+        </small>
+
+      </div>
+
+    </a>
+
+
+    <nav class="desktop-menu">
+
+      <a
+        href="index.html"
+        class="nav-item"
+      >
+        Beranda
+      </a>
+
+      <a
+        href="panduan.html"
+        class="nav-item active"
+      >
+        Panduan
+      </a>
+
+      <a
+        href="orders.html"
+        class="nav-item"
+      >
+        Pesanan Saya
+      </a>
+
+      <a
+        href="login.html"
+        class="nav-item"
+      >
+        Akun
+      </a>
+
+    </nav>
+
+
+    <div class="nav-right">
+
+      <a
+        href="calculator.html"
+        class="nav-calculate"
+      >
+
+        <i class="fa-solid fa-calculator"></i>
+
+        Hitung Biaya
+
+      </a>
+
+
+      <button
+        class="mobile-menu-btn"
+        id="mobileMenuBtn"
+        aria-label="Menu"
+      >
+
+        <i class="fa-solid fa-bars"></i>
+
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div
+    class="mobile-menu"
+    id="mobileMenu"
+  >
+
+    <a href="index.html">
+
+      <i class="fa-solid fa-house"></i>
+
+      Beranda
+
+    </a>
+
+
+    <a href="visa.html">
+
+      <i class="fa-solid fa-passport"></i>
+
+      Visa
+
+    </a>
+
+
+    <a href="hotel.html">
+
+      <i class="fa-solid fa-hotel"></i>
+
+      Hotel
+
+    </a>
+
+
+    <a href="transport.html">
+
+      <i class="fa-solid fa-car-side"></i>
+
+      Transportasi
+
+    </a>
+
+
+    <a href="muthawwif.html">
+
+      <i class="fa-solid fa-person-praying"></i>
+
+      Muthawwif
+
+    </a>
+
+
+    <a href="orders.html">
+
+      <i class="fa-solid fa-receipt"></i>
+
+      Pesanan Saya
+
+    </a>
+
+
+    <a href="login.html">
+
+      <i class="fa-solid fa-user"></i>
+
+      Akun
+
+    </a>
+
+  </div>
+
+</header>
+
+
+<main>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="page-header">
+
+  <div class="container">
+
+    <div class="page-header-content">
+
+
+      <div class="page-breadcrumb">
+
+        <a href="index.html">
+          Beranda
+        </a>
+
+        <i class="fa-solid fa-chevron-right"></i>
+
+        <span>
+          Panduan
+        </span>
+
+      </div>
+
+
+      <div class="page-label">
+
+        <i class="fa-solid fa-book-open"></i>
+
+        PUSAT PANDUAN
+
+      </div>
+
+
+      <h1>
+        Panduan Umrah Mandiri
+      </h1>
+
+
+      <p>
+        Mulai dari menghitung kebutuhan,
+        memilih layanan hingga menyimpan
+        estimasi perjalanan dalam satu alur.
+      </p>
+
+
+      <div class="guide-hero-actions">
+
+
+        <a
+          href="calculator.html"
+          class="guide-hero-button"
+        >
+
+          <i class="fa-solid fa-calculator"></i>
+
+          Mulai Hitung Biaya
+
+        </a>
+
+
+        <a
+          href="#cara-pesan"
+          class="guide-hero-button secondary"
+        >
+
+          <i class="fa-solid fa-list-check"></i>
+
+          Cara Menggunakan Rahayu
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     QUICK NAVIGATION
+===================================================== -->
+
+<section class="guide-navigation">
+
+  <div class="container">
+
+    <div class="guide-navigation-grid">
+
+
+      <a
+        href="visa.html"
+        class="guide-nav-card"
+      >
+
+        <i class="fa-solid fa-passport"></i>
+
+        <strong>
+          Visa
+        </strong>
+
+      </a>
+
+
+      <a
+        href="hotel.html"
+        class="guide-nav-card"
+      >
+
+        <i class="fa-solid fa-hotel"></i>
+
+        <strong>
+          Hotel
+        </strong>
+
+      </a>
+
+
+      <a
+        href="transport.html"
+        class="guide-nav-card"
+      >
+
+        <i class="fa-solid fa-car-side"></i>
+
+        <strong>
+          Transport
+        </strong>
+
+      </a>
+
+
+      <a
+        href="muthawwif.html"
+        class="guide-nav-card"
+      >
+
+        <i class="fa-solid fa-person-praying"></i>
+
+        <strong>
+          Muthawwif
+        </strong>
+
+      </a>
+
+
+      <a
+        href="calculator.html"
+        class="guide-nav-card"
+      >
+
+        <i class="fa-solid fa-calculator"></i>
+
+        <strong>
+          Kalkulator
+        </strong>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     MAIN GUIDE
+===================================================== -->
+
+<section class="guide-main">
+
+  <div class="container guide-layout">
+
+
+    <!-- =================================================
+         LEFT
+    ================================================== -->
+
+    <div>
+
+
+      <!-- HOW TO -->
+
+      <article
+        class="guide-card"
+        id="cara-pesan"
+      >
+
+
+        <div class="guide-card-header">
+
+          <div class="guide-card-icon">
+
+            <i class="fa-solid fa-route"></i>
+
+          </div>
+
+          <div>
+
+            <span>
+              MULAI DI SINI
+            </span>
+
+            <h2>
+              Cara menggunakan Rahayu
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="guide-card-body">
+
+
+          <p>
+            Rahayu dirancang agar kebutuhan
+            utama perjalanan dapat dihitung
+            dan dipilih secara terpisah.
+          </p>
+
+
+          <div class="guide-steps">
+
+
+            <div class="guide-step">
+
+              <div class="guide-step-number">
+                1
+              </div>
+
+              <div class="guide-step-content">
+
+                <h3>
+                  Tentukan kebutuhan
+                </h3>
+
+                <p>
+                  Tentukan jumlah jamaah,
+                  tanggal perjalanan dan layanan
+                  yang dibutuhkan.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div class="guide-step">
+
+              <div class="guide-step-number">
+                2
+              </div>
+
+              <div class="guide-step-content">
+
+                <h3>
+                  Pilih layanan
+                </h3>
+
+                <p>
+                  Pilih Visa, Hotel,
+                  Transportasi atau Muthawwif
+                  secara terpisah.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div class="guide-step">
+
+              <div class="guide-step-number">
+                3
+              </div>
+
+              <div class="guide-step-content">
+
+                <h3>
+                  Hitung estimasi
+                </h3>
+
+                <p>
+                  Gunakan Kalkulator Rahayu
+                  untuk melihat estimasi total
+                  rombongan dan biaya per jamaah.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div class="guide-step">
+
+              <div class="guide-step-number">
+                4
+              </div>
+
+              <div class="guide-step-content">
+
+                <h3>
+                  Simpan ke Pesanan Saya
+                </h3>
+
+                <p>
+                  Estimasi dapat disimpan
+                  sementara pada browser
+                  melalui halaman Pesanan Saya.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- =================================================
+           SERVICES
+      ================================================== -->
+
+      <article class="guide-card">
+
+
+        <div class="guide-card-header">
+
+          <div class="guide-card-icon">
+
+            <i class="fa-solid fa-layer-group"></i>
+
+          </div>
+
+          <div>
+
+            <span>
+              LAYANAN
+            </span>
+
+            <h2>
+              Pilih sesuai kebutuhan
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="guide-card-body">
+
+
+          <div class="service-guide-grid">
+
+
+            <div class="service-guide-item">
+
+
+              <div class="service-guide-top">
+
+                <i class="fa-solid fa-passport"></i>
+
+                <strong>
+                  Visa Umrah
+                </strong>
+
+              </div>
+
+
+              <p>
+                Hitung kebutuhan visa berdasarkan
+                jumlah jamaah dan opsi tambahan
+                yang tersedia.
+              </p>
+
+
+              <a href="visa.html">
+
+                Buka Visa
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+              </a>
+
+            </div>
+
+
+            <div class="service-guide-item">
+
+
+              <div class="service-guide-top">
+
+                <i class="fa-solid fa-hotel"></i>
+
+                <strong>
+                  Hotel
+                </strong>
+
+              </div>
+
+
+              <p>
+                Tentukan kota, tanggal,
+                jumlah malam dan kebutuhan
+                kamar di Makkah atau Madinah.
+              </p>
+
+
+              <a href="hotel.html">
+
+                Cari Hotel
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+              </a>
+
+            </div>
+
+
+            <div class="service-guide-item">
+
+
+              <div class="service-guide-top">
+
+                <i class="fa-solid fa-car-side"></i>
+
+                <strong>
+                  Transportasi
+                </strong>
+
+              </div>
+
+
+              <p>
+                Pilih rute perjalanan dan
+                kendaraan berdasarkan jumlah
+                jamaah serta kebutuhan koper.
+              </p>
+
+
+              <a href="transport.html">
+
+                Pilih Transport
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+              </a>
+
+            </div>
+
+
+            <div class="service-guide-item">
+
+
+              <div class="service-guide-top">
+
+                <i class="fa-solid fa-person-praying"></i>
+
+                <strong>
+                  Muthawwif
+                </strong>
+
+              </div>
+
+
+              <p>
+                Tambahkan pendamping perjalanan
+                sesuai durasi dan kebutuhan
+                rombongan.
+              </p>
+
+
+              <a href="muthawwif.html">
+
+                Lihat Muthawwif
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- =================================================
+           PREPARATION
+      ================================================== -->
+
+      <article
+        class="guide-card"
+        id="persiapan"
+      >
+
+
+        <div class="guide-card-header">
+
+          <div class="guide-card-icon">
+
+            <i class="fa-solid fa-list-check"></i>
+
+          </div>
+
+          <div>
+
+            <span>
+              PERSIAPAN
+            </span>
+
+            <h2>
+              Informasi yang sebaiknya disiapkan
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="guide-card-body">
+
+
+          <p>
+            Sebelum membuat estimasi atau
+            permintaan layanan, siapkan
+            informasi perjalanan berikut.
+          </p>
+
+
+          <div class="checklist">
+
+
+            <div class="checklist-item">
+
+              <div class="checklist-icon">
+
+                <i class="fa-solid fa-check"></i>
+
+              </div>
+
+              <div>
+
+                <strong>
+                  Data jamaah
+                </strong>
+
+                <span>
+                  Jumlah jamaah dan data
+                  perjalanan yang diperlukan
+                  untuk layanan yang dipilih.
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <div class="checklist-item">
+
+              <div class="checklist-icon">
+
+                <i class="fa-solid fa-check"></i>
+
+              </div>
+
+              <div>
+
+                <strong>
+                  Paspor
+                </strong>
+
+                <span>
+                  Siapkan data paspor sesuai
+                  kebutuhan proses layanan visa
+                  dan perjalanan.
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <div class="checklist-item">
+
+              <div class="checklist-icon">
+
+                <i class="fa-solid fa-check"></i>
+
+              </div>
+
+              <div>
+
+                <strong>
+                  Tanggal perjalanan
+                </strong>
+
+                <span>
+                  Tentukan perkiraan tanggal
+                  kedatangan, kepulangan dan
+                  durasi menginap.
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <div class="checklist-item">
+
+              <div class="checklist-icon">
+
+                <i class="fa-solid fa-check"></i>
+
+              </div>
+
+              <div>
+
+                <strong>
+                  Kebutuhan kamar
+                </strong>
+
+                <span>
+                  Tentukan Double, Triple,
+                  Quad serta jumlah kamar
+                  yang diperlukan.
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <div class="checklist-item">
+
+              <div class="checklist-icon">
+
+                <i class="fa-solid fa-check"></i>
+
+              </div>
+
+              <div>
+
+                <strong>
+                  Rute transportasi
+                </strong>
+
+                <span>
+                  Catat rute bandara, hotel,
+                  antar kota dan stasiun yang
+                  akan digunakan.
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="guide-notice">
+
+            <i class="fa-solid fa-circle-info"></i>
+
+            <span>
+              Persyaratan resmi perjalanan dan
+              visa dapat berubah. Pastikan
+              persyaratan aktual dikonfirmasi
+              sebelum melakukan proses final.
+            </span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- =================================================
+           CALCULATOR GUIDE
+      ================================================== -->
+
+      <article class="guide-card">
+
+
+        <div class="guide-card-header">
+
+          <div class="guide-card-icon">
+
+            <i class="fa-solid fa-calculator"></i>
+
+          </div>
+
+          <div>
+
+            <span>
+              KALKULATOR
+            </span>
+
+            <h2>
+              Cara membaca estimasi
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="guide-card-body">
+
+
+          <div class="guide-steps">
+
+
+            <div class="guide-step">
+
+              <div class="guide-step-number">
+                A
+              </div>
+
+              <div class="guide-step-content">
+
+                <h3>
+                  Total rombongan
+                </h3>
+
+                <p>
+                  Merupakan gabungan layanan
+                  yang diaktifkan dalam
+                  kalkulator.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div class="guide-step">
+
+              <div class="guide-step-number">
+                B
+              </div>
+
+              <div class="guide-step-content">
+
+                <h3>
+                  Estimasi per jamaah
+                </h3>
+
+                <p>
+                  Total rombongan dibagi
+                  berdasarkan jumlah jamaah
+                  yang dimasukkan.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div class="guide-step">
+
+              <div class="guide-step-number">
+                C
+              </div>
+
+              <div class="guide-step-content">
+
+                <h3>
+                  Target budget
+                </h3>
+
+                <p>
+                  Anda dapat memasukkan target
+                  budget per jamaah untuk
+                  membandingkan dengan estimasi.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div
+            style="
+              margin-top:20px;
+            "
+          >
+
+            <a
+              href="calculator.html"
+              class="guide-hero-button"
+            >
+
+              <i class="fa-solid fa-calculator"></i>
+
+              Buka Kalkulator
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+
+    <!-- =================================================
+         SIDEBAR
+    ================================================== -->
+
+    <aside class="guide-sidebar">
+
+
+      <!-- PRICE -->
+
+      <div class="guide-sidebar-card">
+
+
+        <h3>
+          Referensi Biaya
+        </h3>
+
+
+        <p>
+          Beberapa biaya dasar yang digunakan
+          pada kalkulator Rahayu.
+        </p>
+
+
+        <div class="guide-price-list">
+
+
+          <div class="guide-price-row">
+
+            <span>
+              Visa
+            </span>
+
+            <strong>
+              Rp2.550.000
+              <br>
+              / jamaah
+            </strong>
+
+          </div>
+
+
+          <div class="guide-price-row">
+
+            <span>
+              Muthawwif
+            </span>
+
+            <strong>
+              Rp1.470.000
+              <br>
+              / hari / grup
+            </strong>
+
+          </div>
+
+
+          <div class="guide-price-row">
+
+            <span>
+              Transport
+            </span>
+
+            <strong>
+              Mulai
+              <br>
+              Rp580.000
+            </strong>
+
+          </div>
+
+
+          <div class="guide-price-row">
+
+            <span>
+              Hotel
+            </span>
+
+            <strong>
+              Sesuai tanggal
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <div class="guide-notice">
+
+          <i class="fa-solid fa-circle-info"></i>
+
+          <span>
+            Harga yang tampil adalah referensi.
+            Harga final dapat berbeda berdasarkan
+            tanggal dan ketersediaan.
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- QUICK -->
+
+      <div class="guide-sidebar-card">
+
+
+        <h3>
+          Menu Cepat
+        </h3>
+
+
+        <p>
+          Langsung menuju halaman yang
+          Anda butuhkan.
+        </p>
+
+
+        <div class="guide-links">
+
+
+          <a href="calculator.html">
+
+            <span class="guide-links-left">
+
+              <i class="fa-solid fa-calculator"></i>
+
+              Hitung Biaya
+
+            </span>
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+          </a>
+
+
+          <a href="orders.html">
+
+            <span class="guide-links-left">
+
+              <i class="fa-solid fa-receipt"></i>
+
+              Pesanan Saya
+
+            </span>
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+          </a>
+
+
+          <a href="index.html#layanan">
+
+            <span class="guide-links-left">
+
+              <i class="fa-solid fa-layer-group"></i>
+
+              Semua Layanan
+
+            </span>
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+          </a>
+
+
+          <a href="login.html">
+
+            <span class="guide-links-left">
+
+              <i class="fa-solid fa-user"></i>
+
+              Akun
+
+            </span>
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </aside>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     FAQ
+===================================================== -->
+
+<section class="guide-faq">
+
+  <div class="container">
+
+
+    <div class="section-title">
+
+      <span>
+        FAQ
+      </span>
+
+      <h2>
+        Pertanyaan yang sering ditanyakan
+      </h2>
+
+      <p>
+        Informasi dasar mengenai penggunaan
+        website Rahayu.
+      </p>
+
+    </div>
+
+
+    <div class="guide-faq-list">
+
+
+      <div class="guide-faq-item">
+
+
+        <button
+          type="button"
+          class="guide-faq-question"
+        >
+
+          Apakah harga di website merupakan harga final?
+
+          <i class="fa-solid fa-chevron-down"></i>
+
+        </button>
+
+
+        <div class="guide-faq-answer">
+
+          Tidak selalu. Harga yang ditampilkan
+          digunakan sebagai estimasi atau referensi.
+          Harga hotel, transportasi dan layanan lain
+          dapat berubah berdasarkan tanggal,
+          ketersediaan dan kebutuhan perjalanan.
+
+        </div>
+
+      </div>
+
+
+      <div class="guide-faq-item">
+
+
+        <button
+          type="button"
+          class="guide-faq-question"
+        >
+
+          Apakah tiket pesawat masuk kalkulator?
+
+          <i class="fa-solid fa-chevron-down"></i>
+
+        </button>
+
+
+        <div class="guide-faq-answer">
+
+          Belum. Kalkulator utama Rahayu saat ini
+          berfokus pada Visa, Hotel, Transportasi
+          dan Muthawwif.
+
+        </div>
+
+      </div>
+
+
+      <div class="guide-faq-item">
+
+
+        <button
+          type="button"
+          class="guide-faq-question"
+        >
+
+          Apakah klik Simpan Pesanan berarti booking sudah dikonfirmasi?
+
+          <i class="fa-solid fa-chevron-down"></i>
+
+        </button>
+
+
+        <div class="guide-faq-answer">
+
+          Belum. Pada versi website statis ini,
+          Simpan Pesanan menyimpan estimasi pada
+          browser perangkat. Belum ada pembayaran
+          atau booking otomatis ke penyedia layanan.
+
+        </div>
+
+      </div>
+
+
+      <div class="guide-faq-item">
+
+
+        <button
+          type="button"
+          class="guide-faq-question"
+        >
+
+          Apakah saya harus membeli semua layanan?
+
+          <i class="fa-solid fa-chevron-down"></i>
+
+        </button>
+
+
+        <div class="guide-faq-answer">
+
+          Tidak. Visa, Hotel, Transportasi dan
+          Muthawwif dapat dihitung secara terpisah
+          sesuai kebutuhan perjalanan.
+
+        </div>
+
+      </div>
+
+
+      <div class="guide-faq-item">
+
+
+        <button
+          type="button"
+          class="guide-faq-question"
+        >
+
+          Di mana estimasi yang sudah disimpan?
+
+          <i class="fa-solid fa-chevron-down"></i>
+
+        </button>
+
+
+        <div class="guide-faq-answer">
+
+          Estimasi yang disimpan dapat dilihat
+          kembali pada halaman Pesanan Saya,
+          selama data browser pada perangkat
+          tersebut belum dihapus.
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="final-cta">
+
+  <div class="container final-cta-inner">
+
+
+    <div>
+
+      <span>
+        SIAP MULAI?
+      </span>
+
+      <h2>
+        Buat estimasi perjalanan Anda
+      </h2>
+
+      <p>
+        Masukkan jumlah jamaah dan kebutuhan
+        perjalanan untuk melihat gambaran biaya.
+      </p>
+
+    </div>
+
+
+    <div class="final-cta-buttons">
+
+
+      <a
+        href="calculator.html"
+        class="primary-btn"
+      >
+
+        <i class="fa-solid fa-calculator"></i>
+
+        Hitung Biaya
+
+      </a>
+
+
+      <a
+        href="index.html#layanan"
+        class="outline-light-btn"
+      >
+
+        Pilih Layanan
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+  <div class="container footer-grid">
+
+
+    <div class="footer-brand">
+
+      <a
+        href="index.html"
+        class="brand"
+      >
+
+        <div class="brand-logo">
+          R
+        </div>
+
+        <div class="brand-name footer-brand-name">
+
+          <strong>
+            rahayu
+          </strong>
+
+          <small>
+            Umrah Services
+          </small>
+
+        </div>
+
+      </a>
+
+
+      <p>
+        Platform layanan kebutuhan Umrah mandiri:
+        visa, hotel, transportasi dan muthawwif.
+      </p>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>
+        Layanan
+      </h3>
+
+      <a href="visa.html">
+        Visa Umrah
+      </a>
+
+      <a href="hotel.html">
+        Hotel
+      </a>
+
+      <a href="transport.html">
+        Transportasi
+      </a>
+
+      <a href="muthawwif.html">
+        Muthawwif
+      </a>
+
+      <a href="calculator.html">
+        Hitung Biaya
+      </a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>
+        Bantuan
+      </h3>
+
+      <a href="panduan.html">
+        Panduan
+      </a>
+
+      <a href="orders.html">
+        Pesanan Saya
+      </a>
+
+      <a href="login.html">
+        Akun
+      </a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>
+        Jelajahi
+      </h3>
+
+      <a href="index.html">
+        Beranda
+      </a>
+
+      <a href="index.html#layanan">
+        Semua Layanan
+      </a>
+
+      <a href="calculator.html">
+        Estimasi Umrah
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <div class="container footer-reference">
+
+    <i class="fa-solid fa-circle-info"></i>
+
+    <p>
+      Informasi dan estimasi pada website dapat
+      berubah mengikuti tanggal perjalanan,
+      ketersediaan dan ketentuan layanan.
+    </p>
+
+  </div>
+
+
+  <div class="container footer-bottom">
+
+    <p>
+      ©
+      <span id="currentYear">
+        2026
+      </span>
+      Rahayu. All rights reserved.
+    </p>
+
+    <span>
+      Umrah Services
+    </span>
+
+  </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+
+<script>
+
+document.addEventListener(
+  "DOMContentLoaded",
+  function () {
+
+
+    /* =====================================================
+       FAQ
+    ===================================================== */
+
+    const faqItems =
+      document.querySelectorAll(
+        ".guide-faq-item"
+      );
+
+
+    faqItems.forEach(
+      item => {
+
+
+        const button =
+          item.querySelector(
+            ".guide-faq-question"
+          );
+
+
+        button.addEventListener(
+          "click",
+          function () {
+
+
+            const isActive =
+              item.classList.contains(
+                "active"
+              );
+
+
+            faqItems.forEach(
+              otherItem => {
+
+                otherItem.classList.remove(
+                  "active"
+                );
+
+              }
+            );
+
+
+            if (!isActive) {
+
+              item.classList.add(
+                "active"
+              );
+
+            }
+
+          }
+        );
+
+      }
+    );
+
+
+    /* =====================================================
+       SMOOTH INTERNAL LINKS
+    ===================================================== */
+
+    document
+      .querySelectorAll(
+        'a[href^="#"]'
+      )
+      .forEach(
+        link => {
+
+
+          link.addEventListener(
+            "click",
+            function (event) {
+
+
+              const target =
+                document.querySelector(
+                  this.getAttribute(
+                    "href"
+                  )
+                );
+
+
+              if (!target) {
+
+                return;
+
+              }
+
+
+              event.preventDefault();
+
+
+              target.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+              });
+
+            }
+          );
+
+        }
+      );
+
+  }
+);
+
+</script>
+
+
+</body>
+</html>
