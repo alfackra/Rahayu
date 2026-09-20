@@ -736,7 +736,7 @@ const RAHAYU_PRICES = {
 
     pricePerDay: 1470000,
 
-    minimumDays: 3
+    minimumDays: 1
 
   },
 
@@ -829,12 +829,12 @@ function calculateVisa() {
   let persons =
     positiveInteger(
       visaPersons.value,
-      2
+      1
     );
 
 
   /*
-    Minimum 2 jamaah
+    Minimum 1 jamaah
   */
 
   if (
@@ -850,8 +850,8 @@ function calculateVisa() {
 
 
     showToast(
-      "Minimum 2 jamaah",
-      "Referensi layanan visa menggunakan minimum pemesanan 2 jamaah.",
+      "Minimum 1 jamaah",
+      "Referensi layanan visa menggunakan minimum pemesanan 1 jamaah.",
       "warning"
     );
 
@@ -1070,7 +1070,7 @@ function calculateMuthawwif() {
   let days =
     positiveInteger(
       muthawwifDays.value,
-      3
+      1
     );
 
 
@@ -1087,8 +1087,8 @@ function calculateMuthawwif() {
 
 
     showToast(
-      "Minimum 3 hari",
-      "Referensi layanan muthawwif menggunakan minimum pemesanan 3 hari.",
+      "Minimum 1 hari",
+      "Referensi layanan muthawwif menggunakan minimum pemesanan 1 hari.",
       "warning"
     );
 
