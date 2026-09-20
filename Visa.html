@@ -1,0 +1,2235 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Visa Umrah | Rahayu
+  </title>
+
+  <meta
+    name="description"
+    content="Layanan pengurusan Visa Umrah Rahayu untuk jamaah Umrah mandiri."
+  >
+
+  <meta
+    name="theme-color"
+    content="#ffffff"
+  >
+
+
+  <!-- GOOGLE FONT -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+
+  <!-- FONT AWESOME -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+  >
+
+
+  <!-- MAIN CSS -->
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+
+  <!-- VISA PAGE EXTRA STYLE -->
+
+  <style>
+
+    /* ================================================
+       VISA HERO PRICE
+    ================================================= */
+
+    .visa-price-highlight {
+      margin-top: 28px;
+
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+    }
+
+
+    .visa-main-price {
+      padding: 16px 20px;
+
+      border: 1px solid rgba(8,102,93,.12);
+      border-radius: 13px;
+
+      background: white;
+
+      box-shadow:
+        0 8px 25px rgba(18,40,39,.05);
+    }
+
+
+    .visa-main-price small {
+      display: block;
+
+      margin-bottom: 3px;
+
+      color: #8b9698;
+
+      font-size: 8px;
+      font-weight: 600;
+    }
+
+
+    .visa-main-price strong {
+      color: #08665d;
+
+      font-size: 24px;
+      font-weight: 800;
+
+      letter-spacing: -1px;
+    }
+
+
+    .visa-main-price span {
+      color: #8b9698;
+
+      font-size: 9px;
+    }
+
+
+    .visa-minimum {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      color: #647174;
+
+      font-size: 10px;
+    }
+
+
+    .visa-minimum i {
+      color: #159669;
+    }
+
+
+
+    /* ================================================
+       VISA CONTENT
+    ================================================= */
+
+    .visa-section {
+      padding: 75px 0 100px;
+
+      background: #fafbfa;
+    }
+
+
+    .visa-layout {
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1.2fr)
+        minmax(300px, .8fr);
+
+      gap: 25px;
+
+      align-items: start;
+    }
+
+
+
+    /* ================================================
+       CARD
+    ================================================= */
+
+    .visa-card {
+      padding: 28px;
+
+      border: 1px solid #e4e8e7;
+      border-radius: 16px;
+
+      background: white;
+
+      box-shadow:
+        0 8px 25px rgba(18,40,39,.06);
+    }
+
+
+    .visa-card-header {
+      margin-bottom: 25px;
+    }
+
+
+    .visa-card-header span {
+      display: block;
+
+      margin-bottom: 6px;
+
+      color: #08665d;
+
+      font-size: 8px;
+      font-weight: 800;
+
+      letter-spacing: 1.2px;
+    }
+
+
+    .visa-card-header h2 {
+      margin-bottom: 7px;
+
+      color: #172326;
+
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+
+    .visa-card-header p {
+      color: #647174;
+
+      font-size: 10px;
+      line-height: 1.7;
+    }
+
+
+
+    /* ================================================
+       COUNTER
+    ================================================= */
+
+    .jamaah-counter {
+      display: grid;
+
+      grid-template-columns:
+        45px 1fr 45px;
+
+      gap: 7px;
+
+      align-items: center;
+    }
+
+
+    .counter-button {
+      height: 46px;
+
+      display: grid;
+      place-items: center;
+
+      border: 1px solid #e4e8e7;
+      border-radius: 9px;
+
+      background: white;
+
+      color: #08665d;
+
+      font-size: 13px;
+
+      cursor: pointer;
+
+      transition: .2s ease;
+    }
+
+
+    .counter-button:hover {
+      border-color: #08665d;
+
+      background: #eaf5f3;
+    }
+
+
+    .jamaah-counter input {
+      text-align: center;
+
+      font-weight: 700;
+    }
+
+
+
+    /* ================================================
+       OPTION CARD
+    ================================================= */
+
+    .visa-option {
+      margin-top: 6px;
+    }
+
+
+    .visa-option-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+
+      padding: 15px;
+
+      border: 1px solid #e4e8e7;
+      border-radius: 11px;
+
+      background: #fbfcfc;
+
+      cursor: pointer;
+
+      transition: .2s ease;
+    }
+
+
+    .visa-option-label:hover {
+      border-color: rgba(8,102,93,.4);
+
+      background: #f8fcfb;
+    }
+
+
+    .visa-option-label input {
+      width: 16px;
+      height: 16px;
+
+      margin-top: 2px;
+
+      accent-color: #08665d;
+    }
+
+
+    .visa-option-text {
+      flex: 1;
+    }
+
+
+    .visa-option-text strong {
+      display: block;
+
+      margin-bottom: 3px;
+
+      color: #172326;
+
+      font-size: 10px;
+    }
+
+
+    .visa-option-text span {
+      display: block;
+
+      color: #778386;
+
+      font-size: 8px;
+      line-height: 1.55;
+    }
+
+
+    .visa-option-price {
+      flex: 0 0 auto;
+
+      color: #08665d;
+
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+
+
+    /* ================================================
+       NOTE
+    ================================================= */
+
+    .visa-form-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+
+      margin: 18px 0;
+
+      padding: 12px;
+
+      border-radius: 9px;
+
+      background: #fcfaf5;
+
+      color: #756b58;
+    }
+
+
+    .visa-form-note i {
+      margin-top: 3px;
+
+      color: #a98645;
+
+      font-size: 10px;
+    }
+
+
+    .visa-form-note p {
+      font-size: 8px;
+      line-height: 1.65;
+    }
+
+
+
+    /* ================================================
+       TOTAL CARD
+    ================================================= */
+
+    .visa-total-card {
+      position: sticky;
+
+      top: 95px;
+
+      padding: 27px;
+
+      border: 1px solid #e4e8e7;
+      border-radius: 16px;
+
+      background: white;
+
+      box-shadow:
+        0 15px 45px rgba(18,40,39,.08);
+    }
+
+
+    .visa-total-label {
+      margin-bottom: 4px;
+
+      color: #8b9698;
+
+      font-size: 8px;
+      font-weight: 700;
+
+      letter-spacing: .7px;
+    }
+
+
+    .visa-total-price {
+      margin-bottom: 6px;
+
+      color: #08665d;
+
+      font-size: 31px;
+      font-weight: 800;
+
+      letter-spacing: -1.5px;
+    }
+
+
+    .visa-total-caption {
+      margin-bottom: 21px;
+
+      color: #8b9698;
+
+      font-size: 8px;
+    }
+
+
+    #visaBreakdown {
+      margin-bottom: 20px;
+    }
+
+
+
+    /* ================================================
+       BUTTON
+    ================================================= */
+
+    .visa-order-button {
+      width: 100%;
+      min-height: 49px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+
+      border-radius: 9px;
+
+      background: #08665d;
+
+      color: white;
+
+      font-size: 11px;
+      font-weight: 700;
+
+      cursor: pointer;
+
+      transition: .2s ease;
+    }
+
+
+    .visa-order-button:hover {
+      background: #064d47;
+
+      transform: translateY(-1px);
+    }
+
+
+
+    /* ================================================
+       INCLUDED
+    ================================================= */
+
+    .visa-included {
+      margin-top: 20px;
+      padding-top: 18px;
+
+      border-top: 1px solid #edf0ef;
+    }
+
+
+    .visa-included h3 {
+      margin-bottom: 10px;
+
+      color: #172326;
+
+      font-size: 10px;
+    }
+
+
+    .visa-included ul {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+
+    .visa-included li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+
+      color: #647174;
+
+      font-size: 8px;
+    }
+
+
+    .visa-included li i {
+      margin-top: 2px;
+
+      color: #159669;
+    }
+
+
+
+    /* ================================================
+       PROCESS
+    ================================================= */
+
+    .visa-process-section {
+      padding: 90px 0;
+
+      background: white;
+    }
+
+
+    .visa-process-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 15px;
+
+      margin-top: 40px;
+    }
+
+
+    .visa-process-item {
+      padding: 22px;
+
+      border: 1px solid #e4e8e7;
+      border-radius: 14px;
+
+      background: white;
+    }
+
+
+    .visa-process-number {
+      width: 36px;
+      height: 36px;
+
+      display: grid;
+      place-items: center;
+
+      margin-bottom: 15px;
+
+      border-radius: 10px;
+
+      background: #eaf5f3;
+
+      color: #08665d;
+
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+
+    .visa-process-item h3 {
+      margin-bottom: 6px;
+
+      color: #172326;
+
+      font-size: 12px;
+    }
+
+
+    .visa-process-item p {
+      color: #778386;
+
+      font-size: 9px;
+      line-height: 1.7;
+    }
+
+
+
+    /* ================================================
+       REQUIREMENT
+    ================================================= */
+
+    .requirement-section {
+      padding: 80px 0;
+
+      background: #f7f8f7;
+    }
+
+
+    .requirement-grid {
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 18px;
+    }
+
+
+    .requirement-card {
+      padding: 25px;
+
+      border: 1px solid #e4e8e7;
+      border-radius: 15px;
+
+      background: white;
+    }
+
+
+    .requirement-card h3 {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+
+      margin-bottom: 17px;
+
+      color: #172326;
+
+      font-size: 14px;
+    }
+
+
+    .requirement-card h3 i {
+      color: #08665d;
+    }
+
+
+    .requirement-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+
+    .requirement-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+
+      color: #647174;
+
+      font-size: 9px;
+      line-height: 1.6;
+    }
+
+
+    .requirement-list li i {
+      margin-top: 3px;
+
+      color: #159669;
+
+      font-size: 8px;
+    }
+
+
+
+    /* ================================================
+       DISCLAIMER
+    ================================================= */
+
+    .visa-disclaimer {
+      max-width: 850px;
+
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+
+      margin: 30px auto 0;
+
+      padding: 14px;
+
+      border: 1px solid #e7e1d3;
+      border-radius: 10px;
+
+      background: #fcfaf5;
+
+      color: #756b58;
+    }
+
+
+    .visa-disclaimer i {
+      margin-top: 3px;
+
+      color: #a98645;
+    }
+
+
+    .visa-disclaimer p {
+      font-size: 8px;
+      line-height: 1.7;
+    }
+
+
+
+    /* ================================================
+       MOBILE
+    ================================================= */
+
+    @media (max-width: 850px) {
+
+      .visa-layout {
+        grid-template-columns: 1fr;
+      }
+
+
+      .visa-total-card {
+        position: static;
+      }
+
+
+      .visa-process-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+    }
+
+
+    @media (max-width: 600px) {
+
+      .visa-section {
+        padding: 55px 0 70px;
+      }
+
+
+      .visa-card,
+      .visa-total-card {
+        padding: 20px;
+      }
+
+
+      .visa-price-highlight {
+        align-items: flex-start;
+        flex-direction: column;
+
+        gap: 12px;
+      }
+
+
+      .visa-main-price {
+        width: 100%;
+      }
+
+
+      .visa-process-grid,
+      .requirement-grid {
+        grid-template-columns: 1fr;
+      }
+
+
+      .visa-process-section,
+      .requirement-section {
+        padding: 65px 0;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header
+  class="main-header"
+  id="mainHeader"
+>
+
+  <div class="container navbar">
+
+
+    <!-- BRAND -->
+
+    <a
+      href="index.html"
+      class="brand"
+    >
+
+      <div class="brand-logo">
+        R
+      </div>
+
+      <div class="brand-name">
+
+        <strong>
+          rahayu
+        </strong>
+
+        <small>
+          Umrah Services
+        </small>
+
+      </div>
+
+    </a>
+
+
+
+    <!-- DESKTOP MENU -->
+
+    <nav class="desktop-menu">
+
+      <a
+        href="index.html"
+        class="nav-item"
+      >
+        Beranda
+      </a>
+
+
+      <a
+        href="panduan.html"
+        class="nav-item"
+      >
+        Panduan
+      </a>
+
+
+      <a
+        href="orders.html"
+        class="nav-item"
+      >
+        Pesanan Saya
+      </a>
+
+
+      <a
+        href="login.html"
+        class="nav-item"
+      >
+        Akun
+      </a>
+
+    </nav>
+
+
+
+    <!-- RIGHT -->
+
+    <div class="nav-right">
+
+      <a
+        href="calculator.html"
+        class="nav-calculate"
+      >
+
+        <i class="fa-solid fa-calculator"></i>
+
+        Hitung Biaya
+
+      </a>
+
+
+      <button
+        class="mobile-menu-btn"
+        id="mobileMenuBtn"
+        aria-label="Menu"
+      >
+
+        <i class="fa-solid fa-bars"></i>
+
+      </button>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- MOBILE MENU -->
+
+  <div
+    class="mobile-menu"
+    id="mobileMenu"
+  >
+
+    <a href="index.html">
+
+      <i class="fa-solid fa-house"></i>
+
+      Beranda
+
+    </a>
+
+
+    <a href="panduan.html">
+
+      <i class="fa-regular fa-circle-question"></i>
+
+      Panduan
+
+    </a>
+
+
+    <a href="orders.html">
+
+      <i class="fa-solid fa-receipt"></i>
+
+      Pesanan Saya
+
+    </a>
+
+
+    <a href="login.html">
+
+      <i class="fa-regular fa-user"></i>
+
+      Akun
+
+    </a>
+
+
+    <a
+      href="calculator.html"
+      class="mobile-calculate"
+    >
+
+      <i class="fa-solid fa-calculator"></i>
+
+      Hitung Biaya
+
+    </a>
+
+  </div>
+
+</header>
+
+
+
+<main>
+
+
+<!-- =========================================================
+     PAGE HEADER
+========================================================= -->
+
+<section class="page-header">
+
+  <div class="container">
+
+    <div class="page-header-content">
+
+
+      <!-- BREADCRUMB -->
+
+      <div class="page-breadcrumb">
+
+        <a href="index.html">
+          Beranda
+        </a>
+
+        <i class="fa-solid fa-chevron-right"></i>
+
+        <span>
+          Visa Umrah
+        </span>
+
+      </div>
+
+
+
+      <!-- LABEL -->
+
+      <div class="page-label">
+
+        <i class="fa-solid fa-passport"></i>
+
+        VISA UMRAH
+
+      </div>
+
+
+
+      <!-- TITLE -->
+
+      <h1>
+        Visa Umrah
+      </h1>
+
+
+      <p>
+        Pengurusan visa Umrah untuk membantu
+        perjalanan Umrah mandiri Anda menjadi
+        lebih praktis.
+      </p>
+
+
+
+      <!-- PRICE -->
+
+      <div class="visa-price-highlight">
+
+
+        <div class="visa-main-price">
+
+          <small>
+            Harga referensi
+          </small>
+
+          <strong>
+            Rp2.550.000
+          </strong>
+
+          <span>
+            / jamaah
+          </span>
+
+        </div>
+
+
+        <div class="visa-minimum">
+
+          <i class="fa-solid fa-circle-check"></i>
+
+          Minimum pemesanan 2 jamaah
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     VISA FORM
+========================================================= -->
+
+<section class="visa-section">
+
+  <div class="container visa-layout">
+
+
+    <!-- =====================================================
+         LEFT
+    ====================================================== -->
+
+    <div class="visa-card">
+
+
+      <div class="visa-card-header">
+
+        <span>
+          HITUNG BIAYA
+        </span>
+
+        <h2>
+          Detail pemesanan visa
+        </h2>
+
+        <p>
+          Masukkan jumlah jamaah untuk melihat
+          estimasi total biaya visa.
+        </p>
+
+      </div>
+
+
+
+      <form id="visaForm">
+
+
+        <!-- JUMLAH JAMAAH -->
+
+        <div class="form-group">
+
+          <label for="visaPersons">
+            Jumlah Jamaah
+          </label>
+
+
+          <div class="jamaah-counter">
+
+
+            <button
+              type="button"
+              class="counter-button"
+              id="decreaseVisaPersons"
+              aria-label="Kurangi jamaah"
+            >
+
+              <i class="fa-solid fa-minus"></i>
+
+            </button>
+
+
+            <input
+              type="number"
+              id="visaPersons"
+              value="2"
+              min="2"
+              step="1"
+              required
+            >
+
+
+            <button
+              type="button"
+              class="counter-button"
+              id="increaseVisaPersons"
+              aria-label="Tambah jamaah"
+            >
+
+              <i class="fa-solid fa-plus"></i>
+
+            </button>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- DATE -->
+
+        <div class="form-group">
+
+          <label for="visaDepartureDate">
+            Perkiraan Tanggal Keberangkatan
+          </label>
+
+          <input
+            type="date"
+            id="visaDepartureDate"
+          >
+
+        </div>
+
+
+
+        <!-- HOTEL APPROVAL -->
+
+        <div class="form-group">
+
+          <label>
+            Layanan Tambahan
+          </label>
+
+
+          <div class="visa-option">
+
+            <label
+              class="visa-option-label"
+              for="visaExternalHotel"
+            >
+
+              <input
+                type="checkbox"
+                id="visaExternalHotel"
+              >
+
+
+              <div class="visa-option-text">
+
+                <strong>
+                  Approval Hotel Eksternal
+                </strong>
+
+                <span>
+                  Tambahkan jika akomodasi menggunakan
+                  hotel eksternal dan memerlukan
+                  layanan approval.
+                </span>
+
+              </div>
+
+
+              <div class="visa-option-price">
+                + Rp490.000
+              </div>
+
+            </label>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- NOTE -->
+
+        <div class="visa-form-note">
+
+          <i class="fa-solid fa-circle-info"></i>
+
+          <p>
+            Nilai yang ditampilkan merupakan estimasi
+            berdasarkan harga referensi. Harga akhir
+            tetap mengikuti konfirmasi dan ketentuan
+            layanan pada saat pemesanan.
+          </p>
+
+        </div>
+
+
+
+        <button
+          type="submit"
+          class="submit-btn"
+        >
+
+          <i class="fa-solid fa-calculator"></i>
+
+          Hitung Total
+
+        </button>
+
+      </form>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         RIGHT — TOTAL
+    ====================================================== -->
+
+    <aside class="visa-total-card">
+
+
+      <div class="visa-total-label">
+        ESTIMASI TOTAL
+      </div>
+
+
+      <div
+        class="visa-total-price"
+        id="visaTotal"
+      >
+        Rp5.100.000
+      </div>
+
+
+      <div class="visa-total-caption">
+        Untuk 2 jamaah
+      </div>
+
+
+
+      <!-- BREAKDOWN -->
+
+      <div id="visaBreakdown">
+
+        <div
+          style="
+            display:flex;
+            justify-content:space-between;
+            gap:15px;
+            padding:8px 0;
+            border-bottom:1px solid #edf0ef;
+          "
+        >
+
+          <span
+            style="
+              color:#647174;
+              font-size:10px;
+            "
+          >
+            Visa Umrah (2 jamaah)
+          </span>
+
+
+          <strong
+            style="
+              color:#172326;
+              font-size:10px;
+            "
+          >
+            Rp5.100.000
+          </strong>
+
+        </div>
+
+
+        <div
+          style="
+            display:flex;
+            justify-content:space-between;
+            gap:15px;
+            padding-top:10px;
+          "
+        >
+
+          <strong
+            style="
+              color:#08665d;
+              font-size:11px;
+            "
+          >
+            Total
+          </strong>
+
+
+          <strong
+            style="
+              color:#08665d;
+              font-size:13px;
+            "
+          >
+            Rp5.100.000
+          </strong>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- ORDER -->
+
+      <button
+        type="button"
+        class="visa-order-button"
+        id="visaOrderButton"
+      >
+
+        Lanjutkan Pemesanan
+
+        <i class="fa-solid fa-arrow-right"></i>
+
+      </button>
+
+
+
+      <!-- INCLUDED -->
+
+      <div class="visa-included">
+
+        <h3>
+          Informasi layanan
+        </h3>
+
+
+        <ul>
+
+          <li>
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            <span>
+              Pengurusan visa Umrah
+            </span>
+
+          </li>
+
+
+          <li>
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            <span>
+              Minimum pemesanan 2 jamaah
+            </span>
+
+          </li>
+
+
+          <li>
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            <span>
+              Approval hotel eksternal tersedia
+              sebagai layanan tambahan
+            </span>
+
+          </li>
+
+
+          <li>
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            <span>
+              Harga akhir dikonfirmasi sebelum
+              pembayaran
+            </span>
+
+          </li>
+
+        </ul>
+
+      </div>
+
+    </aside>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PROCESS
+========================================================= -->
+
+<section class="visa-process-section">
+
+  <div class="container">
+
+
+    <div class="section-title">
+
+      <span>
+        CARA PESAN
+      </span>
+
+      <h2>
+        Proses pemesanan Visa Umrah
+      </h2>
+
+      <p>
+        Proses dibuat sederhana agar kebutuhan
+        dokumen dan perjalanan mudah dipantau.
+      </p>
+
+    </div>
+
+
+
+    <div class="visa-process-grid">
+
+
+      <div class="visa-process-item">
+
+        <div class="visa-process-number">
+          1
+        </div>
+
+        <h3>
+          Isi data
+        </h3>
+
+        <p>
+          Tentukan jumlah jamaah dan
+          tanggal keberangkatan.
+        </p>
+
+      </div>
+
+
+
+      <div class="visa-process-item">
+
+        <div class="visa-process-number">
+          2
+        </div>
+
+        <h3>
+          Lengkapi dokumen
+        </h3>
+
+        <p>
+          Siapkan dokumen yang dibutuhkan
+          untuk proses pengajuan.
+        </p>
+
+      </div>
+
+
+
+      <div class="visa-process-item">
+
+        <div class="visa-process-number">
+          3
+        </div>
+
+        <h3>
+          Konfirmasi
+        </h3>
+
+        <p>
+          Periksa detail layanan dan
+          konfirmasi biaya pemesanan.
+        </p>
+
+      </div>
+
+
+
+      <div class="visa-process-item">
+
+        <div class="visa-process-number">
+          4
+        </div>
+
+        <h3>
+          Proses visa
+        </h3>
+
+        <p>
+          Pengajuan diproses setelah
+          persyaratan dinyatakan lengkap.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     REQUIREMENTS
+========================================================= -->
+
+<section class="requirement-section">
+
+  <div class="container">
+
+
+    <div class="section-title">
+
+      <span>
+        INFORMASI
+      </span>
+
+      <h2>
+        Sebelum mengajukan Visa Umrah
+      </h2>
+
+    </div>
+
+
+
+    <div class="requirement-grid">
+
+
+      <!-- DOCUMENT -->
+
+      <div class="requirement-card">
+
+        <h3>
+
+          <i class="fa-regular fa-file-lines"></i>
+
+          Dokumen jamaah
+
+        </h3>
+
+
+        <ul class="requirement-list">
+
+          <li>
+
+            <i class="fa-solid fa-check"></i>
+
+            <span>
+              Paspor yang masih berlaku sesuai
+              ketentuan perjalanan.
+            </span>
+
+          </li>
+
+
+          <li>
+
+            <i class="fa-solid fa-check"></i>
+
+            <span>
+              Data identitas jamaah harus sesuai
+              dengan paspor.
+            </span>
+
+          </li>
+
+
+          <li>
+
+            <i class="fa-solid fa-check"></i>
+
+            <span>
+              Dokumen tambahan dapat diminta
+              sesuai ketentuan yang berlaku.
+            </span>
+
+          </li>
+
+        </ul>
+
+      </div>
+
+
+
+      <!-- IMPORTANT -->
+
+      <div class="requirement-card">
+
+        <h3>
+
+          <i class="fa-solid fa-circle-info"></i>
+
+          Informasi penting
+
+        </h3>
+
+
+        <ul class="requirement-list">
+
+          <li>
+
+            <i class="fa-solid fa-check"></i>
+
+            <span>
+              Harga dapat berubah mengikuti
+              kebijakan dan kondisi aktual.
+            </span>
+
+          </li>
+
+
+          <li>
+
+            <i class="fa-solid fa-check"></i>
+
+            <span>
+              Pengajuan visa tetap mengikuti
+              persetujuan otoritas terkait.
+            </span>
+
+          </li>
+
+
+          <li>
+
+            <i class="fa-solid fa-check"></i>
+
+            <span>
+              Pastikan data jamaah benar sebelum
+              proses pengajuan dimulai.
+            </span>
+
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="visa-disclaimer">
+
+      <i class="fa-solid fa-circle-info"></i>
+
+      <p>
+        Harga pada halaman ini menggunakan harga publik
+        Taraqa sebagai referensi layanan dan dapat berubah.
+        Rahayu merupakan brand terpisah dan tidak menyatakan
+        afiliasi dengan Taraqa.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CTA
+========================================================= -->
+
+<section class="final-cta">
+
+  <div class="container final-cta-inner">
+
+
+    <div>
+
+      <span>
+        LAYANAN LAINNYA
+      </span>
+
+      <h2>
+        Lengkapi kebutuhan Umrah Anda
+      </h2>
+
+      <p>
+        Selain Visa Umrah, Anda juga dapat memilih
+        hotel, transportasi dan muthawwif.
+      </p>
+
+    </div>
+
+
+
+    <div class="final-cta-buttons">
+
+      <a
+        href="hotel.html"
+        class="primary-btn"
+      >
+
+        <i class="fa-solid fa-hotel"></i>
+
+        Cari Hotel
+
+      </a>
+
+
+      <a
+        href="transport.html"
+        class="outline-light-btn"
+      >
+
+        Transportasi
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="footer">
+
+  <div class="container footer-grid">
+
+
+    <!-- BRAND -->
+
+    <div class="footer-brand">
+
+      <a
+        href="index.html"
+        class="brand"
+      >
+
+        <div class="brand-logo">
+          R
+        </div>
+
+
+        <div
+          class="brand-name footer-brand-name"
+        >
+
+          <strong>
+            rahayu
+          </strong>
+
+          <small>
+            Umrah Services
+          </small>
+
+        </div>
+
+      </a>
+
+
+      <p>
+        Platform layanan kebutuhan Umrah mandiri:
+        visa, hotel, transportasi dan muthawwif.
+      </p>
+
+    </div>
+
+
+
+    <!-- SERVICES -->
+
+    <div class="footer-column">
+
+      <h3>
+        Layanan
+      </h3>
+
+      <a href="visa.html">
+        Visa Umrah
+      </a>
+
+      <a href="hotel.html">
+        Hotel
+      </a>
+
+      <a href="transport.html">
+        Transportasi
+      </a>
+
+      <a href="muthawwif.html">
+        Muthawwif
+      </a>
+
+      <a href="calculator.html">
+        Hitung Biaya
+      </a>
+
+    </div>
+
+
+
+    <!-- HELP -->
+
+    <div class="footer-column">
+
+      <h3>
+        Bantuan
+      </h3>
+
+      <a href="panduan.html">
+        Panduan
+      </a>
+
+      <a href="orders.html">
+        Pesanan Saya
+      </a>
+
+      <a href="login.html">
+        Akun
+      </a>
+
+    </div>
+
+
+
+    <!-- INFORMATION -->
+
+    <div class="footer-column">
+
+      <h3>
+        Informasi
+      </h3>
+
+      <a href="index.html">
+        Tentang Rahayu
+      </a>
+
+      <a href="panduan.html">
+        Syarat & Ketentuan
+      </a>
+
+      <a href="panduan.html">
+        Kebijakan Privasi
+      </a>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="container footer-reference">
+
+    <i class="fa-solid fa-circle-info"></i>
+
+    <p>
+      Sebagian harga layanan yang ditampilkan
+      menggunakan data publik sebagai referensi.
+      Harga aktual dapat berubah mengikuti
+      tanggal dan ketentuan layanan.
+    </p>
+
+  </div>
+
+
+
+  <div class="container footer-bottom">
+
+    <p>
+
+      ©
+      <span id="currentYear">
+        2026
+      </span>
+
+      Rahayu. All rights reserved.
+
+    </p>
+
+
+    <span>
+      Umrah Services
+    </span>
+
+  </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     MAIN SCRIPT
+========================================================= -->
+
+<script src="script.js"></script>
+
+
+<!-- =========================================================
+     VISA PAGE SCRIPT
+========================================================= -->
+
+<script>
+
+  document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+
+      /* =========================================
+         ELEMENTS
+      ========================================== */
+
+      const personsInput =
+        document.getElementById(
+          "visaPersons"
+        );
+
+
+      const decreaseButton =
+        document.getElementById(
+          "decreaseVisaPersons"
+        );
+
+
+      const increaseButton =
+        document.getElementById(
+          "increaseVisaPersons"
+        );
+
+
+      const orderButton =
+        document.getElementById(
+          "visaOrderButton"
+        );
+
+
+      const caption =
+        document.querySelector(
+          ".visa-total-caption"
+        );
+
+
+
+      /* =========================================
+         UPDATE CAPTION
+      ========================================== */
+
+      function updateCaption() {
+
+        if (
+          !personsInput ||
+          !caption
+        ) {
+          return;
+        }
+
+
+        let persons =
+          parseInt(
+            personsInput.value
+          );
+
+
+        if (
+          isNaN(persons) ||
+          persons < 2
+        ) {
+
+          persons = 2;
+
+        }
+
+
+        caption.textContent =
+          `Untuk ${persons} jamaah`;
+
+      }
+
+
+
+      /* =========================================
+         MINUS
+      ========================================== */
+
+      if (
+        decreaseButton &&
+        personsInput
+      ) {
+
+        decreaseButton.addEventListener(
+          "click",
+          function () {
+
+            let value =
+              parseInt(
+                personsInput.value
+              ) || 2;
+
+
+            value =
+              Math.max(
+                2,
+                value - 1
+              );
+
+
+            personsInput.value =
+              value;
+
+
+            personsInput.dispatchEvent(
+              new Event(
+                "input",
+                {
+                  bubbles: true
+                }
+              )
+            );
+
+
+            updateCaption();
+
+          }
+        );
+
+      }
+
+
+
+      /* =========================================
+         PLUS
+      ========================================== */
+
+      if (
+        increaseButton &&
+        personsInput
+      ) {
+
+        increaseButton.addEventListener(
+          "click",
+          function () {
+
+            let value =
+              parseInt(
+                personsInput.value
+              ) || 2;
+
+
+            value += 1;
+
+
+            personsInput.value =
+              value;
+
+
+            personsInput.dispatchEvent(
+              new Event(
+                "input",
+                {
+                  bubbles: true
+                }
+              )
+            );
+
+
+            updateCaption();
+
+          }
+        );
+
+      }
+
+
+
+      /* =========================================
+         MANUAL INPUT
+      ========================================== */
+
+      if (personsInput) {
+
+        personsInput.addEventListener(
+          "input",
+          updateCaption
+        );
+
+      }
+
+
+
+      /* =========================================
+         ORDER BUTTON
+      ========================================== */
+
+      if (orderButton) {
+
+        orderButton.addEventListener(
+          "click",
+          function () {
+
+            const persons =
+              personsInput
+                ? Math.max(
+                    2,
+                    parseInt(
+                      personsInput.value
+                    ) || 2
+                  )
+                : 2;
+
+
+            const approval =
+              document.getElementById(
+                "visaExternalHotel"
+              );
+
+
+            const date =
+              document.getElementById(
+                "visaDepartureDate"
+              );
+
+
+            const params =
+              new URLSearchParams();
+
+
+            params.set(
+              "service",
+              "visa"
+            );
+
+
+            params.set(
+              "persons",
+              persons
+            );
+
+
+            if (
+              approval &&
+              approval.checked
+            ) {
+
+              params.set(
+                "approval",
+                "yes"
+              );
+
+            }
+
+
+            if (
+              date &&
+              date.value
+            ) {
+
+              params.set(
+                "date",
+                date.value
+              );
+
+            }
+
+
+            /*
+              Untuk sementara diarahkan
+              ke halaman Pesanan Saya.
+
+              Setelah orders.html kita buat,
+              parameter ini akan dibaca
+              otomatis.
+            */
+
+            window.location.href =
+              "orders.html?" +
+              params.toString();
+
+          }
+        );
+
+      }
+
+
+      updateCaption();
+
+    }
+  );
+
+</script>
+
+
+</body>
+
+</html>
