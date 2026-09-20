@@ -1,0 +1,2489 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
+<title>Transportasi Umrah Saudi | Rahayu</title>
+
+<meta
+  name="description"
+  content="Pesan transportasi Umrah di Jeddah, Makkah dan Madinah bersama Rahayu."
+>
+
+<meta name="theme-color" content="#ffffff">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+  rel="stylesheet"
+>
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+>
+
+<link rel="stylesheet" href="style.css">
+
+
+<style>
+
+/* =====================================================
+   TRANSPORT PAGE
+===================================================== */
+
+.transport-hero-info {
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:25px;
+}
+
+.transport-badge {
+  display:flex;
+  align-items:center;
+  gap:7px;
+
+  padding:9px 12px;
+
+  border:1px solid #dfe8e6;
+  border-radius:9px;
+
+  background:white;
+
+  color:#647174;
+
+  font-size:9px;
+  font-weight:600;
+}
+
+.transport-badge i {
+  color:#159669;
+}
+
+
+/* =====================================================
+   BOOKING SECTION
+===================================================== */
+
+.transport-booking {
+  padding:50px 0 80px;
+  background:#f7f8f7;
+}
+
+.transport-layout {
+  display:grid;
+  grid-template-columns:minmax(0,1.25fr) minmax(290px,.75fr);
+  gap:24px;
+  align-items:start;
+}
+
+.transport-form-card,
+.transport-summary {
+  padding:27px;
+
+  border:1px solid #e4e8e7;
+  border-radius:16px;
+
+  background:white;
+
+  box-shadow:
+    0 8px 25px rgba(18,40,39,.06);
+}
+
+.transport-form-title {
+  margin-bottom:24px;
+}
+
+.transport-form-title span {
+  display:block;
+  margin-bottom:5px;
+
+  color:#08665d;
+
+  font-size:8px;
+  font-weight:800;
+  letter-spacing:1.2px;
+}
+
+.transport-form-title h2 {
+  margin-bottom:5px;
+
+  font-size:21px;
+  font-weight:800;
+}
+
+.transport-form-title p {
+  color:#778386;
+  font-size:9px;
+}
+
+
+/* =====================================================
+   TYPE
+===================================================== */
+
+.service-type {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+
+  margin-bottom:20px;
+}
+
+.type-button {
+  min-height:46px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+
+  border:1px solid #e4e8e7;
+  border-radius:9px;
+
+  background:#fbfcfc;
+
+  color:#647174;
+
+  font-size:9px;
+  font-weight:700;
+
+  cursor:pointer;
+}
+
+.type-button.active {
+  border-color:#08665d;
+
+  background:#eaf5f3;
+
+  color:#08665d;
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.transport-form-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:13px;
+}
+
+.transport-field {
+  margin-bottom:14px;
+}
+
+.transport-field.full {
+  grid-column:1/-1;
+}
+
+.transport-field label {
+  display:block;
+
+  margin-bottom:6px;
+
+  color:#526164;
+
+  font-size:8px;
+  font-weight:700;
+}
+
+.transport-field input,
+.transport-field select {
+  width:100%;
+  height:46px;
+
+  padding:0 12px;
+
+  outline:none;
+
+  border:1px solid #e4e8e7;
+  border-radius:9px;
+
+  background:#fbfcfc;
+
+  color:#172326;
+
+  font-size:10px;
+}
+
+.transport-field input:focus,
+.transport-field select:focus {
+  border-color:#08665d;
+
+  background:white;
+
+  box-shadow:
+    0 0 0 3px rgba(8,102,93,.07);
+}
+
+
+/* =====================================================
+   VEHICLES
+===================================================== */
+
+.vehicle-title {
+  margin:12px 0 11px;
+
+  font-size:10px;
+  font-weight:700;
+}
+
+.vehicle-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+}
+
+.vehicle-option {
+  position:relative;
+
+  min-height:86px;
+
+  display:flex;
+  align-items:center;
+  gap:11px;
+
+  padding:12px;
+
+  border:1px solid #e4e8e7;
+  border-radius:10px;
+
+  background:white;
+
+  cursor:pointer;
+
+  transition:.2s ease;
+}
+
+.vehicle-option:hover {
+  border-color:rgba(8,102,93,.4);
+}
+
+.vehicle-option.active {
+  border:1.5px solid #08665d;
+  background:#f8fcfb;
+}
+
+.vehicle-icon {
+  width:40px;
+  height:40px;
+
+  flex:0 0 40px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:9px;
+
+  background:#eaf5f3;
+  color:#08665d;
+
+  font-size:14px;
+}
+
+.vehicle-text {
+  flex:1;
+}
+
+.vehicle-text strong {
+  display:block;
+
+  margin-bottom:2px;
+
+  color:#172326;
+
+  font-size:9px;
+}
+
+.vehicle-text span {
+  display:block;
+
+  color:#8b9698;
+
+  font-size:7px;
+}
+
+.vehicle-price {
+  margin-top:4px;
+
+  color:#08665d !important;
+
+  font-size:9px !important;
+  font-weight:800;
+}
+
+
+/* =====================================================
+   SUMMARY
+===================================================== */
+
+.transport-summary {
+  position:sticky;
+  top:95px;
+}
+
+.summary-label {
+  margin-bottom:4px;
+
+  color:#8b9698;
+
+  font-size:8px;
+  font-weight:700;
+  letter-spacing:.8px;
+}
+
+.summary-price {
+  margin-bottom:4px;
+
+  color:#08665d;
+
+  font-size:29px;
+  font-weight:800;
+
+  letter-spacing:-1px;
+}
+
+.summary-caption {
+  margin-bottom:20px;
+
+  color:#8b9698;
+
+  font-size:8px;
+}
+
+.summary-details {
+  display:flex;
+  flex-direction:column;
+
+  margin-bottom:20px;
+}
+
+.summary-row {
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+
+  padding:9px 0;
+
+  border-bottom:1px solid #edf0ef;
+
+  font-size:8px;
+}
+
+.summary-row span {
+  color:#778386;
+}
+
+.summary-row strong {
+  color:#172326;
+
+  text-align:right;
+}
+
+.transport-order-button {
+  width:100%;
+  min-height:48px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+
+  border-radius:9px;
+
+  background:#08665d;
+
+  color:white;
+
+  font-size:10px;
+  font-weight:700;
+}
+
+.transport-order-button:hover {
+  background:#064d47;
+}
+
+.summary-note {
+  display:flex;
+  align-items:flex-start;
+  gap:7px;
+
+  margin-top:16px;
+
+  padding:11px;
+
+  border-radius:8px;
+
+  background:#f7f8f7;
+
+  color:#778386;
+
+  font-size:7px;
+  line-height:1.6;
+}
+
+.summary-note i {
+  margin-top:2px;
+
+  color:#08665d;
+}
+
+
+/* =====================================================
+   POPULAR ROUTES
+===================================================== */
+
+.popular-transport {
+  padding:90px 0;
+  background:white;
+}
+
+.transport-route-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.transport-route-card {
+  padding:20px;
+
+  border:1px solid #e4e8e7;
+  border-radius:13px;
+
+  background:white;
+
+  cursor:pointer;
+
+  transition:.2s ease;
+}
+
+.transport-route-card:hover {
+  border-color:rgba(8,102,93,.4);
+
+  transform:translateY(-3px);
+
+  box-shadow:
+    0 12px 30px rgba(18,40,39,.08);
+}
+
+.transport-route-icon {
+  width:38px;
+  height:38px;
+
+  display:grid;
+  place-items:center;
+
+  margin-bottom:14px;
+
+  border-radius:9px;
+
+  background:#eaf5f3;
+
+  color:#08665d;
+}
+
+.transport-route-card span {
+  display:block;
+
+  margin-bottom:4px;
+
+  color:#8b9698;
+
+  font-size:7px;
+  font-weight:700;
+}
+
+.transport-route-card h3 {
+  min-height:39px;
+
+  margin-bottom:13px;
+
+  font-size:11px;
+  line-height:1.5;
+}
+
+.transport-route-price {
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+
+  padding-top:12px;
+
+  border-top:1px solid #edf0ef;
+}
+
+.transport-route-price small {
+  color:#8b9698;
+
+  font-size:7px;
+}
+
+.transport-route-price strong {
+  color:#08665d;
+
+  font-size:13px;
+}
+
+
+/* =====================================================
+   VEHICLE INFORMATION
+===================================================== */
+
+.fleet-section {
+  padding:80px 0;
+  background:#f7f8f7;
+}
+
+.fleet-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+
+.fleet-card {
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+  padding:17px;
+
+  border:1px solid #e4e8e7;
+  border-radius:12px;
+
+  background:white;
+}
+
+.fleet-card-icon {
+  width:42px;
+  height:42px;
+
+  flex:0 0 42px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:10px;
+
+  background:#eaf5f3;
+
+  color:#08665d;
+
+  font-size:15px;
+}
+
+.fleet-card strong {
+  display:block;
+
+  margin-bottom:3px;
+
+  font-size:10px;
+}
+
+.fleet-card span {
+  display:block;
+
+  color:#8b9698;
+
+  font-size:7px;
+  line-height:1.5;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:900px) {
+
+  .transport-layout {
+    grid-template-columns:1fr;
+  }
+
+  .transport-summary {
+    position:static;
+  }
+
+  .transport-route-grid {
+    grid-template-columns:1fr 1fr;
+  }
+
+  .fleet-grid {
+    grid-template-columns:1fr 1fr;
+  }
+
+}
+
+@media(max-width:600px) {
+
+  .transport-booking {
+    padding:40px 0 65px;
+  }
+
+  .transport-form-card,
+  .transport-summary {
+    padding:20px;
+  }
+
+  .transport-form-grid {
+    grid-template-columns:1fr;
+  }
+
+  .transport-field.full {
+    grid-column:auto;
+  }
+
+  .vehicle-grid {
+    grid-template-columns:1fr;
+  }
+
+  .transport-route-grid,
+  .fleet-grid {
+    grid-template-columns:1fr;
+  }
+
+  .service-type {
+    grid-template-columns:1fr;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="main-header" id="mainHeader">
+
+<div class="container navbar">
+
+
+<a href="index.html" class="brand">
+
+  <div class="brand-logo">
+    R
+  </div>
+
+  <div class="brand-name">
+
+    <strong>
+      rahayu
+    </strong>
+
+    <small>
+      Umrah Services
+    </small>
+
+  </div>
+
+</a>
+
+
+<nav class="desktop-menu">
+
+  <a href="index.html" class="nav-item">
+    Beranda
+  </a>
+
+  <a href="panduan.html" class="nav-item">
+    Panduan
+  </a>
+
+  <a href="orders.html" class="nav-item">
+    Pesanan Saya
+  </a>
+
+  <a href="login.html" class="nav-item">
+    Akun
+  </a>
+
+</nav>
+
+
+<div class="nav-right">
+
+  <a
+    href="calculator.html"
+    class="nav-calculate"
+  >
+
+    <i class="fa-solid fa-calculator"></i>
+
+    Hitung Biaya
+
+  </a>
+
+
+  <button
+    class="mobile-menu-btn"
+    id="mobileMenuBtn"
+    aria-label="Menu"
+  >
+
+    <i class="fa-solid fa-bars"></i>
+
+  </button>
+
+</div>
+
+</div>
+
+
+<div
+  class="mobile-menu"
+  id="mobileMenu"
+>
+
+<a href="index.html">
+  <i class="fa-solid fa-house"></i>
+  Beranda
+</a>
+
+<a href="visa.html">
+  <i class="fa-solid fa-passport"></i>
+  Visa
+</a>
+
+<a href="hotel.html">
+  <i class="fa-solid fa-hotel"></i>
+  Hotel
+</a>
+
+<a href="muthawwif.html">
+  <i class="fa-solid fa-person-praying"></i>
+  Muthawwif
+</a>
+
+<a href="orders.html">
+  <i class="fa-solid fa-receipt"></i>
+  Pesanan Saya
+</a>
+
+<a
+  href="calculator.html"
+  class="mobile-calculate"
+>
+  <i class="fa-solid fa-calculator"></i>
+  Hitung Biaya
+</a>
+
+</div>
+
+</header>
+
+
+<main>
+
+
+<!-- =====================================================
+     PAGE HEADER
+===================================================== -->
+
+<section class="page-header">
+
+<div class="container">
+
+<div class="page-header-content">
+
+
+<div class="page-breadcrumb">
+
+  <a href="index.html">
+    Beranda
+  </a>
+
+  <i class="fa-solid fa-chevron-right"></i>
+
+  <span>
+    Transportasi
+  </span>
+
+</div>
+
+
+<div class="page-label">
+
+  <i class="fa-solid fa-car-side"></i>
+
+  TRANSPORT SAUDI
+
+</div>
+
+
+<h1>
+  Transportasi Umrah
+</h1>
+
+
+<p>
+  Transfer bandara, perjalanan Makkah–Madinah,
+  Stasiun Haramain dan perjalanan lokal dengan
+  pilihan kendaraan sesuai jumlah jamaah.
+</p>
+
+
+<div class="transport-hero-info">
+
+  <div class="transport-badge">
+
+    <i class="fa-solid fa-users"></i>
+
+    Harga per rombongan
+
+  </div>
+
+
+  <div class="transport-badge">
+
+    <i class="fa-solid fa-gas-pump"></i>
+
+    Termasuk bahan bakar
+
+  </div>
+
+
+  <div class="transport-badge">
+
+    <i class="fa-solid fa-user-tie"></i>
+
+    Termasuk sopir
+
+  </div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     BOOKING
+===================================================== -->
+
+<section class="transport-booking">
+
+<div class="container transport-layout">
+
+
+<!-- LEFT -->
+
+<div class="transport-form-card">
+
+
+<div class="transport-form-title">
+
+  <span>
+    PESAN TRANSPORT
+  </span>
+
+  <h2>
+    Pilih perjalanan
+  </h2>
+
+  <p>
+    Pilih rute dan kendaraan untuk melihat
+    estimasi harga.
+  </p>
+
+</div>
+
+
+<div class="service-type">
+
+  <button
+    type="button"
+    class="type-button active"
+  >
+
+    <i class="fa-solid fa-arrow-right-arrow-left"></i>
+
+    Transfer Antar Titik
+
+  </button>
+
+
+  <button
+    type="button"
+    class="type-button"
+    id="tourButton"
+  >
+
+    <i class="fa-solid fa-kaaba"></i>
+
+    Tur & Ziarah
+
+  </button>
+
+</div>
+
+
+<form id="transportBookingForm">
+
+
+<div class="transport-form-grid">
+
+
+<div class="transport-field full">
+
+<label for="transportRoute">
+  Rute Perjalanan
+</label>
+
+
+<select id="transportRoute">
+
+<option value="jeddah-makkah">
+  Bandara Jeddah (JED) → Hotel Makkah
+</option>
+
+<option value="jeddah-madinah">
+  Bandara Jeddah (JED) → Hotel Madinah
+</option>
+
+<option value="med-airport-madinah">
+  Bandara Madinah (MED) → Hotel Madinah
+</option>
+
+<option value="makkah-jeddah">
+  Hotel Makkah → Bandara Jeddah (JED)
+</option>
+
+<option value="madinah-med-airport">
+  Hotel Madinah → Bandara Madinah (MED)
+</option>
+
+<option value="makkah-madinah">
+  Hotel Makkah → Hotel Madinah
+</option>
+
+<option value="madinah-makkah">
+  Hotel Madinah → Hotel Makkah
+</option>
+
+<option value="makkah-station">
+  Hotel Makkah → Stasiun Haramain Makkah
+</option>
+
+<option value="madinah-station">
+  Hotel Madinah → Stasiun Haramain Madinah
+</option>
+
+</select>
+
+</div>
+
+
+<div class="transport-field">
+
+<label for="pickupDate">
+  Tanggal Penjemputan
+</label>
+
+<input
+  type="date"
+  id="pickupDate"
+  required
+>
+
+</div>
+
+
+<div class="transport-field">
+
+<label for="pickupTime">
+  Jam Penjemputan
+</label>
+
+<input
+  type="time"
+  id="pickupTime"
+>
+
+</div>
+
+
+<div class="transport-field">
+
+<label for="passengers">
+  Jumlah Penumpang
+</label>
+
+<input
+  type="number"
+  id="passengers"
+  min="1"
+  value="2"
+>
+
+</div>
+
+
+<div class="transport-field">
+
+<label for="luggage">
+  Koper Besar
+</label>
+
+<input
+  type="number"
+  id="luggage"
+  min="0"
+  value="2"
+>
+
+</div>
+
+</div>
+
+
+<div class="vehicle-title">
+  Pilih Kendaraan
+</div>
+
+
+<div
+  class="vehicle-grid"
+  id="vehicleGrid"
+></div>
+
+
+</form>
+
+</div>
+
+
+<!-- RIGHT -->
+
+<aside class="transport-summary">
+
+
+<div class="summary-label">
+  TOTAL TRANSPORT
+</div>
+
+
+<div
+  class="summary-price"
+  id="transportTotal"
+>
+  Rp1.430.000
+</div>
+
+
+<div class="summary-caption">
+  Harga per rombongan · sekali jalan
+</div>
+
+
+<div class="summary-details">
+
+
+<div class="summary-row">
+
+<span>
+  Rute
+</span>
+
+<strong id="summaryRoute">
+  Jeddah → Makkah
+</strong>
+
+</div>
+
+
+<div class="summary-row">
+
+<span>
+  Kendaraan
+</span>
+
+<strong id="summaryVehicle">
+  Sedan
+</strong>
+
+</div>
+
+
+<div class="summary-row">
+
+<span>
+  Kapasitas
+</span>
+
+<strong id="summaryCapacity">
+  4 penumpang
+</strong>
+
+</div>
+
+
+<div class="summary-row">
+
+<span>
+  Penumpang
+</span>
+
+<strong id="summaryPassengers">
+  2 jamaah
+</strong>
+
+</div>
+
+
+<div class="summary-row">
+
+<span>
+  Koper
+</span>
+
+<strong id="summaryLuggage">
+  2 koper
+</strong>
+
+</div>
+
+
+</div>
+
+
+<button
+  type="button"
+  class="transport-order-button"
+  id="transportOrderButton"
+>
+
+  Tambah ke Pesanan
+
+  <i class="fa-solid fa-arrow-right"></i>
+
+</button>
+
+
+<div class="summary-note">
+
+<i class="fa-solid fa-circle-info"></i>
+
+<span>
+  Harga merupakan referensi dan dapat berubah
+  berdasarkan periode serta ketersediaan kendaraan.
+</span>
+
+</div>
+
+</aside>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     POPULAR ROUTES
+===================================================== -->
+
+<section class="popular-transport">
+
+<div class="container">
+
+
+<div class="section-title">
+
+<span>
+  RUTE POPULER
+</span>
+
+<h2>
+  Perjalanan yang sering digunakan
+</h2>
+
+<p>
+  Pilih salah satu rute untuk langsung
+  memasukkannya ke formulir.
+</p>
+
+</div>
+
+
+<div class="transport-route-grid">
+
+
+<div
+  class="transport-route-card"
+  data-route="jeddah-makkah"
+>
+
+<div class="transport-route-icon">
+  <i class="fa-solid fa-plane-arrival"></i>
+</div>
+
+<span>
+  BANDARA
+</span>
+
+<h3>
+  Jeddah Airport → Makkah Hotel
+</h3>
+
+<div class="transport-route-price">
+
+<small>
+  Mulai
+</small>
+
+<strong>
+  Rp1.430.000
+</strong>
+
+</div>
+
+</div>
+
+
+<div
+  class="transport-route-card"
+  data-route="jeddah-madinah"
+>
+
+<div class="transport-route-icon">
+  <i class="fa-solid fa-plane-arrival"></i>
+</div>
+
+<span>
+  BANDARA
+</span>
+
+<h3>
+  Jeddah Airport → Madinah Hotel
+</h3>
+
+<div class="transport-route-price">
+
+<small>
+  Mulai
+</small>
+
+<strong>
+  Rp2.600.000
+</strong>
+
+</div>
+
+</div>
+
+
+<div
+  class="transport-route-card"
+  data-route="med-airport-madinah"
+>
+
+<div class="transport-route-icon">
+  <i class="fa-solid fa-plane-arrival"></i>
+</div>
+
+<span>
+  BANDARA
+</span>
+
+<h3>
+  Madinah Airport → Madinah Hotel
+</h3>
+
+<div class="transport-route-price">
+
+<small>
+  Mulai
+</small>
+
+<strong>
+  Rp980.000
+</strong>
+
+</div>
+
+</div>
+
+
+<div
+  class="transport-route-card"
+  data-route="makkah-madinah"
+>
+
+<div class="transport-route-icon">
+  <i class="fa-solid fa-road"></i>
+</div>
+
+<span>
+  ANTAR KOTA
+</span>
+
+<h3>
+  Makkah Hotel → Madinah Hotel
+</h3>
+
+<div class="transport-route-price">
+
+<small>
+  Mulai
+</small>
+
+<strong>
+  Rp2.430.000
+</strong>
+
+</div>
+
+</div>
+
+
+<div
+  class="transport-route-card"
+  data-route="makkah-station"
+>
+
+<div class="transport-route-icon">
+  <i class="fa-solid fa-train"></i>
+</div>
+
+<span>
+  HARAMAIN
+</span>
+
+<h3>
+  Makkah Hotel → Stasiun Haramain
+</h3>
+
+<div class="transport-route-price">
+
+<small>
+  Mulai
+</small>
+
+<strong>
+  Rp580.000
+</strong>
+
+</div>
+
+</div>
+
+
+<div
+  class="transport-route-card"
+  data-route="madinah-station"
+>
+
+<div class="transport-route-icon">
+  <i class="fa-solid fa-train"></i>
+</div>
+
+<span>
+  HARAMAIN
+</span>
+
+<h3>
+  Madinah Hotel → Stasiun Haramain
+</h3>
+
+<div class="transport-route-price">
+
+<small>
+  Mulai
+</small>
+
+<strong>
+  Rp580.000
+</strong>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FLEET
+===================================================== -->
+
+<section class="fleet-section">
+
+<div class="container">
+
+
+<div class="section-title">
+
+<span>
+  KENDARAAN
+</span>
+
+<h2>
+  Pilih sesuai jumlah jamaah
+</h2>
+
+</div>
+
+
+<div class="fleet-grid">
+
+
+<div class="fleet-card">
+
+<div class="fleet-card-icon">
+  <i class="fa-solid fa-car"></i>
+</div>
+
+<div>
+  <strong>Sedan</strong>
+  <span>4 kursi · sekitar 3 koper</span>
+</div>
+
+</div>
+
+
+<div class="fleet-card">
+
+<div class="fleet-card-icon">
+  <i class="fa-solid fa-van-shuttle"></i>
+</div>
+
+<div>
+  <strong>Hyundai Staria</strong>
+  <span>7 kursi · sekitar 10 koper</span>
+</div>
+
+</div>
+
+
+<div class="fleet-card">
+
+<div class="fleet-card-icon">
+  <i class="fa-solid fa-car-side"></i>
+</div>
+
+<div>
+  <strong>GMC Yukon</strong>
+  <span>7 kursi · sekitar 5 koper</span>
+</div>
+
+</div>
+
+
+<div class="fleet-card">
+
+<div class="fleet-card-icon">
+  <i class="fa-solid fa-van-shuttle"></i>
+</div>
+
+<div>
+  <strong>Toyota Hiace</strong>
+  <span>9 kursi · sekitar 14 koper</span>
+</div>
+
+</div>
+
+
+<div class="fleet-card">
+
+<div class="fleet-card-icon">
+  <i class="fa-solid fa-bus-simple"></i>
+</div>
+
+<div>
+  <strong>Toyota Coaster</strong>
+  <span>22 kursi · sekitar 20 koper</span>
+</div>
+
+</div>
+
+
+<div class="fleet-card">
+
+<div class="fleet-card-icon">
+  <i class="fa-solid fa-bus"></i>
+</div>
+
+<div>
+  <strong>Bus 49 Seat</strong>
+  <span>49 kursi · sekitar 45 koper</span>
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+<div class="container footer-grid">
+
+
+<div class="footer-brand">
+
+<a href="index.html" class="brand">
+
+<div class="brand-logo">
+R
+</div>
+
+<div class="brand-name footer-brand-name">
+
+<strong>
+rahayu
+</strong>
+
+<small>
+Umrah Services
+</small>
+
+</div>
+
+</a>
+
+<p>
+Platform layanan kebutuhan Umrah mandiri:
+visa, hotel, transportasi dan muthawwif.
+</p>
+
+</div>
+
+
+<div class="footer-column">
+
+<h3>
+Layanan
+</h3>
+
+<a href="visa.html">
+Visa Umrah
+</a>
+
+<a href="hotel.html">
+Hotel
+</a>
+
+<a href="transport.html">
+Transportasi
+</a>
+
+<a href="muthawwif.html">
+Muthawwif
+</a>
+
+<a href="calculator.html">
+Hitung Biaya
+</a>
+
+</div>
+
+
+<div class="footer-column">
+
+<h3>
+Bantuan
+</h3>
+
+<a href="panduan.html">
+Panduan
+</a>
+
+<a href="orders.html">
+Pesanan Saya
+</a>
+
+<a href="login.html">
+Akun
+</a>
+
+</div>
+
+
+<div class="footer-column">
+
+<h3>
+Informasi
+</h3>
+
+<a href="index.html">
+Tentang Rahayu
+</a>
+
+<a href="panduan.html">
+Syarat & Ketentuan
+</a>
+
+</div>
+
+</div>
+
+
+<div class="container footer-reference">
+
+<i class="fa-solid fa-circle-info"></i>
+
+<p>
+Tarif transportasi menggunakan data publik
+sebagai referensi dan dapat berubah mengikuti
+periode serta ketersediaan kendaraan.
+</p>
+
+</div>
+
+
+<div class="container footer-bottom">
+
+<p>
+©
+<span id="currentYear">
+2026
+</span>
+Rahayu. All rights reserved.
+</p>
+
+<span>
+Umrah Services
+</span>
+
+</div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+
+<script>
+
+/* =====================================================
+   TRANSPORT PAGE
+===================================================== */
+
+document.addEventListener(
+"DOMContentLoaded",
+function() {
+
+
+/* =====================================================
+   DATABASE
+
+   Harga per kendaraan dan per rute.
+===================================================== */
+
+const transportData = {
+
+
+"jeddah-makkah": {
+
+name:
+"Jeddah Airport → Makkah Hotel",
+
+short:
+"Jeddah → Makkah",
+
+vehicles: {
+
+sedan: {
+name:"Sedan",
+detail:"Camry / Sonata · 4 kursi · 3 koper",
+capacity:4,
+luggage:3,
+price:1430000
+},
+
+staria: {
+name:"Hyundai Staria",
+detail:"Van · 7 kursi · 10 koper",
+capacity:7,
+luggage:10,
+price:1680000
+},
+
+gmc: {
+name:"GMC Yukon",
+detail:"SUV · 7 kursi · 5 koper",
+capacity:7,
+luggage:5,
+price:2330000
+},
+
+hiace: {
+name:"Toyota Hiace",
+detail:"Van · 9 kursi · 14 koper",
+capacity:9,
+luggage:14,
+price:1880000
+},
+
+coaster: {
+name:"Toyota Coaster",
+detail:"Bus · 22 kursi · 20 koper",
+capacity:22,
+luggage:20,
+price:3330000
+},
+
+bus: {
+name:"Bus 49 Seat",
+detail:"Bus · 49 kursi · 45 koper",
+capacity:49,
+luggage:45,
+price:4880000
+}
+
+}
+
+},
+
+
+"jeddah-madinah": {
+
+name:
+"Jeddah Airport → Madinah Hotel",
+
+short:
+"Jeddah → Madinah",
+
+vehicles: {
+
+sedan:{name:"Sedan",detail:"Camry / Sonata · 4 kursi · 3 koper",capacity:4,luggage:3,price:2600000},
+staria:{name:"Hyundai Staria",detail:"Van · 7 kursi · 10 koper",capacity:7,luggage:10,price:2980000},
+gmc:{name:"GMC Yukon",detail:"SUV · 7 kursi · 5 koper",capacity:7,luggage:5,price:4630000},
+hiace:{name:"Toyota Hiace",detail:"Van · 9 kursi · 14 koper",capacity:9,luggage:14,price:3330000},
+coaster:{name:"Toyota Coaster",detail:"Bus · 22 kursi · 20 koper",capacity:22,luggage:20,price:5350000},
+bus:{name:"Bus 49 Seat",detail:"Bus · 49 kursi · 45 koper",capacity:49,luggage:45,price:6950000}
+
+}
+
+},
+
+
+"med-airport-madinah": {
+
+name:
+"Madinah Airport → Madinah Hotel",
+
+short:
+"Airport Madinah → Hotel",
+
+vehicles: {
+
+sedan:{name:"Sedan",detail:"Camry / Sonata · 4 kursi · 3 koper",capacity:4,luggage:3,price:980000},
+staria:{name:"Hyundai Staria",detail:"Van · 7 kursi · 10 koper",capacity:7,luggage:10,price:1230000},
+gmc:{name:"GMC Yukon",detail:"SUV · 7 kursi · 5 koper",capacity:7,luggage:5,price:1550000},
+hiace:{name:"Toyota Hiace",detail:"Van · 9 kursi · 14 koper",capacity:9,luggage:14,price:1430000},
+coaster:{name:"Toyota Coaster",detail:"Bus · 22 kursi · 20 koper",capacity:22,luggage:20,price:2180000},
+bus:{name:"Bus 49 Seat",detail:"Bus · 49 kursi · 45 koper",capacity:49,luggage:45,price:2880000}
+
+}
+
+},
+
+
+"makkah-jeddah": {
+
+name:
+"Makkah Hotel → Jeddah Airport",
+
+short:
+"Makkah → Jeddah Airport",
+
+vehicles: {
+
+sedan:{name:"Sedan",detail:"4 kursi · 3 koper",capacity:4,luggage:3,price:980000},
+staria:{name:"Hyundai Staria",detail:"7 kursi · 10 koper",capacity:7,luggage:10,price:1380000},
+gmc:{name:"GMC Yukon",detail:"7 kursi · 5 koper",capacity:7,luggage:5,price:2150000},
+hiace:{name:"Toyota Hiace",detail:"9 kursi · 14 koper",capacity:9,luggage:14,price:1750000},
+coaster:{name:"Toyota Coaster",detail:"22 kursi · 20 koper",capacity:22,luggage:20,price:2980000},
+bus:{name:"Bus 49 Seat",detail:"49 kursi · 45 koper",capacity:49,luggage:45,price:4550000}
+
+}
+
+},
+
+
+"madinah-med-airport": {
+
+name:
+"Madinah Hotel → Madinah Airport",
+
+short:
+"Hotel → Airport Madinah",
+
+vehicles: {
+
+sedan:{name:"Sedan",detail:"4 kursi · 3 koper",capacity:4,luggage:3,price:700000},
+staria:{name:"Hyundai Staria",detail:"7 kursi · 10 koper",capacity:7,luggage:10,price:880000},
+gmc:{name:"GMC Yukon",detail:"7 kursi · 5 koper",capacity:7,luggage:5,price:1400000},
+hiace:{name:"Toyota Hiace",detail:"9 kursi · 14 koper",capacity:9,luggage:14,price:980000},
+coaster:{name:"Toyota Coaster",detail:"22 kursi · 20 koper",capacity:22,luggage:20,price:2100000},
+bus:{name:"Bus 49 Seat",detail:"49 kursi · 45 koper",capacity:49,luggage:45,price:2500000}
+
+}
+
+},
+
+
+"makkah-madinah": {
+
+name:
+"Makkah Hotel → Madinah Hotel",
+
+short:
+"Makkah → Madinah",
+
+vehicles: {
+
+sedan:{name:"Sedan",detail:"4 kursi · 3 koper",capacity:4,luggage:3,price:2430000},
+staria:{name:"Hyundai Staria",detail:"7 kursi · 10 koper",capacity:7,luggage:10,price:2830000},
+gmc:{name:"GMC Yukon",detail:"7 kursi · 5 koper",capacity:7,luggage:5,price:4400000},
+hiace:{name:"Toyota Hiace",detail:"9 kursi · 14 koper",capacity:9,luggage:14,price:3250000},
+coaster:{name:"Toyota Coaster",detail:"22 kursi · 20 koper",capacity:22,luggage:20,price:5100000},
+bus:{name:"Bus 49 Seat",detail:"49 kursi · 45 koper",capacity:49,luggage:45,price:6750000}
+
+}
+
+},
+
+
+"madinah-makkah": {
+
+name:
+"Madinah Hotel → Makkah Hotel",
+
+short:
+"Madinah → Makkah",
+
+vehicles: {
+
+sedan:{name:"Sedan",detail:"4 kursi · 3 koper",capacity:4,luggage:3,price:2430000},
+staria:{name:"Hyundai Staria",detail:"7 kursi · 10 koper",capacity:7,luggage:10,price:2830000},
+gmc:{name:"GMC Yukon",detail:"7 kursi · 5 koper",capacity:7,luggage:5,price:4400000},
+hiace:{name:"Toyota Hiace",detail:"9 kursi · 14 koper",capacity:9,luggage:14,price:3250000},
+coaster:{name:"Toyota Coaster",detail:"22 kursi · 20 koper",capacity:22,luggage:20,price:5100000},
+bus:{name:"Bus 49 Seat",detail:"49 kursi · 45 koper",capacity:49,luggage:45,price:6750000}
+
+}
+
+},
+
+
+"makkah-station": {
+
+name:
+"Makkah Hotel → Stasiun Haramain",
+
+short:
+"Makkah → Haramain",
+
+vehicles: {
+
+sedan:{name:"Sedan",detail:"4 kursi · 3 koper",capacity:4,luggage:3,price:580000},
+staria:{name:"Hyundai Staria",detail:"7 kursi · 10 koper",capacity:7,luggage:10,price:830000},
+gmc:{name:"GMC Yukon",detail:"7 kursi · 5 koper",capacity:7,luggage:5,price:1430000},
+hiace:{name:"Toyota Hiace",detail:"9 kursi · 14 koper",capacity:9,luggage:14,price:980000},
+coaster:{name:"Toyota Coaster",detail:"22 kursi · 20 koper",capacity:22,luggage:20,price:2000000},
+bus:{name:"Bus 49 Seat",detail:"49 kursi · 45 koper",capacity:49,luggage:45,price:2600000}
+
+}
+
+},
+
+
+"madinah-station": {
+
+name:
+"Madinah Hotel → Stasiun Haramain",
+
+short:
+"Madinah → Haramain",
+
+vehicles: {
+
+sedan:{name:"Sedan",detail:"4 kursi · 3 koper",capacity:4,luggage:3,price:580000},
+staria:{name:"Hyundai Staria",detail:"7 kursi · 10 koper",capacity:7,luggage:10,price:830000},
+gmc:{name:"GMC Yukon",detail:"7 kursi · 5 koper",capacity:7,luggage:5,price:1430000},
+hiace:{name:"Toyota Hiace",detail:"9 kursi · 14 koper",capacity:9,luggage:14,price:980000},
+coaster:{name:"Toyota Coaster",detail:"22 kursi · 20 koper",capacity:22,luggage:20,price:2000000},
+bus:{name:"Bus 49 Seat",detail:"49 kursi · 45 koper",capacity:49,luggage:45,price:2600000}
+
+}
+
+}
+
+};
+
+
+/* =====================================================
+   ELEMENTS
+===================================================== */
+
+const routeSelect =
+document.getElementById(
+"transportRoute"
+);
+
+const vehicleGrid =
+document.getElementById(
+"vehicleGrid"
+);
+
+const total =
+document.getElementById(
+"transportTotal"
+);
+
+const summaryRoute =
+document.getElementById(
+"summaryRoute"
+);
+
+const summaryVehicle =
+document.getElementById(
+"summaryVehicle"
+);
+
+const summaryCapacity =
+document.getElementById(
+"summaryCapacity"
+);
+
+const passengers =
+document.getElementById(
+"passengers"
+);
+
+const luggage =
+document.getElementById(
+"luggage"
+);
+
+const summaryPassengers =
+document.getElementById(
+"summaryPassengers"
+);
+
+const summaryLuggage =
+document.getElementById(
+"summaryLuggage"
+);
+
+let selectedVehicle =
+"sedan";
+
+
+/* =====================================================
+   FORMAT
+===================================================== */
+
+function rupiah(number) {
+
+return new Intl.NumberFormat(
+"id-ID",
+{
+style:"currency",
+currency:"IDR",
+minimumFractionDigits:0
+}
+).format(number);
+
+}
+
+
+/* =====================================================
+   VEHICLE ICON
+===================================================== */
+
+function vehicleIcon(key) {
+
+if (
+key === "coaster" ||
+key === "bus"
+) {
+return "fa-bus";
+}
+
+if (
+key === "staria" ||
+key === "hiace"
+) {
+return "fa-van-shuttle";
+}
+
+return "fa-car-side";
+
+}
+
+
+/* =====================================================
+   RENDER VEHICLES
+===================================================== */
+
+function renderVehicles() {
+
+const route =
+transportData[
+routeSelect.value
+];
+
+if (!route) return;
+
+
+vehicleGrid.innerHTML =
+"";
+
+
+Object.entries(
+route.vehicles
+).forEach(
+([key,vehicle]) => {
+
+
+const card =
+document.createElement(
+"div"
+);
+
+
+card.className =
+"vehicle-option";
+
+
+if (
+key === selectedVehicle
+) {
+
+card.classList.add(
+"active"
+);
+
+}
+
+
+card.innerHTML = `
+
+<div class="vehicle-icon">
+
+<i class="fa-solid ${vehicleIcon(key)}"></i>
+
+</div>
+
+
+<div class="vehicle-text">
+
+<strong>
+${vehicle.name}
+</strong>
+
+<span>
+${vehicle.detail}
+</span>
+
+<span class="vehicle-price">
+${rupiah(vehicle.price)}
+</span>
+
+</div>
+
+`;
+
+
+card.addEventListener(
+"click",
+function() {
+
+selectedVehicle =
+key;
+
+renderVehicles();
+
+updateSummary();
+
+}
+);
+
+
+vehicleGrid.appendChild(
+card
+);
+
+});
+
+}
+
+
+/* =====================================================
+   SUMMARY
+===================================================== */
+
+function updateSummary() {
+
+const route =
+transportData[
+routeSelect.value
+];
+
+
+if (!route) return;
+
+
+let vehicle =
+route.vehicles[
+selectedVehicle
+];
+
+
+if (!vehicle) {
+
+selectedVehicle =
+"sedan";
+
+vehicle =
+route.vehicles.sedan;
+
+}
+
+
+total.textContent =
+rupiah(
+vehicle.price
+);
+
+
+summaryRoute.textContent =
+route.short;
+
+
+summaryVehicle.textContent =
+vehicle.name;
+
+
+summaryCapacity.textContent =
+vehicle.capacity +
+" penumpang";
+
+
+const passengerValue =
+Math.max(
+1,
+parseInt(passengers.value) || 1
+);
+
+
+const luggageValue =
+Math.max(
+0,
+parseInt(luggage.value) || 0
+);
+
+
+summaryPassengers.textContent =
+passengerValue +
+" jamaah";
+
+
+summaryLuggage.textContent =
+luggageValue +
+" koper";
+
+
+/*
+   Warning capacity
+*/
+
+if (
+passengerValue >
+vehicle.capacity
+) {
+
+summaryCapacity.innerHTML =
+`
+<span style="color:#c04c4c">
+Maks. ${vehicle.capacity}
+· kendaraan terlalu kecil
+</span>
+`;
+
+}
+
+else if (
+luggageValue >
+vehicle.luggage
+) {
+
+summaryCapacity.innerHTML =
+`
+<span style="color:#b88727">
+Kapasitas koper sekitar
+${vehicle.luggage}
+</span>
+`;
+
+}
+
+}
+
+
+/* =====================================================
+   ROUTE CHANGE
+===================================================== */
+
+routeSelect.addEventListener(
+"change",
+function() {
+
+selectedVehicle =
+"sedan";
+
+renderVehicles();
+
+updateSummary();
+
+}
+);
+
+
+/* =====================================================
+   PASSENGERS
+===================================================== */
+
+passengers.addEventListener(
+"input",
+updateSummary
+);
+
+luggage.addEventListener(
+"input",
+updateSummary
+);
+
+
+/* =====================================================
+   POPULAR ROUTES
+===================================================== */
+
+document
+.querySelectorAll(
+".transport-route-card"
+)
+.forEach(card => {
+
+card.addEventListener(
+"click",
+function() {
+
+routeSelect.value =
+this.dataset.route;
+
+selectedVehicle =
+"sedan";
+
+renderVehicles();
+
+updateSummary();
+
+
+document
+.querySelector(
+".transport-booking"
+)
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+);
+
+});
+
+
+/* =====================================================
+   ORDER
+===================================================== */
+
+const orderButton =
+document.getElementById(
+"transportOrderButton"
+);
+
+
+orderButton.addEventListener(
+"click",
+function() {
+
+const route =
+transportData[
+routeSelect.value
+];
+
+
+const vehicle =
+route.vehicles[
+selectedVehicle
+];
+
+
+const params =
+new URLSearchParams();
+
+
+params.set(
+"service",
+"transport"
+);
+
+params.set(
+"route",
+routeSelect.value
+);
+
+params.set(
+"vehicle",
+selectedVehicle
+);
+
+params.set(
+"passengers",
+passengers.value
+);
+
+params.set(
+"luggage",
+luggage.value
+);
+
+params.set(
+"price",
+vehicle.price
+);
+
+
+const date =
+document.getElementById(
+"pickupDate"
+).value;
+
+
+const time =
+document.getElementById(
+"pickupTime"
+).value;
+
+
+if (date) {
+params.set(
+"date",
+date
+);
+}
+
+
+if (time) {
+params.set(
+"time",
+time
+);
+}
+
+
+window.location.href =
+"orders.html?" +
+params.toString();
+
+}
+);
+
+
+/* =====================================================
+   TOUR BUTTON
+===================================================== */
+
+const tourButton =
+document.getElementById(
+"tourButton"
+);
+
+
+tourButton.addEventListener(
+"click",
+function() {
+
+if (
+typeof showToast ===
+"function"
+) {
+
+showToast(
+"Tur & Ziarah",
+"Pilihan ziarah akan ditambahkan setelah daftar transfer utama selesai.",
+"warning"
+);
+
+}
+
+else {
+
+alert(
+"Menu Tur & Ziarah akan segera ditambahkan."
+);
+
+}
+
+}
+);
+
+
+/* =====================================================
+   INITIAL
+===================================================== */
+
+renderVehicles();
+
+updateSummary();
+
+
+}
+);
+
+</script>
+
+
+</body>
+</html>
