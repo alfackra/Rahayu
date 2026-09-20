@@ -1,13 +1,13 @@
 /* =========================================================
-   RAHAYU HARAMAIN SERVICES
-   MAIN JAVASCRIPT
+   RAHAYU — UMRAH SERVICES
+   script.js
 ========================================================= */
 
 "use strict";
 
 
 /* =========================================================
-   1. HELPERS
+   1. SHORTCUT
 ========================================================= */
 
 const $ = (selector, parent = document) =>
@@ -21,149 +21,96 @@ const $$ = (selector, parent = document) =>
    2. FORMAT RUPIAH
 ========================================================= */
 
-function formatRupiah(number) {
+function formatRupiah(value) {
+
+  const number = Number(value) || 0;
+
   return new Intl.NumberFormat("id-ID", {
     style: "currency",
     currency: "IDR",
     minimumFractionDigits: 0,
     maximumFractionDigits: 0
   }).format(number);
+
 }
 
 
 /* =========================================================
-   3. FORMAT NUMBER
-========================================================= */
-
-function formatNumber(number) {
-  return new Intl.NumberFormat("id-ID").format(number);
-}
-
-
-/* =========================================================
-   4. CURRENT YEAR
+   3. CURRENT YEAR
 ========================================================= */
 
 const currentYear = $("#currentYear");
 
 if (currentYear) {
-  currentYear.textContent = new Date().getFullYear();
+  currentYear.textContent =
+    new Date().getFullYear();
 }
 
 
 /* =========================================================
-   5. HEADER SCROLL EFFECT
+   4. HEADER SCROLL
 ========================================================= */
 
-const header = $("#header");
+const mainHeader = $("#mainHeader");
 
-function handleHeaderScroll() {
+function updateHeader() {
 
-  if (!header) return;
+  if (!mainHeader) return;
 
-  if (window.scrollY > 20) {
-    header.classList.add("scrolled");
-  } else {
-    header.classList.remove("scrolled");
-  }
-
-}
-
-window.addEventListener("scroll", handleHeaderScroll);
-
-handleHeaderScroll();
-
-
-/* =========================================================
-   6. MOBILE MENU
-========================================================= */
-
-const mobileMenuButton = $("#mobileMenuButton");
-const mobileMenu = $("#mobileMenu");
-
-if (mobileMenuButton && mobileMenu) {
-
-  mobileMenuButton.addEventListener("click", () => {
-
-    const isOpen =
-      mobileMenu.classList.toggle("active");
-
-    document.body.classList.toggle(
-      "menu-open",
-      isOpen
-    );
-
-    mobileMenuButton.innerHTML = isOpen
-      ? '<i class="fa-solid fa-xmark"></i>'
-      : '<i class="fa-solid fa-bars"></i>';
-
-  });
-
-}
-
-
-/* =========================================================
-   7. MOBILE SERVICE SUBMENU
-========================================================= */
-
-const mobileServiceButton =
-  $("#mobileServiceButton");
-
-const mobileServiceMenu =
-  $("#mobileServiceMenu");
-
-if (
-  mobileServiceButton &&
-  mobileServiceMenu
-) {
-
-  mobileServiceButton.addEventListener(
-    "click",
-    () => {
-
-      mobileServiceMenu.classList.toggle(
-        "active"
-      );
-
-      const icon =
-        mobileServiceButton.querySelector("i");
-
-      if (icon) {
-
-        if (
-          mobileServiceMenu.classList.contains(
-            "active"
-          )
-        ) {
-
-          icon.style.transform =
-            "rotate(180deg)";
-
-        } else {
-
-          icon.style.transform =
-            "rotate(0deg)";
-
-        }
-
-      }
-
-    }
+  mainHeader.classList.toggle(
+    "scrolled",
+    window.scrollY > 15
   );
 
 }
 
+window.addEventListener(
+  "scroll",
+  updateHeader
+);
+
+updateHeader();
+
 
 /* =========================================================
-   8. CLOSE MOBILE MENU AFTER CLICK
+   5. MOBILE MENU
 ========================================================= */
 
-if (mobileMenu) {
+const mobileMenuBtn =
+  $("#mobileMenuBtn");
 
-  const mobileLinks =
-    $$("a", mobileMenu);
+const mobileMenu =
+  $("#mobileMenu");
 
-  mobileLinks.forEach((link) => {
+
+if (mobileMenuBtn && mobileMenu) {
+
+  mobileMenuBtn.addEventListener(
+    "click",
+    () => {
+
+      const open =
+        mobileMenu.classList.toggle("active");
+
+      document.body.classList.toggle(
+        "menu-open",
+        open
+      );
+
+      mobileMenuBtn.innerHTML =
+        open
+          ? '<i class="fa-solid fa-xmark"></i>'
+          : '<i class="fa-solid fa-bars"></i>';
+
+    }
+  );
+
+
+  /*
+    Tutup menu setelah link diklik
+  */
+
+  $$("a", mobileMenu).forEach((link) => {
 
     link.addEventListener("click", () => {
 
@@ -173,12 +120,8 @@ if (mobileMenu) {
         "menu-open"
       );
 
-      if (mobileMenuButton) {
-
-        mobileMenuButton.innerHTML =
-          '<i class="fa-solid fa-bars"></i>';
-
-      }
+      mobileMenuBtn.innerHTML =
+        '<i class="fa-solid fa-bars"></i>';
 
     });
 
@@ -188,14 +131,15 @@ if (mobileMenu) {
 
 
 /* =========================================================
-   9. CLOSE MOBILE MENU WHEN RESIZED
+   6. RESPONSIVE MOBILE MENU RESET
 ========================================================= */
 
 window.addEventListener("resize", () => {
 
   if (
-    window.innerWidth > 1100 &&
-    mobileMenu
+    window.innerWidth > 900 &&
+    mobileMenu &&
+    mobileMenuBtn
   ) {
 
     mobileMenu.classList.remove("active");
@@ -204,12 +148,8 @@ window.addEventListener("resize", () => {
       "menu-open"
     );
 
-    if (mobileMenuButton) {
-
-      mobileMenuButton.innerHTML =
-        '<i class="fa-solid fa-bars"></i>';
-
-    }
+    mobileMenuBtn.innerHTML =
+      '<i class="fa-solid fa-bars"></i>';
 
   }
 
@@ -217,30 +157,27 @@ window.addEventListener("resize", () => {
 
 
 /* =========================================================
-   10. SMOOTH SCROLL
+   7. SMOOTH SCROLL
 ========================================================= */
 
-const anchorLinks =
-  $$('a[href^="#"]');
-
-anchorLinks.forEach((link) => {
+$$('a[href^="#"]').forEach((link) => {
 
   link.addEventListener(
     "click",
-    function (event) {
+    function(event) {
 
-      const targetID =
+      const targetId =
         this.getAttribute("href");
 
       if (
-        !targetID ||
-        targetID === "#"
+        !targetId ||
+        targetId === "#"
       ) {
         return;
       }
 
       const target =
-        document.querySelector(targetID);
+        document.querySelector(targetId);
 
       if (!target) return;
 
@@ -258,107 +195,45 @@ anchorLinks.forEach((link) => {
 
 
 /* =========================================================
-   11. ACTIVE NAVIGATION
-========================================================= */
-
-const sections =
-  $$("section[id]");
-
-const navigationLinks =
-  $$(".desktop-nav a[href^='#']");
-
-function updateActiveNavigation() {
-
-  let currentSection = "";
-
-  const scrollPosition =
-    window.scrollY + 180;
-
-  sections.forEach((section) => {
-
-    const top =
-      section.offsetTop;
-
-    const height =
-      section.offsetHeight;
-
-    if (
-      scrollPosition >= top &&
-      scrollPosition <
-        top + height
-    ) {
-
-      currentSection =
-        section.getAttribute("id");
-
-    }
-
-  });
-
-  navigationLinks.forEach((link) => {
-
-    link.classList.remove("active");
-
-    if (
-      link.getAttribute("href") ===
-      `#${currentSection}`
-    ) {
-
-      link.classList.add("active");
-
-    }
-
-  });
-
-}
-
-window.addEventListener(
-  "scroll",
-  updateActiveNavigation
-);
-
-
-/* =========================================================
-   12. FAQ ACCORDION
+   8. FAQ
 ========================================================= */
 
 const faqItems =
   $$(".faq-item");
 
+
 faqItems.forEach((item) => {
 
-  const button =
+  const question =
     $(".faq-question", item);
 
-  if (!button) return;
+  if (!question) return;
 
-  button.addEventListener(
+
+  question.addEventListener(
     "click",
     () => {
 
-      const alreadyOpen =
+      const isOpen =
         item.classList.contains("active");
 
-      /*
-       Tutup semua FAQ terlebih dahulu.
-      */
-
-      faqItems.forEach(
-        (otherItem) => {
-
-          otherItem.classList.remove(
-            "active"
-          );
-
-        }
-      );
 
       /*
-       Jika sebelumnya belum terbuka,
-       buka item yang diklik.
+        Tutup semua
       */
 
-      if (!alreadyOpen) {
+      faqItems.forEach((faq) => {
+
+        faq.classList.remove("active");
+
+      });
+
+
+      /*
+        Buka yang diklik
+      */
+
+      if (!isOpen) {
 
         item.classList.add("active");
 
@@ -371,802 +246,14 @@ faqItems.forEach((item) => {
 
 
 /* =========================================================
-   13. CALCULATOR CHECKBOX UI
+   9. REVEAL ANIMATION
 ========================================================= */
-
-const checkCards =
-  $$(".check-card");
-
-checkCards.forEach((card) => {
-
-  const checkbox =
-    $('input[type="checkbox"]', card);
-
-  if (!checkbox) return;
-
-  function updateCheckCard() {
-
-    card.classList.toggle(
-      "active",
-      checkbox.checked
-    );
-
-  }
-
-  checkbox.addEventListener(
-    "change",
-    updateCheckCard
-  );
-
-  updateCheckCard();
-
-});
-
-
-/* =========================================================
-   14. RAHAYU PRICE CONFIGURATION
-========================================================= */
-
-/*
-   =====================================================
-   HARGA SEMENTARA
-
-   Semua nominal menggunakan RUPIAH.
-
-   Nanti bagian ini paling mudah kita ubah
-   sesuai harga asli Rahayu.
-
-   Struktur:
-
-   VISA
-   Harga per jamaah.
-
-   HOTEL
-   Estimasi per jamaah / malam.
-
-   TRANSPORT
-   Estimasi per kendaraan / layanan.
-
-   MUTHAWWIF
-   Estimasi per hari / grup.
-   =====================================================
-*/
-
-const RAHAYU_PRICES = {
-
-  visa: {
-    pricePerPerson: 2300000
-  },
-
-  hotel: {
-    pricePerPersonPerNight: 650000
-  },
-
-  transport: {
-    basePrice: 3500000,
-
-    capacity: 40
-  },
-
-  muthawwif: {
-    pricePerDay: 1300000,
-
-    days: 2
-  }
-
-};
-
-
-/* =========================================================
-   15. CALCULATOR ELEMENTS
-========================================================= */
-
-const calculator =
-  $("#umrahCalculator");
-
-const jamaahCount =
-  $("#jamaahCount");
-
-const duration =
-  $("#duration");
-
-const calcVisa =
-  $("#calcVisa");
-
-const calcHotel =
-  $("#calcHotel");
-
-const calcTransport =
-  $("#calcTransport");
-
-const calcGuide =
-  $("#calcGuide");
-
-const calculateButton =
-  $("#calculateButton");
-
-const calculatorResult =
-  $("#calculatorResult");
-
-const estimatedPrice =
-  $("#estimatedPrice");
-
-const resultDetails =
-  $("#resultDetails");
-
-
-/* =========================================================
-   16. CALCULATOR FUNCTION
-========================================================= */
-
-function calculateUmrahCost() {
-
-  if (
-    !jamaahCount ||
-    !duration
-  ) {
-    return;
-  }
-
-  let pax =
-    parseInt(jamaahCount.value);
-
-  let days =
-    parseInt(duration.value);
-
-  /*
-   Validasi jumlah jamaah.
-  */
-
-  if (
-    isNaN(pax) ||
-    pax < 1
-  ) {
-
-    pax = 1;
-
-    jamaahCount.value = 1;
-
-  }
-
-  if (
-    isNaN(days) ||
-    days < 1
-  ) {
-
-    days = 9;
-
-  }
-
-
-  /* =====================================================
-     TOTAL VARIABLES
-  ===================================================== */
-
-  let total = 0;
-
-  let breakdown = [];
-
-
-  /* =====================================================
-     VISA
-  ===================================================== */
-
-  if (
-    calcVisa &&
-    calcVisa.checked
-  ) {
-
-    const visaTotal =
-      RAHAYU_PRICES.visa.pricePerPerson *
-      pax;
-
-    total += visaTotal;
-
-    breakdown.push({
-
-      name: "Visa Umrah",
-
-      description:
-        `${pax} jamaah × ${formatRupiah(
-          RAHAYU_PRICES.visa.pricePerPerson
-        )}`,
-
-      amount: visaTotal
-
-    });
-
-  }
-
-
-  /* =====================================================
-     HOTEL
-  ===================================================== */
-
-  if (
-    calcHotel &&
-    calcHotel.checked
-  ) {
-
-    /*
-      Asumsi malam = hari - 1
-    */
-
-    const nights =
-      Math.max(days - 1, 1);
-
-    const hotelTotal =
-      RAHAYU_PRICES.hotel
-        .pricePerPersonPerNight *
-      pax *
-      nights;
-
-    total += hotelTotal;
-
-    breakdown.push({
-
-      name: "Hotel",
-
-      description:
-        `${pax} jamaah × ${nights} malam`,
-
-      amount: hotelTotal
-
-    });
-
-  }
-
-
-  /* =====================================================
-     TRANSPORT
-  ===================================================== */
-
-  if (
-    calcTransport &&
-    calcTransport.checked
-  ) {
-
-    /*
-      1 kendaraan maksimal 40 pax.
-
-      Contoh:
-      1 - 40 pax = 1 kendaraan
-      41 - 80 pax = 2 kendaraan
-    */
-
-    const vehicleCount =
-      Math.ceil(
-        pax /
-        RAHAYU_PRICES.transport.capacity
-      );
-
-    const transportTotal =
-      RAHAYU_PRICES.transport.basePrice *
-      vehicleCount;
-
-    total += transportTotal;
-
-    breakdown.push({
-
-      name: "Transportasi",
-
-      description:
-        `${vehicleCount} kendaraan / layanan`,
-
-      amount: transportTotal
-
-    });
-
-  }
-
-
-  /* =====================================================
-     MUTHAWWIF
-  ===================================================== */
-
-  if (
-    calcGuide &&
-    calcGuide.checked
-  ) {
-
-    const guideTotal =
-      RAHAYU_PRICES.muthawwif
-        .pricePerDay *
-      RAHAYU_PRICES.muthawwif.days;
-
-    total += guideTotal;
-
-    breakdown.push({
-
-      name: "Muthawwif",
-
-      description:
-        `${RAHAYU_PRICES.muthawwif.days} hari × ${formatRupiah(
-          RAHAYU_PRICES.muthawwif.pricePerDay
-        )}`,
-
-      amount: guideTotal
-
-    });
-
-  }
-
-
-  /* =====================================================
-     NOTHING SELECTED
-  ===================================================== */
-
-  if (breakdown.length === 0) {
-
-    showToast(
-      "Pilih layanan",
-      "Silakan pilih minimal satu layanan."
-    );
-
-    if (calculatorResult) {
-
-      calculatorResult.classList.remove(
-        "show"
-      );
-
-    }
-
-    return;
-
-  }
-
-
-  /* =====================================================
-     PRICE PER PERSON
-  ===================================================== */
-
-  const perPerson =
-    Math.round(total / pax);
-
-
-  /* =====================================================
-     SHOW TOTAL
-  ===================================================== */
-
-  if (estimatedPrice) {
-
-    estimatedPrice.textContent =
-      formatRupiah(total);
-
-  }
-
-
-  /* =====================================================
-     GENERATE BREAKDOWN
-  ===================================================== */
-
-  if (resultDetails) {
-
-    let breakdownHTML = `
-      <div class="result-breakdown">
-    `;
-
-    breakdown.forEach((item) => {
-
-      breakdownHTML += `
-
-        <div
-          style="
-            display:flex;
-            justify-content:space-between;
-            align-items:flex-start;
-            gap:15px;
-            padding:7px 0;
-          "
-        >
-
-          <div>
-
-            <strong
-              style="
-                display:block;
-                color:#082a35;
-                font-size:10px;
-                margin-bottom:2px;
-              "
-            >
-              ${item.name}
-            </strong>
-
-            <span
-              style="
-                color:#879399;
-                font-size:9px;
-              "
-            >
-              ${item.description}
-            </span>
-
-          </div>
-
-          <strong
-            style="
-              color:#082a35;
-              font-size:10px;
-              white-space:nowrap;
-            "
-          >
-            ${formatRupiah(item.amount)}
-          </strong>
-
-        </div>
-
-      `;
-
-    });
-
-
-    breakdownHTML += `
-
-      <div
-        style="
-          border-top:1px solid rgba(201,169,110,.25);
-          margin-top:8px;
-          padding-top:10px;
-          display:flex;
-          justify-content:space-between;
-          gap:10px;
-        "
-      >
-
-        <span
-          style="
-            color:#66757c;
-            font-size:10px;
-          "
-        >
-          Estimasi / jamaah
-        </span>
-
-        <strong
-          style="
-            color:#a9874f;
-            font-size:11px;
-          "
-        >
-          ${formatRupiah(perPerson)}
-        </strong>
-
-      </div>
-
-    `;
-
-
-    breakdownHTML += `
-      </div>
-    `;
-
-
-    resultDetails.innerHTML =
-      breakdownHTML;
-
-  }
-
-
-  /* =====================================================
-     DISPLAY RESULT
-  ===================================================== */
-
-  if (calculatorResult) {
-
-    calculatorResult.classList.add(
-      "show"
-    );
-
-  }
-
-
-  /* =====================================================
-     SCROLL RESULT INTO VIEW ON MOBILE
-  ===================================================== */
-
-  if (
-    window.innerWidth < 650 &&
-    calculatorResult
-  ) {
-
-    setTimeout(() => {
-
-      calculatorResult.scrollIntoView({
-        behavior: "smooth",
-        block: "nearest"
-      });
-
-    }, 100);
-
-  }
-
-}
-
-
-/* =========================================================
-   17. CALCULATOR BUTTON
-========================================================= */
-
-if (calculateButton) {
-
-  calculateButton.addEventListener(
-    "click",
-    calculateUmrahCost
-  );
-
-}
-
-
-/* =========================================================
-   18. PREVENT CALCULATOR FORM SUBMIT
-========================================================= */
-
-if (calculator) {
-
-  calculator.addEventListener(
-    "submit",
-    (event) => {
-
-      event.preventDefault();
-
-      calculateUmrahCost();
-
-    }
-  );
-
-}
-
-
-/* =========================================================
-   19. ENTER KEY CALCULATOR
-========================================================= */
-
-if (jamaahCount) {
-
-  jamaahCount.addEventListener(
-    "keydown",
-    (event) => {
-
-      if (event.key === "Enter") {
-
-        event.preventDefault();
-
-        calculateUmrahCost();
-
-      }
-
-    }
-  );
-
-}
-
-
-/* =========================================================
-   20. TRACKING
-========================================================= */
-
-const trackingNumber =
-  $("#trackingNumber");
-
-const trackingButton =
-  $("#trackingButton");
-
-
-/*
-  Demo database.
-
-  Nanti ketika website dikembangkan dengan
-  database/backend, bagian ini dapat diganti
-  dengan Firebase / Supabase / API.
-*/
-
-const demoOrders = {
-
-  "RHY-260901": {
-    customer: "Jamaah Rahayu",
-    service: "Hotel + Transport",
-    status: "Diproses"
-  },
-
-  "RHY-260902": {
-    customer: "Group Rahayu",
-    service: "Visa Umrah",
-    status: "Selesai"
-  },
-
-  "RHY-260903": {
-    customer: "Jamaah Indonesia",
-    service: "Muthawwif",
-    status: "Menunggu Konfirmasi"
-  }
-
-};
-
-
-/* =========================================================
-   21. TRACK ORDER FUNCTION
-========================================================= */
-
-function trackOrder() {
-
-  if (!trackingNumber) return;
-
-  let orderID =
-    trackingNumber.value
-      .trim()
-      .toUpperCase();
-
-  if (!orderID) {
-
-    showToast(
-      "Nomor pesanan kosong",
-      "Masukkan nomor pesanan Rahayu."
-    );
-
-    trackingNumber.focus();
-
-    return;
-
-  }
-
-
-  const order =
-    demoOrders[orderID];
-
-
-  if (order) {
-
-    showToast(
-      `Status: ${order.status}`,
-      `${order.service} • ${orderID}`
-    );
-
-  } else {
-
-    showToast(
-      "Pesanan belum ditemukan",
-      `Nomor ${orderID} tidak ditemukan.`
-    );
-
-  }
-
-}
-
-
-/* =========================================================
-   22. TRACKING BUTTON
-========================================================= */
-
-if (trackingButton) {
-
-  trackingButton.addEventListener(
-    "click",
-    trackOrder
-  );
-
-}
-
-
-/* =========================================================
-   23. TRACKING ENTER KEY
-========================================================= */
-
-if (trackingNumber) {
-
-  trackingNumber.addEventListener(
-    "keydown",
-    (event) => {
-
-      if (event.key === "Enter") {
-
-        event.preventDefault();
-
-        trackOrder();
-
-      }
-
-    }
-  );
-
-}
-
-
-/* =========================================================
-   24. TOAST SYSTEM
-========================================================= */
-
-const toast =
-  $("#toast");
-
-const toastTitle =
-  $("#toastTitle");
-
-const toastMessage =
-  $("#toastMessage");
-
-const toastClose =
-  $("#toastClose");
-
-let toastTimer = null;
-
-
-function showToast(
-  title,
-  message
-) {
-
-  if (
-    !toast ||
-    !toastTitle ||
-    !toastMessage
-  ) {
-    return;
-  }
-
-
-  toastTitle.textContent =
-    title;
-
-  toastMessage.textContent =
-    message;
-
-
-  toast.classList.add("show");
-
-
-  if (toastTimer) {
-
-    clearTimeout(toastTimer);
-
-  }
-
-
-  toastTimer =
-    setTimeout(() => {
-
-      toast.classList.remove("show");
-
-    }, 4500);
-
-}
-
-
-if (toastClose) {
-
-  toastClose.addEventListener(
-    "click",
-    () => {
-
-      toast.classList.remove("show");
-
-      if (toastTimer) {
-
-        clearTimeout(toastTimer);
-
-      }
-
-    }
-  );
-
-}
-
-
-/* =========================================================
-   25. SCROLL REVEAL
-========================================================= */
-
-/*
-  Animasi ringan saat section masuk layar.
-  Tidak membutuhkan library tambahan.
-*/
 
 const revealElements =
   $$(
-    ".service-card, " +
-    ".destination-card, " +
-    ".step-card, " +
-    ".why-item, " +
+    ".service-card," +
+    ".step," +
+    ".route-card," +
     ".faq-item"
   );
 
@@ -1178,19 +265,20 @@ if (
   revealElements.forEach((element) => {
 
     element.style.opacity = "0";
+
     element.style.transform =
-      "translateY(18px)";
+      "translateY(15px)";
 
     element.style.transition =
-      "opacity .55s ease, transform .55s ease";
+      "opacity .45s ease, transform .45s ease";
 
   });
 
 
-  const revealObserver =
+  const observer =
     new IntersectionObserver(
 
-      (entries, observer) => {
+      (entries, obs) => {
 
         entries.forEach((entry) => {
 
@@ -1202,9 +290,7 @@ if (
             entry.target.style.transform =
               "translateY(0)";
 
-            observer.unobserve(
-              entry.target
-            );
+            obs.unobserve(entry.target);
 
           }
 
@@ -1213,7 +299,7 @@ if (
       },
 
       {
-        threshold: 0.12
+        threshold: 0.1
       }
 
     );
@@ -1221,7 +307,7 @@ if (
 
   revealElements.forEach((element) => {
 
-    revealObserver.observe(element);
+    observer.observe(element);
 
   });
 
@@ -1229,18 +315,281 @@ if (
 
 
 /* =========================================================
-   26. DESTINATION QUERY PARAMETER
+   10. TOAST NOTIFICATION
 ========================================================= */
 
-/*
-  Contoh:
-  hotel.html?city=makkah
+function createToastContainer() {
 
-  Fitur ini nanti akan dipakai ketika
-  halaman hotel dibuat.
-*/
+  let container =
+    $("#rahayuToastContainer");
 
-function getQueryParameter(name) {
+  if (container) {
+    return container;
+  }
+
+
+  container =
+    document.createElement("div");
+
+  container.id =
+    "rahayuToastContainer";
+
+
+  Object.assign(
+    container.style,
+    {
+
+      position: "fixed",
+
+      top: "90px",
+
+      right: "20px",
+
+      zIndex: "99999",
+
+      display: "flex",
+
+      flexDirection: "column",
+
+      gap: "8px",
+
+      width: "min(340px, calc(100% - 40px))"
+
+    }
+  );
+
+
+  document.body.appendChild(container);
+
+  return container;
+
+}
+
+
+/* =========================================================
+   11. SHOW TOAST
+========================================================= */
+
+function showToast(
+  title,
+  message,
+  type = "success"
+) {
+
+  const container =
+    createToastContainer();
+
+
+  const toast =
+    document.createElement("div");
+
+
+  let icon =
+    "fa-circle-check";
+
+  let iconColor =
+    "#159669";
+
+
+  if (type === "warning") {
+
+    icon =
+      "fa-circle-exclamation";
+
+    iconColor =
+      "#b88727";
+
+  }
+
+
+  if (type === "error") {
+
+    icon =
+      "fa-circle-xmark";
+
+    iconColor =
+      "#c04c4c";
+
+  }
+
+
+  toast.innerHTML = `
+
+    <div
+      style="
+        width:38px;
+        height:38px;
+        flex:0 0 38px;
+        display:grid;
+        place-items:center;
+        border-radius:50%;
+        background:#f4f7f6;
+        color:${iconColor};
+      "
+    >
+      <i class="fa-solid ${icon}"></i>
+    </div>
+
+
+    <div
+      style="
+        flex:1;
+        min-width:0;
+      "
+    >
+
+      <strong
+        style="
+          display:block;
+          margin-bottom:2px;
+          color:#172326;
+          font-size:11px;
+        "
+      >
+        ${title}
+      </strong>
+
+      <span
+        style="
+          display:block;
+          color:#778386;
+          font-size:9px;
+          line-height:1.5;
+        "
+      >
+        ${message}
+      </span>
+
+    </div>
+
+
+    <button
+      type="button"
+      aria-label="Tutup"
+      style="
+        width:28px;
+        height:28px;
+        border:0;
+        background:transparent;
+        color:#9ba4a6;
+        cursor:pointer;
+      "
+    >
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+  `;
+
+
+  Object.assign(
+    toast.style,
+    {
+
+      display: "flex",
+
+      alignItems: "center",
+
+      gap: "10px",
+
+      padding: "13px",
+
+      border: "1px solid #e4e8e7",
+
+      borderRadius: "11px",
+
+      background: "#ffffff",
+
+      boxShadow:
+        "0 15px 40px rgba(18,40,39,.13)",
+
+      opacity: "0",
+
+      transform:
+        "translateX(25px)",
+
+      transition:
+        ".25s ease"
+
+    }
+  );
+
+
+  container.appendChild(toast);
+
+
+  requestAnimationFrame(() => {
+
+    toast.style.opacity = "1";
+
+    toast.style.transform =
+      "translateX(0)";
+
+  });
+
+
+  const closeButton =
+    $("button", toast);
+
+
+  function removeToast() {
+
+    toast.style.opacity = "0";
+
+    toast.style.transform =
+      "translateX(25px)";
+
+
+    setTimeout(() => {
+
+      toast.remove();
+
+    }, 250);
+
+  }
+
+
+  closeButton.addEventListener(
+    "click",
+    removeToast
+  );
+
+
+  setTimeout(
+    removeToast,
+    4500
+  );
+
+}
+
+
+/* =========================================================
+   12. NUMBER INPUT HELPER
+========================================================= */
+
+function positiveInteger(value, fallback = 1) {
+
+  const number =
+    parseInt(value);
+
+  if (
+    isNaN(number) ||
+    number < 1
+  ) {
+
+    return fallback;
+
+  }
+
+  return number;
+
+}
+
+
+/* =========================================================
+   13. QUERY PARAMETER
+========================================================= */
+
+function getQuery(name) {
 
   const params =
     new URLSearchParams(
@@ -1253,89 +602,858 @@ function getQueryParameter(name) {
 
 
 /* =========================================================
-   27. BASIC EXTERNAL LINK SAFETY
+   14. DATE FORMAT
 ========================================================= */
 
-const externalLinks =
-  $$('a[target="_blank"]');
+function formatDateIndonesia(dateString) {
 
-externalLinks.forEach((link) => {
-
-  if (
-    !link.getAttribute("rel")
-  ) {
-
-    link.setAttribute(
-      "rel",
-      "noopener noreferrer"
-    );
-
+  if (!dateString) {
+    return "-";
   }
 
-});
+
+  const date =
+    new Date(
+      `${dateString}T00:00:00`
+    );
+
+
+  if (
+    Number.isNaN(date.getTime())
+  ) {
+    return dateString;
+  }
+
+
+  return new Intl.DateTimeFormat(
+    "id-ID",
+    {
+      day: "numeric",
+      month: "long",
+      year: "numeric"
+    }
+  ).format(date);
+
+}
 
 
 /* =========================================================
-   28. WHATSAPP PLACEHOLDER WARNING
+   15. DIFFERENCE BETWEEN DATES
+========================================================= */
+
+function differenceInDays(
+  startDate,
+  endDate
+) {
+
+  if (
+    !startDate ||
+    !endDate
+  ) {
+    return 0;
+  }
+
+
+  const start =
+    new Date(
+      `${startDate}T00:00:00`
+    );
+
+
+  const end =
+    new Date(
+      `${endDate}T00:00:00`
+    );
+
+
+  const difference =
+    end.getTime() -
+    start.getTime();
+
+
+  if (difference <= 0) {
+    return 0;
+  }
+
+
+  return Math.ceil(
+    difference /
+    (1000 * 60 * 60 * 24)
+  );
+
+}
+
+
+/* =========================================================
+   16. PRICE DATABASE
 ========================================================= */
 
 /*
-  Karena HTML awal masih menggunakan:
+   =========================================================
+   PENTING
 
-  966XXXXXXXXX
+   Database ini dipakai oleh halaman-halaman berikutnya.
 
-  kode ini mencegah link placeholder
-  membuka WhatsApp yang salah.
+   Angka referensi awal mengikuti harga publik
+   yang sedang kita jadikan rujukan.
 
-  Setelah nomor asli dimasukkan,
-  tombol otomatis bekerja normal.
+   Untuk hotel, harga tidak dibuat tetap karena
+   hotel berubah berdasarkan:
+   - tanggal
+   - musim
+   - tipe kamar
+   - meal plan
+   - availability
+
+   Detail hotel akan kita buat di hotel.html.
+   =========================================================
 */
 
-const whatsappLinks =
-  $$('a[href*="wa.me"]');
 
-whatsappLinks.forEach((link) => {
+const RAHAYU_PRICES = {
 
-  const href =
-    link.getAttribute("href") || "";
 
-  if (
-    href.includes("XXXXXXXXX")
-  ) {
+  /* ===============================
+     VISA
+  =============================== */
 
-    link.addEventListener(
-      "click",
-      (event) => {
+  visa: {
 
-        event.preventDefault();
+    pricePerPerson: 2550000,
 
-        showToast(
-          "WhatsApp belum diatur",
-          "Masukkan nomor WhatsApp Rahayu pada index.html."
-        );
+    minimumPersons: 2,
+
+    externalHotelApproval: 490000
+
+  },
+
+
+  /* ===============================
+     MUTHAWWIF
+  =============================== */
+
+  muthawwif: {
+
+    pricePerDay: 1470000,
+
+    minimumDays: 3
+
+  },
+
+
+  /* ===============================
+     TRANSPORT
+  =============================== */
+
+  transport: {
+
+    routes: {
+
+      jeddahAirportMakkah: {
+
+        name:
+          "Jeddah Airport → Makkah",
+
+        startingPrice:
+          1430000
+
+      },
+
+
+      jeddahAirportMadinah: {
+
+        name:
+          "Jeddah Airport → Madinah",
+
+        startingPrice:
+          2600000
+
+      },
+
+
+      madinahAirportHotel: {
+
+        name:
+          "Madinah Airport → Hotel Madinah",
+
+        startingPrice:
+          980000
+
+      },
+
+
+      makkahMadinah: {
+
+        name:
+          "Makkah → Madinah",
+
+        startingPrice:
+          2430000
 
       }
+
+    }
+
+  }
+
+};
+
+
+/* =========================================================
+   17. VISA CALCULATOR
+   Akan otomatis bekerja jika visa.html
+   memiliki ID yang sesuai.
+========================================================= */
+
+const visaForm =
+  $("#visaForm");
+
+const visaPersons =
+  $("#visaPersons");
+
+const visaExternalHotel =
+  $("#visaExternalHotel");
+
+const visaTotal =
+  $("#visaTotal");
+
+const visaBreakdown =
+  $("#visaBreakdown");
+
+
+function calculateVisa() {
+
+  if (!visaPersons) return;
+
+
+  let persons =
+    positiveInteger(
+      visaPersons.value,
+      2
+    );
+
+
+  /*
+    Minimum 2 jamaah
+  */
+
+  if (
+    persons <
+    RAHAYU_PRICES.visa.minimumPersons
+  ) {
+
+    persons =
+      RAHAYU_PRICES.visa.minimumPersons;
+
+    visaPersons.value =
+      persons;
+
+
+    showToast(
+      "Minimum 2 jamaah",
+      "Referensi layanan visa menggunakan minimum pemesanan 2 jamaah.",
+      "warning"
     );
 
   }
 
-});
+
+  const visaPrice =
+    persons *
+    RAHAYU_PRICES.visa
+      .pricePerPerson;
+
+
+  let approvalPrice = 0;
+
+
+  if (
+    visaExternalHotel &&
+    visaExternalHotel.checked
+  ) {
+
+    approvalPrice =
+      RAHAYU_PRICES.visa
+        .externalHotelApproval;
+
+  }
+
+
+  const total =
+    visaPrice +
+    approvalPrice;
+
+
+  if (visaTotal) {
+
+    visaTotal.textContent =
+      formatRupiah(total);
+
+  }
+
+
+  if (visaBreakdown) {
+
+    visaBreakdown.innerHTML = `
+
+      <div
+        style="
+          display:flex;
+          justify-content:space-between;
+          gap:15px;
+          padding:8px 0;
+          border-bottom:1px solid #edf0ef;
+        "
+      >
+
+        <span
+          style="
+            color:#647174;
+            font-size:10px;
+          "
+        >
+          Visa Umrah
+          (${persons} jamaah)
+        </span>
+
+        <strong
+          style="
+            color:#172326;
+            font-size:10px;
+          "
+        >
+          ${formatRupiah(visaPrice)}
+        </strong>
+
+      </div>
+
+
+      ${
+        approvalPrice > 0
+        ? `
+
+          <div
+            style="
+              display:flex;
+              justify-content:space-between;
+              gap:15px;
+              padding:8px 0;
+              border-bottom:1px solid #edf0ef;
+            "
+          >
+
+            <span
+              style="
+                color:#647174;
+                font-size:10px;
+              "
+            >
+              Approval hotel eksternal
+            </span>
+
+            <strong
+              style="
+                color:#172326;
+                font-size:10px;
+              "
+            >
+              ${formatRupiah(approvalPrice)}
+            </strong>
+
+          </div>
+
+        `
+        : ""
+      }
+
+
+      <div
+        style="
+          display:flex;
+          justify-content:space-between;
+          gap:15px;
+          padding-top:10px;
+        "
+      >
+
+        <strong
+          style="
+            color:#08665d;
+            font-size:11px;
+          "
+        >
+          Total
+        </strong>
+
+        <strong
+          style="
+            color:#08665d;
+            font-size:13px;
+          "
+        >
+          ${formatRupiah(total)}
+        </strong>
+
+      </div>
+
+    `;
+
+  }
+
+}
+
+
+if (visaPersons) {
+
+  visaPersons.addEventListener(
+    "input",
+    calculateVisa
+  );
+
+}
+
+
+if (visaExternalHotel) {
+
+  visaExternalHotel.addEventListener(
+    "change",
+    calculateVisa
+  );
+
+}
+
+
+if (visaForm) {
+
+  visaForm.addEventListener(
+    "submit",
+    (event) => {
+
+      event.preventDefault();
+
+      calculateVisa();
+
+
+      showToast(
+        "Detail visa siap",
+        "Silakan periksa rincian harga sebelum melanjutkan pemesanan."
+      );
+
+    }
+  );
+
+
+  calculateVisa();
+
+}
 
 
 /* =========================================================
-   29. CONSOLE
+   18. MUTHAWWIF CALCULATOR
 ========================================================= */
 
-console.log(
-  "%c RAHAYU ",
-  "background:#082a35;color:#e3c996;font-size:16px;font-weight:bold;padding:8px 12px;border-radius:6px;"
-);
+const muthawwifForm =
+  $("#muthawwifForm");
 
-console.log(
-  "Haramain Services website loaded successfully."
+const muthawwifDays =
+  $("#muthawwifDays");
+
+const muthawwifTotal =
+  $("#muthawwifTotal");
+
+
+function calculateMuthawwif() {
+
+  if (!muthawwifDays) return;
+
+
+  let days =
+    positiveInteger(
+      muthawwifDays.value,
+      3
+    );
+
+
+  if (
+    days <
+    RAHAYU_PRICES.muthawwif.minimumDays
+  ) {
+
+    days =
+      RAHAYU_PRICES.muthawwif.minimumDays;
+
+    muthawwifDays.value =
+      days;
+
+
+    showToast(
+      "Minimum 3 hari",
+      "Referensi layanan muthawwif menggunakan minimum pemesanan 3 hari.",
+      "warning"
+    );
+
+  }
+
+
+  const total =
+    days *
+    RAHAYU_PRICES.muthawwif
+      .pricePerDay;
+
+
+  if (muthawwifTotal) {
+
+    muthawwifTotal.textContent =
+      formatRupiah(total);
+
+  }
+
+}
+
+
+if (muthawwifDays) {
+
+  muthawwifDays.addEventListener(
+    "input",
+    calculateMuthawwif
+  );
+
+}
+
+
+if (muthawwifForm) {
+
+  muthawwifForm.addEventListener(
+    "submit",
+    (event) => {
+
+      event.preventDefault();
+
+      calculateMuthawwif();
+
+
+      showToast(
+        "Estimasi diperbarui",
+        "Rincian biaya muthawwif sudah dihitung."
+      );
+
+    }
+  );
+
+
+  calculateMuthawwif();
+
+}
+
+
+/* =========================================================
+   19. TRANSPORT ROUTE PRICE
+========================================================= */
+
+const transportRoute =
+  $("#transportRoute");
+
+const transportPrice =
+  $("#transportPrice");
+
+
+function updateTransportPrice() {
+
+  if (
+    !transportRoute ||
+    !transportPrice
+  ) {
+    return;
+  }
+
+
+  const route =
+    RAHAYU_PRICES.transport.routes[
+      transportRoute.value
+    ];
+
+
+  if (!route) {
+
+    transportPrice.textContent =
+      "Pilih rute";
+
+    return;
+
+  }
+
+
+  transportPrice.textContent =
+    formatRupiah(
+      route.startingPrice
+    );
+
+}
+
+
+if (transportRoute) {
+
+  transportRoute.addEventListener(
+    "change",
+    updateTransportPrice
+  );
+
+
+  updateTransportPrice();
+
+}
+
+
+/* =========================================================
+   20. ORDER TRACKING
+========================================================= */
+
+const orderTrackingForm =
+  $("#orderTrackingForm");
+
+const orderNumber =
+  $("#orderNumber");
+
+const orderResult =
+  $("#orderResult");
+
+
+/*
+  Ini masih demo lokal.
+
+  Nanti dapat diganti database sebenarnya
+  seperti Supabase/Firebase/backend.
+*/
+
+const DEMO_ORDERS = {
+
+  "RHY-VISA-001": {
+
+    service:
+      "Visa Umrah",
+
+    customer:
+      "Jamaah Rahayu",
+
+    status:
+      "Sedang diproses"
+
+  },
+
+
+  "RHY-TR-001": {
+
+    service:
+      "Transportasi",
+
+    customer:
+      "Jamaah Rahayu",
+
+    status:
+      "Terkonfirmasi"
+
+  },
+
+
+  "RHY-HTL-001": {
+
+    service:
+      "Hotel",
+
+    customer:
+      "Jamaah Rahayu",
+
+    status:
+      "Menunggu konfirmasi"
+
+  }
+
+};
+
+
+function trackOrder() {
+
+  if (!orderNumber) return;
+
+
+  const number =
+    orderNumber.value
+      .trim()
+      .toUpperCase();
+
+
+  if (!number) {
+
+    showToast(
+      "Masukkan nomor pesanan",
+      "Nomor pesanan tidak boleh kosong.",
+      "warning"
+    );
+
+    orderNumber.focus();
+
+    return;
+
+  }
+
+
+  const order =
+    DEMO_ORDERS[number];
+
+
+  if (!order) {
+
+    if (orderResult) {
+
+      orderResult.innerHTML = `
+
+        <div
+          style="
+            padding:18px;
+            border:1px solid #eadede;
+            border-radius:10px;
+            background:#fffafa;
+          "
+        >
+
+          <strong
+            style="
+              display:block;
+              margin-bottom:5px;
+              color:#a84b4b;
+              font-size:11px;
+            "
+          >
+            Pesanan tidak ditemukan
+          </strong>
+
+          <span
+            style="
+              color:#7b6969;
+              font-size:9px;
+            "
+          >
+            Periksa kembali nomor pesanan
+            ${number}.
+          </span>
+
+        </div>
+
+      `;
+
+    }
+
+
+    return;
+
+  }
+
+
+  if (orderResult) {
+
+    orderResult.innerHTML = `
+
+      <div
+        style="
+          padding:18px;
+          border:1px solid #dbeae6;
+          border-radius:10px;
+          background:#f8fcfb;
+        "
+      >
+
+        <span
+          style="
+            display:block;
+            margin-bottom:5px;
+            color:#647174;
+            font-size:8px;
+          "
+        >
+          ${number}
+        </span>
+
+
+        <strong
+          style="
+            display:block;
+            margin-bottom:4px;
+            color:#08665d;
+            font-size:13px;
+          "
+        >
+          ${order.status}
+        </strong>
+
+
+        <span
+          style="
+            color:#647174;
+            font-size:9px;
+          "
+        >
+          ${order.service}
+        </span>
+
+      </div>
+
+    `;
+
+  }
+
+}
+
+
+if (orderTrackingForm) {
+
+  orderTrackingForm.addEventListener(
+    "submit",
+    (event) => {
+
+      event.preventDefault();
+
+      trackOrder();
+
+    }
+  );
+
+}
+
+
+/* =========================================================
+   21. EXTERNAL LINKS
+========================================================= */
+
+$$('a[target="_blank"]').forEach(
+  (link) => {
+
+    if (!link.rel) {
+
+      link.rel =
+        "noopener noreferrer";
+
+    }
+
+  }
 );
 
 
 /* =========================================================
-   END OF RAHAYU SCRIPT
+   22. INITIALIZE
 ========================================================= */
+
+document.addEventListener(
+  "DOMContentLoaded",
+  () => {
+
+    console.log(
+      "%c RAHAYU ",
+      "background:#08665d;color:white;padding:7px 12px;border-radius:5px;font-weight:700;"
+    );
+
+    console.log(
+      "Rahayu Umrah Services loaded."
+    );
+
+  }
+);
