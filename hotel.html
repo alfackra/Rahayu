@@ -1,0 +1,2037 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Hotel Makkah & Madinah | Rahayu</title>
+
+  <meta
+    name="description"
+    content="Cari hotel Makkah dan Madinah untuk perjalanan Umrah bersama Rahayu."
+  >
+
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+  >
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+
+    /* =========================================
+       HOTEL PAGE
+    ========================================= */
+
+    .hotel-search-section {
+      padding: 35px 0 25px;
+      background: #f7f8f7;
+    }
+
+    .hotel-search-card {
+      padding: 22px;
+      border: 1px solid #e4e8e7;
+      border-radius: 16px;
+      background: white;
+      box-shadow: 0 8px 25px rgba(18,40,39,.06);
+    }
+
+    .hotel-search-title {
+      margin-bottom: 18px;
+    }
+
+    .hotel-search-title h2 {
+      margin-bottom: 4px;
+      font-size: 17px;
+      font-weight: 800;
+    }
+
+    .hotel-search-title p {
+      color: #778386;
+      font-size: 9px;
+    }
+
+    .hotel-search-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr .8fr auto;
+      gap: 10px;
+      align-items: end;
+    }
+
+    .hotel-search-field label {
+      display: block;
+      margin-bottom: 6px;
+      color: #526164;
+      font-size: 8px;
+      font-weight: 700;
+    }
+
+    .hotel-search-field select,
+    .hotel-search-field input {
+      width: 100%;
+      height: 44px;
+      padding: 0 11px;
+      outline: none;
+      border: 1px solid #e4e8e7;
+      border-radius: 9px;
+      background: #fbfcfc;
+      color: #172326;
+      font-size: 10px;
+    }
+
+    .hotel-search-field select:focus,
+    .hotel-search-field input:focus {
+      border-color: #08665d;
+      box-shadow: 0 0 0 3px rgba(8,102,93,.07);
+    }
+
+    .hotel-search-button {
+      height: 44px;
+      padding: 0 19px;
+      border-radius: 9px;
+      background: #08665d;
+      color: white;
+      font-size: 10px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+
+    /* FILTER */
+
+    .hotel-main {
+      padding: 40px 0 100px;
+      background: white;
+    }
+
+    .hotel-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 27px;
+    }
+
+    .hotel-toolbar-left h2 {
+      margin-bottom: 3px;
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: -.8px;
+    }
+
+    .hotel-toolbar-left p {
+      color: #8b9698;
+      font-size: 9px;
+    }
+
+    .city-tabs {
+      display: flex;
+      padding: 4px;
+      border-radius: 10px;
+      background: #f3f5f4;
+    }
+
+    .city-tab {
+      min-height: 36px;
+      padding: 0 15px;
+      border-radius: 8px;
+      background: transparent;
+      color: #778386;
+      font-size: 9px;
+      font-weight: 700;
+    }
+
+    .city-tab.active {
+      background: white;
+      color: #08665d;
+      box-shadow: 0 3px 12px rgba(18,40,39,.08);
+    }
+
+
+    /* HOTEL GRID */
+
+    .hotel-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 18px;
+    }
+
+    .hotel-card {
+      overflow: hidden;
+      border: 1px solid #e4e8e7;
+      border-radius: 15px;
+      background: white;
+      transition: .25s ease;
+    }
+
+    .hotel-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(8,102,93,.35);
+      box-shadow: 0 15px 40px rgba(18,40,39,.10);
+    }
+
+    .hotel-card.hidden {
+      display: none;
+    }
+
+    .hotel-cover {
+      position: relative;
+      height: 175px;
+      display: flex;
+      align-items: flex-end;
+      padding: 17px;
+      overflow: hidden;
+    }
+
+    .hotel-cover::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          to top,
+          rgba(3,42,38,.88),
+          rgba(3,42,38,.08)
+        );
+    }
+
+    .hotel-cover.makkah {
+      background:
+        linear-gradient(135deg,#0c5b52,#143f3d);
+    }
+
+    .hotel-cover.madinah {
+      background:
+        linear-gradient(135deg,#8e7444,#3d4e49);
+    }
+
+    .hotel-cover-icon {
+      position: absolute;
+      top: 18px;
+      right: 20px;
+      color: rgba(255,255,255,.15);
+      font-size: 65px;
+    }
+
+    .hotel-cover-info {
+      position: relative;
+      z-index: 2;
+      color: white;
+    }
+
+    .hotel-cover-info span {
+      display: block;
+      margin-bottom: 3px;
+      color: #e4ce9d;
+      font-size: 8px;
+      font-weight: 700;
+    }
+
+    .hotel-cover-info strong {
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .hotel-body {
+      padding: 19px;
+    }
+
+    .hotel-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 11px;
+    }
+
+    .hotel-stars {
+      color: #bd984f;
+      font-size: 8px;
+      letter-spacing: 1px;
+    }
+
+    .nusuk-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 7px;
+      border-radius: 100px;
+      background: #e9f7f1;
+      color: #159669;
+      font-size: 7px;
+      font-weight: 700;
+    }
+
+    .hotel-body h3 {
+      margin-bottom: 6px;
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .hotel-location {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-bottom: 13px;
+      color: #8b9698;
+      font-size: 8px;
+    }
+
+    .hotel-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      min-height: 38px;
+      margin-bottom: 14px;
+      color: #647174;
+      font-size: 8px;
+      line-height: 1.55;
+    }
+
+    .hotel-feature i {
+      margin-top: 2px;
+      color: #159669;
+    }
+
+    .hotel-price {
+      padding-top: 14px;
+      border-top: 1px solid #edf0ef;
+    }
+
+    .hotel-price > span {
+      display: block;
+      margin-bottom: 2px;
+      color: #8b9698;
+      font-size: 7px;
+    }
+
+    .hotel-price strong {
+      color: #08665d;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -.7px;
+    }
+
+    .hotel-price small {
+      color: #8b9698;
+      font-size: 7px;
+    }
+
+    .hotel-actions {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 7px;
+      margin-top: 15px;
+    }
+
+    .hotel-detail-button {
+      min-height: 41px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      border-radius: 8px;
+      background: #08665d;
+      color: white;
+      font-size: 9px;
+      font-weight: 700;
+    }
+
+    .hotel-info-button {
+      width: 41px;
+      height: 41px;
+      display: grid;
+      place-items: center;
+      border: 1px solid #e4e8e7;
+      border-radius: 8px;
+      background: white;
+      color: #08665d;
+    }
+
+
+    /* PRICE INFO */
+
+    .hotel-notice {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-top: 30px;
+      padding: 15px;
+      border: 1px solid #e7e1d3;
+      border-radius: 10px;
+      background: #fcfaf5;
+      color: #756b58;
+    }
+
+    .hotel-notice i {
+      margin-top: 3px;
+      color: #a98645;
+    }
+
+    .hotel-notice p {
+      font-size: 8px;
+      line-height: 1.7;
+    }
+
+
+    /* MODAL */
+
+    .hotel-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(4,35,32,.66);
+      backdrop-filter: blur(5px);
+    }
+
+    .hotel-modal.active {
+      display: flex;
+    }
+
+    .hotel-modal-card {
+      width: min(600px,100%);
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 27px;
+      border-radius: 17px;
+      background: white;
+      box-shadow: 0 25px 70px rgba(0,0,0,.2);
+    }
+
+    .modal-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .modal-top span {
+      display: block;
+      margin-bottom: 3px;
+      color: #08665d;
+      font-size: 8px;
+      font-weight: 800;
+    }
+
+    .modal-top h2 {
+      font-size: 21px;
+    }
+
+    .modal-close {
+      width: 35px;
+      height: 35px;
+      flex: 0 0 35px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #f3f5f4;
+      color: #647174;
+    }
+
+    .room-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .room-table th,
+    .room-table td {
+      padding: 11px 8px;
+      border-bottom: 1px solid #edf0ef;
+      text-align: left;
+      font-size: 9px;
+    }
+
+    .room-table th {
+      color: #8b9698;
+      font-size: 7px;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+
+    .room-table td:last-child {
+      text-align: right;
+      color: #08665d;
+      font-weight: 700;
+    }
+
+    .modal-note {
+      margin-top: 16px;
+      padding: 11px;
+      border-radius: 8px;
+      background: #f7f8f7;
+      color: #778386;
+      font-size: 8px;
+      line-height: 1.6;
+    }
+
+
+    @media(max-width:950px) {
+
+      .hotel-search-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hotel-search-button {
+        width: 100%;
+      }
+
+      .hotel-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+    }
+
+    @media(max-width:650px) {
+
+      .hotel-search-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hotel-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .city-tabs {
+        width: 100%;
+      }
+
+      .city-tab {
+        flex: 1;
+      }
+
+      .hotel-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hotel-cover {
+        height: 160px;
+      }
+
+      .hotel-modal-card {
+        padding: 20px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+
+<!-- HEADER -->
+
+<header class="main-header" id="mainHeader">
+
+  <div class="container navbar">
+
+    <a href="index.html" class="brand">
+
+      <div class="brand-logo">R</div>
+
+      <div class="brand-name">
+        <strong>rahayu</strong>
+        <small>Umrah Services</small>
+      </div>
+
+    </a>
+
+
+    <nav class="desktop-menu">
+
+      <a href="index.html" class="nav-item">
+        Beranda
+      </a>
+
+      <a href="panduan.html" class="nav-item">
+        Panduan
+      </a>
+
+      <a href="orders.html" class="nav-item">
+        Pesanan Saya
+      </a>
+
+      <a href="login.html" class="nav-item">
+        Akun
+      </a>
+
+    </nav>
+
+
+    <div class="nav-right">
+
+      <a href="calculator.html" class="nav-calculate">
+        <i class="fa-solid fa-calculator"></i>
+        Hitung Biaya
+      </a>
+
+      <button
+        class="mobile-menu-btn"
+        id="mobileMenuBtn"
+        aria-label="Menu"
+      >
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div class="mobile-menu" id="mobileMenu">
+
+    <a href="index.html">
+      <i class="fa-solid fa-house"></i>
+      Beranda
+    </a>
+
+    <a href="visa.html">
+      <i class="fa-solid fa-passport"></i>
+      Visa
+    </a>
+
+    <a href="transport.html">
+      <i class="fa-solid fa-car-side"></i>
+      Transportasi
+    </a>
+
+    <a href="muthawwif.html">
+      <i class="fa-solid fa-person-praying"></i>
+      Muthawwif
+    </a>
+
+    <a href="orders.html">
+      <i class="fa-solid fa-receipt"></i>
+      Pesanan Saya
+    </a>
+
+    <a href="calculator.html" class="mobile-calculate">
+      <i class="fa-solid fa-calculator"></i>
+      Hitung Biaya
+    </a>
+
+  </div>
+
+</header>
+
+
+<main>
+
+
+<!-- PAGE HEADER -->
+
+<section class="page-header">
+
+  <div class="container">
+
+    <div class="page-header-content">
+
+      <div class="page-breadcrumb">
+
+        <a href="index.html">
+          Beranda
+        </a>
+
+        <i class="fa-solid fa-chevron-right"></i>
+
+        <span>Hotel</span>
+
+      </div>
+
+
+      <div class="page-label">
+
+        <i class="fa-solid fa-hotel"></i>
+
+        HOTEL UMRAH
+
+      </div>
+
+
+      <h1>
+        Hotel Makkah & Madinah
+      </h1>
+
+      <p>
+        Cari akomodasi untuk perjalanan Umrah.
+        Harga ditampilkan per kamar per malam
+        dalam Riyal Saudi.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- SEARCH -->
+
+<section class="hotel-search-section">
+
+  <div class="container">
+
+    <div class="hotel-search-card">
+
+      <div class="hotel-search-title">
+
+        <h2>Cari hotel</h2>
+
+        <p>
+          Masukkan kebutuhan menginap untuk
+          menemukan pilihan yang sesuai.
+        </p>
+
+      </div>
+
+
+      <form
+        class="hotel-search-grid"
+        id="hotelSearchForm"
+      >
+
+        <div class="hotel-search-field">
+
+          <label>Kota</label>
+
+          <select id="hotelCity">
+
+            <option value="all">
+              Semua Kota
+            </option>
+
+            <option value="makkah">
+              Makkah
+            </option>
+
+            <option value="madinah">
+              Madinah
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="hotel-search-field">
+
+          <label>Check-in</label>
+
+          <input
+            type="date"
+            id="hotelCheckin"
+          >
+
+        </div>
+
+
+        <div class="hotel-search-field">
+
+          <label>Check-out</label>
+
+          <input
+            type="date"
+            id="hotelCheckout"
+          >
+
+        </div>
+
+
+        <div class="hotel-search-field">
+
+          <label>Jumlah Kamar</label>
+
+          <input
+            type="number"
+            id="hotelRooms"
+            value="1"
+            min="1"
+          >
+
+        </div>
+
+
+        <button
+          type="submit"
+          class="hotel-search-button"
+        >
+
+          <i class="fa-solid fa-magnifying-glass"></i>
+
+          Cari
+
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- HOTEL LIST -->
+
+<section class="hotel-main">
+
+  <div class="container">
+
+
+    <div class="hotel-toolbar">
+
+      <div class="hotel-toolbar-left">
+
+        <h2>Hotel Pilihan</h2>
+
+        <p id="hotelResultText">
+          Pilihan hotel Makkah dan Madinah
+        </p>
+
+      </div>
+
+
+      <div class="city-tabs">
+
+        <button
+          class="city-tab active"
+          data-city="all"
+        >
+          Semua
+        </button>
+
+        <button
+          class="city-tab"
+          data-city="makkah"
+        >
+          Makkah
+        </button>
+
+        <button
+          class="city-tab"
+          data-city="madinah"
+        >
+          Madinah
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div class="hotel-grid">
+
+
+      <!-- SWISSOTEL -->
+
+      <article
+        class="hotel-card"
+        data-city="makkah"
+      >
+
+        <div class="hotel-cover makkah">
+
+          <i class="fa-solid fa-hotel hotel-cover-icon"></i>
+
+          <div class="hotel-cover-info">
+            <span>MAKKAH</span>
+            <strong>Swissotel Makkah</strong>
+          </div>
+
+        </div>
+
+
+        <div class="hotel-body">
+
+          <div class="hotel-meta">
+
+            <div class="hotel-stars">
+              ★★★★★
+            </div>
+
+            <div class="nusuk-badge">
+              <i class="fa-solid fa-check"></i>
+              Nusuk
+            </div>
+
+          </div>
+
+          <h3>Swissotel Makkah</h3>
+
+          <div class="hotel-location">
+            <i class="fa-solid fa-location-dot"></i>
+            Abraj Al Bait, Makkah
+          </div>
+
+          <div class="hotel-feature">
+
+            <i class="fa-solid fa-utensils"></i>
+
+            <span>
+              Referensi paket termasuk full board;
+              konfirmasi kembali saat pemesanan.
+            </span>
+
+          </div>
+
+
+          <div class="hotel-price">
+
+            <span>Mulai dari</span>
+
+            <strong>SAR 1.210</strong>
+
+            <small>/ kamar / malam</small>
+
+          </div>
+
+
+          <div class="hotel-actions">
+
+            <button
+              class="hotel-detail-button"
+              data-hotel="swissotel"
+            >
+              Lihat Kamar
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+            <button
+              class="hotel-info-button"
+              title="Informasi hotel"
+            >
+              <i class="fa-solid fa-circle-info"></i>
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- SAJA -->
+
+      <article
+        class="hotel-card"
+        data-city="makkah"
+      >
+
+        <div class="hotel-cover makkah">
+
+          <i class="fa-solid fa-hotel hotel-cover-icon"></i>
+
+          <div class="hotel-cover-info">
+            <span>MAKKAH</span>
+            <strong>Saja by Warwick</strong>
+          </div>
+
+        </div>
+
+
+        <div class="hotel-body">
+
+          <div class="hotel-meta">
+
+            <div class="hotel-stars">
+              ★★★★★
+            </div>
+
+            <div class="nusuk-badge">
+              <i class="fa-solid fa-check"></i>
+              Nusuk
+            </div>
+
+          </div>
+
+          <h3>Saja by Warwick Makkah</h3>
+
+          <div class="hotel-location">
+            <i class="fa-solid fa-location-dot"></i>
+            Kudai, Makkah
+          </div>
+
+          <div class="hotel-feature">
+
+            <i class="fa-solid fa-bus"></i>
+
+            <span>
+              Area Kudai dengan layanan shuttle
+              menuju Masjidil Haram.
+            </span>
+
+          </div>
+
+
+          <div class="hotel-price">
+
+            <span>Mulai dari</span>
+
+            <strong>SAR 315</strong>
+
+            <small>/ kamar / malam</small>
+
+          </div>
+
+
+          <div class="hotel-actions">
+
+            <button
+              class="hotel-detail-button"
+              data-hotel="saja"
+            >
+              Lihat Kamar
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+            <button class="hotel-info-button">
+              <i class="fa-solid fa-circle-info"></i>
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- TARA AJYAD -->
+
+      <article
+        class="hotel-card"
+        data-city="makkah"
+      >
+
+        <div class="hotel-cover makkah">
+
+          <i class="fa-solid fa-building hotel-cover-icon"></i>
+
+          <div class="hotel-cover-info">
+            <span>MAKKAH</span>
+            <strong>Tara Ajyad</strong>
+          </div>
+
+        </div>
+
+
+        <div class="hotel-body">
+
+          <div class="hotel-meta">
+
+            <div class="hotel-stars">
+              ★★★
+            </div>
+
+            <div class="nusuk-badge">
+              <i class="fa-solid fa-check"></i>
+              Nusuk
+            </div>
+
+          </div>
+
+          <h3>Tara Ajyad</h3>
+
+          <div class="hotel-location">
+            <i class="fa-solid fa-location-dot"></i>
+            Makkah
+          </div>
+
+          <div class="hotel-feature">
+
+            <i class="fa-solid fa-utensils"></i>
+
+            <span>
+              Pilihan hotel ekonomis dengan
+              pilihan Double, Triple dan Quad.
+            </span>
+
+          </div>
+
+
+          <div class="hotel-price">
+
+            <span>Mulai dari</span>
+
+            <strong>SAR 330</strong>
+
+            <small>/ kamar / malam</small>
+
+          </div>
+
+
+          <div class="hotel-actions">
+
+            <button
+              class="hotel-detail-button"
+              data-hotel="tara"
+            >
+              Lihat Kamar
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+            <button class="hotel-info-button">
+              <i class="fa-solid fa-circle-info"></i>
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- GRAND MILLENNIUM -->
+
+      <article
+        class="hotel-card"
+        data-city="madinah"
+      >
+
+        <div class="hotel-cover madinah">
+
+          <i class="fa-solid fa-mosque hotel-cover-icon"></i>
+
+          <div class="hotel-cover-info">
+            <span>MADINAH</span>
+            <strong>Grand Millennium Al Haram</strong>
+          </div>
+
+        </div>
+
+
+        <div class="hotel-body">
+
+          <div class="hotel-meta">
+
+            <div class="hotel-stars">
+              ★★★★★
+            </div>
+
+            <div class="nusuk-badge">
+              <i class="fa-solid fa-check"></i>
+              Nusuk
+            </div>
+
+          </div>
+
+          <h3>Grand Millennium Al Haram</h3>
+
+          <div class="hotel-location">
+            <i class="fa-solid fa-location-dot"></i>
+            Madinah
+          </div>
+
+          <div class="hotel-feature">
+
+            <i class="fa-solid fa-utensils"></i>
+
+            <span>
+              Hotel bintang 5 dengan beberapa
+              pilihan kamar dan suite.
+            </span>
+
+          </div>
+
+
+          <div class="hotel-price">
+
+            <span>Mulai dari</span>
+
+            <strong>SAR 935</strong>
+
+            <small>/ kamar / malam</small>
+
+          </div>
+
+
+          <div class="hotel-actions">
+
+            <button
+              class="hotel-detail-button"
+              data-hotel="grand"
+            >
+              Lihat Kamar
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+            <button class="hotel-info-button">
+              <i class="fa-solid fa-circle-info"></i>
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- ANCYRA -->
+
+      <article
+        class="hotel-card"
+        data-city="madinah"
+      >
+
+        <div class="hotel-cover madinah">
+
+          <i class="fa-solid fa-hotel hotel-cover-icon"></i>
+
+          <div class="hotel-cover-info">
+            <span>MADINAH</span>
+            <strong>Ancyra Hotel</strong>
+          </div>
+
+        </div>
+
+
+        <div class="hotel-body">
+
+          <div class="hotel-meta">
+
+            <div class="hotel-stars">
+              ★★★★
+            </div>
+
+            <div class="nusuk-badge">
+              <i class="fa-solid fa-check"></i>
+              Nusuk
+            </div>
+
+          </div>
+
+          <h3>Ancyra Hotel</h3>
+
+          <div class="hotel-location">
+            <i class="fa-solid fa-location-dot"></i>
+            Madinah
+          </div>
+
+          <div class="hotel-feature">
+
+            <i class="fa-solid fa-bed"></i>
+
+            <span>
+              Tersedia pilihan Double,
+              Triple dan Quad.
+            </span>
+
+          </div>
+
+
+          <div class="hotel-price">
+
+            <span>Mulai dari</span>
+
+            <strong>SAR 550</strong>
+
+            <small>/ kamar / malam</small>
+
+          </div>
+
+
+          <div class="hotel-actions">
+
+            <button
+              class="hotel-detail-button"
+              data-hotel="ancyra"
+            >
+              Lihat Kamar
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+            <button class="hotel-info-button">
+              <i class="fa-solid fa-circle-info"></i>
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- HILTON -->
+
+      <article
+        class="hotel-card"
+        data-city="madinah"
+      >
+
+        <div class="hotel-cover madinah">
+
+          <i class="fa-solid fa-mosque hotel-cover-icon"></i>
+
+          <div class="hotel-cover-info">
+            <span>MADINAH</span>
+            <strong>Hilton Madinah</strong>
+          </div>
+
+        </div>
+
+
+        <div class="hotel-body">
+
+          <div class="hotel-meta">
+
+            <div class="hotel-stars">
+              ★★★★★
+            </div>
+
+            <div class="nusuk-badge">
+              <i class="fa-solid fa-check"></i>
+              Nusuk
+            </div>
+
+          </div>
+
+          <h3>Hilton Madinah</h3>
+
+          <div class="hotel-location">
+            <i class="fa-solid fa-location-dot"></i>
+            Madinah
+          </div>
+
+          <div class="hotel-feature">
+
+            <i class="fa-solid fa-calendar-days"></i>
+
+            <span>
+              Tarif dapat berbeda antara
+              hari biasa dan akhir pekan.
+            </span>
+
+          </div>
+
+
+          <div class="hotel-price">
+
+            <span>Mulai dari</span>
+
+            <strong>SAR 1.645</strong>
+
+            <small>/ kamar / malam*</small>
+
+          </div>
+
+
+          <div class="hotel-actions">
+
+            <button
+              class="hotel-detail-button"
+              data-hotel="hilton"
+            >
+              Lihat Kamar
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+            <button class="hotel-info-button">
+              <i class="fa-solid fa-circle-info"></i>
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+
+    <div class="hotel-notice">
+
+      <i class="fa-solid fa-circle-info"></i>
+
+      <p>
+        Harga di atas adalah referensi harga publik
+        per kamar per malam dalam SAR dan dapat berubah
+        berdasarkan periode menginap, musim serta
+        ketersediaan. Konfirmasi kembali harga aktual
+        sebelum menerima pembayaran dari jamaah.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="final-cta">
+
+  <div class="container final-cta-inner">
+
+    <div>
+
+      <span>LAYANAN RAHAYU</span>
+
+      <h2>
+        Lengkapi perjalanan Umrah
+      </h2>
+
+      <p>
+        Setelah memilih hotel, Anda dapat melanjutkan
+        ke transportasi, visa dan muthawwif.
+      </p>
+
+    </div>
+
+
+    <div class="final-cta-buttons">
+
+      <a
+        href="transport.html"
+        class="primary-btn"
+      >
+        <i class="fa-solid fa-car-side"></i>
+        Transportasi
+      </a>
+
+      <a
+        href="visa.html"
+        class="outline-light-btn"
+      >
+        Visa Umrah
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+  <div class="container footer-grid">
+
+    <div class="footer-brand">
+
+      <a href="index.html" class="brand">
+
+        <div class="brand-logo">
+          R
+        </div>
+
+        <div class="brand-name footer-brand-name">
+
+          <strong>rahayu</strong>
+
+          <small>Umrah Services</small>
+
+        </div>
+
+      </a>
+
+      <p>
+        Platform layanan kebutuhan Umrah mandiri:
+        visa, hotel, transportasi dan muthawwif.
+      </p>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>Layanan</h3>
+
+      <a href="visa.html">Visa Umrah</a>
+      <a href="hotel.html">Hotel</a>
+      <a href="transport.html">Transportasi</a>
+      <a href="muthawwif.html">Muthawwif</a>
+      <a href="calculator.html">Hitung Biaya</a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>Bantuan</h3>
+
+      <a href="panduan.html">Panduan</a>
+      <a href="orders.html">Pesanan Saya</a>
+      <a href="login.html">Akun</a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>Informasi</h3>
+
+      <a href="index.html">Tentang Rahayu</a>
+      <a href="panduan.html">Syarat & Ketentuan</a>
+
+    </div>
+
+  </div>
+
+
+  <div class="container footer-reference">
+
+    <i class="fa-solid fa-circle-info"></i>
+
+    <p>
+      Harga hotel menggunakan data publik sebagai
+      referensi dan dapat berubah mengikuti periode
+      menginap serta ketersediaan.
+    </p>
+
+  </div>
+
+
+  <div class="container footer-bottom">
+
+    <p>
+      © <span id="currentYear">2026</span>
+      Rahayu. All rights reserved.
+    </p>
+
+    <span>Umrah Services</span>
+
+  </div>
+
+</footer>
+
+
+<!-- HOTEL MODAL -->
+
+<div
+  class="hotel-modal"
+  id="hotelModal"
+>
+
+  <div class="hotel-modal-card">
+
+    <div class="modal-top">
+
+      <div>
+
+        <span id="modalCity">
+          HOTEL
+        </span>
+
+        <h2 id="modalHotelName">
+          Detail Hotel
+        </h2>
+
+      </div>
+
+      <button
+        class="modal-close"
+        id="modalClose"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+    </div>
+
+
+    <div id="modalContent"></div>
+
+  </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+
+<script>
+
+document.addEventListener(
+  "DOMContentLoaded",
+  function () {
+
+
+    /* =========================================
+       HOTEL DATABASE
+    ========================================= */
+
+    const hotels = {
+
+      swissotel: {
+
+        name: "Swissotel Makkah",
+        city: "Makkah",
+
+        period:
+          "30 September 2026 – 17 Desember 2026",
+
+        rooms: [
+          ["Double", "SAR 1.595"],
+          ["Triple", "SAR 1.905"],
+          ["Quad", "SAR 2.215"]
+        ]
+
+      },
+
+
+      saja: {
+
+        name: "Saja by Warwick Makkah",
+        city: "Makkah",
+
+        period:
+          "1 Oktober 2026 – 8 Desember 2026",
+
+        rooms: [
+          ["Double", "SAR 355"],
+          ["Triple", "SAR 415"],
+          ["Quad", "SAR 475"]
+        ]
+
+      },
+
+
+      tara: {
+
+        name: "Tara Ajyad",
+        city: "Makkah",
+
+        period:
+          "15 September 2026 – 8 Oktober 2026",
+
+        rooms: [
+          ["Double", "SAR 375"],
+          ["Triple", "SAR 420"],
+          ["Quad", "SAR 465"]
+        ]
+
+      },
+
+
+      grand: {
+
+        name:
+          "Grand Millennium Al Haram",
+
+        city: "Madinah",
+
+        period:
+          "9 Januari 2027 – 8 Februari 2027",
+
+        rooms: [
+          ["Double", "SAR 1.430"],
+          ["Triple", "SAR 1.595"],
+          ["Quad", "SAR 1.760"],
+          ["Junior Suite", "SAR 2.145"],
+          ["Executive Suite", "SAR 3.575"]
+        ]
+
+      },
+
+
+      ancyra: {
+
+        name: "Ancyra Hotel",
+        city: "Madinah",
+
+        period:
+          "1 November 2026 – 10 Desember 2026",
+
+        rooms: [
+          ["Double", "SAR 715"],
+          ["Triple", "SAR 770"],
+          ["Quad", "SAR 825"]
+        ]
+
+      },
+
+
+      hilton: {
+
+        name: "Hilton Madinah",
+        city: "Madinah",
+
+        period:
+          "1 November 2026 – 18 November 2026",
+
+        rooms: [
+          ["Single · weekday", "SAR 1.705"],
+          ["Double · weekday", "SAR 2.105"],
+          ["Triple · weekday", "SAR 2.735"],
+          ["Single · weekend", "SAR 1.830"],
+          ["Double · weekend", "SAR 2.225"],
+          ["Triple · weekend", "SAR 2.850"]
+        ]
+
+      }
+
+    };
+
+
+    /* =========================================
+       FILTER
+    ========================================= */
+
+    const cards =
+      document.querySelectorAll(
+        ".hotel-card"
+      );
+
+    const tabs =
+      document.querySelectorAll(
+        ".city-tab"
+      );
+
+    const citySelect =
+      document.getElementById(
+        "hotelCity"
+      );
+
+    const resultText =
+      document.getElementById(
+        "hotelResultText"
+      );
+
+
+    function filterHotels(city) {
+
+      let visible = 0;
+
+
+      cards.forEach(card => {
+
+        const match =
+          city === "all" ||
+          card.dataset.city === city;
+
+
+        card.classList.toggle(
+          "hidden",
+          !match
+        );
+
+
+        if (match) {
+          visible++;
+        }
+
+      });
+
+
+      tabs.forEach(tab => {
+
+        tab.classList.toggle(
+          "active",
+          tab.dataset.city === city
+        );
+
+      });
+
+
+      if (citySelect) {
+        citySelect.value = city;
+      }
+
+
+      if (resultText) {
+
+        if (city === "makkah") {
+
+          resultText.textContent =
+            `${visible} hotel Makkah ditampilkan`;
+
+        }
+
+        else if (city === "madinah") {
+
+          resultText.textContent =
+            `${visible} hotel Madinah ditampilkan`;
+
+        }
+
+        else {
+
+          resultText.textContent =
+            `${visible} hotel Makkah & Madinah ditampilkan`;
+
+        }
+
+      }
+
+    }
+
+
+    tabs.forEach(tab => {
+
+      tab.addEventListener(
+        "click",
+        function () {
+
+          filterHotels(
+            this.dataset.city
+          );
+
+        }
+      );
+
+    });
+
+
+    /* =========================================
+       SEARCH
+    ========================================= */
+
+    const searchForm =
+      document.getElementById(
+        "hotelSearchForm"
+      );
+
+
+    if (searchForm) {
+
+      searchForm.addEventListener(
+        "submit",
+        function(event) {
+
+          event.preventDefault();
+
+
+          const city =
+            citySelect.value;
+
+
+          filterHotels(city);
+
+
+          document
+            .querySelector(".hotel-main")
+            .scrollIntoView({
+              behavior: "smooth"
+            });
+
+        }
+      );
+
+    }
+
+
+    /* =========================================
+       MODAL
+    ========================================= */
+
+    const modal =
+      document.getElementById(
+        "hotelModal"
+      );
+
+    const modalName =
+      document.getElementById(
+        "modalHotelName"
+      );
+
+    const modalCity =
+      document.getElementById(
+        "modalCity"
+      );
+
+    const modalContent =
+      document.getElementById(
+        "modalContent"
+      );
+
+    const modalClose =
+      document.getElementById(
+        "modalClose"
+      );
+
+
+    document
+      .querySelectorAll(
+        ".hotel-detail-button"
+      )
+      .forEach(button => {
+
+        button.addEventListener(
+          "click",
+          function() {
+
+            const hotel =
+              hotels[
+                this.dataset.hotel
+              ];
+
+
+            if (!hotel) return;
+
+
+            modalName.textContent =
+              hotel.name;
+
+
+            modalCity.textContent =
+              hotel.city.toUpperCase();
+
+
+            let rows = "";
+
+
+            hotel.rooms.forEach(room => {
+
+              rows += `
+                <tr>
+                  <td>${room[0]}</td>
+                  <td>${room[1]}</td>
+                </tr>
+              `;
+
+            });
+
+
+            modalContent.innerHTML = `
+
+              <div
+                style="
+                  margin-bottom:15px;
+                  padding:12px;
+                  border-radius:9px;
+                  background:#eaf5f3;
+                "
+              >
+
+                <span
+                  style="
+                    display:block;
+                    margin-bottom:3px;
+                    color:#647174;
+                    font-size:8px;
+                  "
+                >
+                  Periode harga
+                </span>
+
+                <strong
+                  style="
+                    color:#08665d;
+                    font-size:10px;
+                  "
+                >
+                  ${hotel.period}
+                </strong>
+
+              </div>
+
+
+              <table class="room-table">
+
+                <thead>
+
+                  <tr>
+                    <th>Tipe kamar</th>
+                    <th>Harga / malam</th>
+                  </tr>
+
+                </thead>
+
+                <tbody>
+                  ${rows}
+                </tbody>
+
+              </table>
+
+
+              <div class="modal-note">
+
+                Harga dalam Riyal Saudi (SAR)
+                per kamar per malam.
+
+                Harga dapat berubah berdasarkan
+                periode menginap dan ketersediaan.
+
+              </div>
+
+            `;
+
+
+            modal.classList.add(
+              "active"
+            );
+
+
+            document.body.style.overflow =
+              "hidden";
+
+          }
+        );
+
+      });
+
+
+    function closeModal() {
+
+      modal.classList.remove(
+        "active"
+      );
+
+      document.body.style.overflow =
+        "";
+
+    }
+
+
+    modalClose.addEventListener(
+      "click",
+      closeModal
+    );
+
+
+    modal.addEventListener(
+      "click",
+      function(event) {
+
+        if (event.target === modal) {
+          closeModal();
+        }
+
+      }
+    );
+
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (
+          event.key === "Escape"
+        ) {
+          closeModal();
+        }
+
+      }
+    );
+
+
+    filterHotels("all");
+
+  }
+);
+
+</script>
+
+</body>
+</html>
