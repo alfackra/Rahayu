@@ -1,0 +1,2261 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Akun | Rahayu Umrah Services</title>
+
+  <meta
+    name="description"
+    content="Akun pelanggan Rahayu Umrah Services."
+  >
+
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+  >
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+
+    /* ================================================
+       ACCOUNT PAGE
+    ================================================= */
+
+    .account-page {
+      min-height: calc(100vh - 70px);
+      padding: 75px 0 95px;
+      background:
+        radial-gradient(
+          circle at 15% 10%,
+          rgba(8,102,93,.08),
+          transparent 32%
+        ),
+        radial-gradient(
+          circle at 90% 90%,
+          rgba(199,165,101,.09),
+          transparent 30%
+        ),
+        #f7f8f7;
+    }
+
+    .account-layout {
+      display: grid;
+      grid-template-columns:
+        minmax(0,.9fr)
+        minmax(390px,1.1fr);
+      gap: 35px;
+      align-items: center;
+    }
+
+
+    /* ================================================
+       LEFT
+    ================================================= */
+
+    .account-intro {
+      padding-right: 25px;
+    }
+
+    .account-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+
+      margin-bottom: 17px;
+      padding: 7px 10px;
+
+      border: 1px solid rgba(8,102,93,.12);
+      border-radius: 100px;
+
+      background: #eaf5f3;
+
+      color: #08665d;
+
+      font-size: 7px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .account-intro h1 {
+      max-width: 530px;
+      margin-bottom: 15px;
+
+      color: #172326;
+
+      font-size: clamp(32px,4vw,52px);
+      line-height: 1.06;
+      letter-spacing: -2px;
+    }
+
+    .account-intro > p {
+      max-width: 500px;
+      margin-bottom: 28px;
+
+      color: #778386;
+
+      font-size: 10px;
+      line-height: 1.8;
+    }
+
+    .account-features {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .account-feature {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      color: #526164;
+      font-size: 8px;
+      font-weight: 600;
+    }
+
+    .account-feature-icon {
+      width: 29px;
+      height: 29px;
+
+      flex: 0 0 29px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 8px;
+
+      background: white;
+      border: 1px solid #e4e8e7;
+
+      color: #08665d;
+    }
+
+
+    /* ================================================
+       ACCOUNT CARD
+    ================================================= */
+
+    .account-card {
+      overflow: hidden;
+
+      border: 1px solid #e2e7e6;
+      border-radius: 18px;
+
+      background: white;
+
+      box-shadow:
+        0 20px 55px rgba(18,40,39,.10);
+    }
+
+    .account-card-top {
+      padding: 26px 28px 0;
+    }
+
+    .account-logo {
+      width: 45px;
+      height: 45px;
+
+      display: grid;
+      place-items: center;
+
+      margin-bottom: 18px;
+
+      border-radius: 11px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #08665d,
+          #064d47
+        );
+
+      color: white;
+
+      font-size: 19px;
+      font-weight: 800;
+
+      box-shadow:
+        0 8px 20px rgba(8,102,93,.18);
+    }
+
+    .account-card-top h2 {
+      margin-bottom: 5px;
+
+      color: #172326;
+
+      font-size: 20px;
+      font-weight: 800;
+    }
+
+    .account-card-top p {
+      color: #8b9698;
+
+      font-size: 8px;
+      line-height: 1.6;
+    }
+
+
+    /* ================================================
+       TABS
+    ================================================= */
+
+    .account-tabs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      margin: 23px 28px 0;
+      padding: 4px;
+
+      border-radius: 9px;
+
+      background: #f2f4f4;
+    }
+
+    .account-tab {
+      min-height: 37px;
+
+      border: 0;
+      border-radius: 7px;
+
+      background: transparent;
+
+      color: #7d898b;
+
+      font-family: inherit;
+      font-size: 8px;
+      font-weight: 700;
+
+      cursor: pointer;
+
+      transition: .2s ease;
+    }
+
+    .account-tab.active {
+      background: white;
+
+      color: #08665d;
+
+      box-shadow:
+        0 3px 10px rgba(18,40,39,.06);
+    }
+
+
+    /* ================================================
+       FORMS
+    ================================================= */
+
+    .account-form {
+      display: none;
+      padding: 24px 28px 28px;
+    }
+
+    .account-form.active {
+      display: block;
+    }
+
+    .account-field {
+      margin-bottom: 13px;
+    }
+
+    .account-field label {
+      display: block;
+
+      margin-bottom: 6px;
+
+      color: #526164;
+
+      font-size: 8px;
+      font-weight: 700;
+    }
+
+    .account-input-wrap {
+      position: relative;
+    }
+
+    .account-input-wrap > i {
+      position: absolute;
+
+      left: 12px;
+      top: 50%;
+
+      transform: translateY(-50%);
+
+      color: #9aa4a6;
+
+      font-size: 10px;
+
+      pointer-events: none;
+    }
+
+    .account-input-wrap input {
+      width: 100%;
+      height: 46px;
+
+      padding: 0 40px 0 36px;
+
+      outline: none;
+
+      border: 1px solid #e3e7e6;
+      border-radius: 9px;
+
+      background: #fbfcfc;
+
+      color: #172326;
+
+      font-family: inherit;
+      font-size: 9px;
+
+      transition: .2s ease;
+    }
+
+    .account-input-wrap input:focus {
+      border-color: #08665d;
+
+      background: white;
+
+      box-shadow:
+        0 0 0 3px rgba(8,102,93,.07);
+    }
+
+    .toggle-password {
+      position: absolute;
+
+      right: 7px;
+      top: 50%;
+
+      width: 32px;
+      height: 32px;
+
+      transform: translateY(-50%);
+
+      display: grid;
+      place-items: center;
+
+      border: 0;
+
+      background: transparent;
+
+      color: #8b9698;
+
+      cursor: pointer;
+    }
+
+    .account-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+
+      margin: 3px 0 17px;
+    }
+
+    .remember {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+
+      color: #778386;
+
+      font-size: 7px;
+    }
+
+    .remember input {
+      accent-color: #08665d;
+    }
+
+    .account-small-link {
+      border: 0;
+      background: transparent;
+
+      color: #08665d;
+
+      font-size: 7px;
+      font-weight: 700;
+
+      cursor: pointer;
+    }
+
+    .account-submit {
+      width: 100%;
+      min-height: 47px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+
+      border: 0;
+      border-radius: 9px;
+
+      background: #08665d;
+
+      color: white;
+
+      font-family: inherit;
+      font-size: 9px;
+      font-weight: 700;
+
+      cursor: pointer;
+
+      transition: .2s ease;
+    }
+
+    .account-submit:hover {
+      background: #064d47;
+      transform: translateY(-1px);
+    }
+
+    .account-notice {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+
+      margin-top: 16px;
+      padding: 11px;
+
+      border-radius: 8px;
+
+      background: #fcfaf5;
+
+      color: #756b58;
+
+      font-size: 7px;
+      line-height: 1.6;
+    }
+
+    .account-notice i {
+      margin-top: 2px;
+      color: #a98645;
+    }
+
+
+    /* ================================================
+       REGISTER GRID
+    ================================================= */
+
+    .register-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 11px;
+    }
+
+    .register-grid .account-field.full {
+      grid-column: 1 / -1;
+    }
+
+
+    /* ================================================
+       MESSAGE
+    ================================================= */
+
+    .account-message {
+      display: none;
+
+      margin-bottom: 15px;
+      padding: 11px 12px;
+
+      border-radius: 8px;
+
+      font-size: 8px;
+      line-height: 1.6;
+    }
+
+    .account-message.active {
+      display: block;
+    }
+
+    .account-message.success {
+      border: 1px solid #d6ebe4;
+
+      background: #eff9f5;
+
+      color: #167052;
+    }
+
+    .account-message.error {
+      border: 1px solid #f1dddd;
+
+      background: #fff5f5;
+
+      color: #a44747;
+    }
+
+
+    /* ================================================
+       DASHBOARD
+    ================================================= */
+
+    .account-dashboard {
+      display: none;
+      padding: 27px 28px 29px;
+    }
+
+    .account-dashboard.active {
+      display: block;
+    }
+
+    .profile-header {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+
+      margin-bottom: 22px;
+    }
+
+    .profile-avatar {
+      width: 48px;
+      height: 48px;
+
+      flex: 0 0 48px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+
+      background:
+        linear-gradient(
+          135deg,
+          #08665d,
+          #064d47
+        );
+
+      color: white;
+
+      font-size: 16px;
+      font-weight: 800;
+    }
+
+    .profile-header small {
+      display: block;
+
+      margin-bottom: 2px;
+
+      color: #8b9698;
+
+      font-size: 7px;
+    }
+
+    .profile-header h3 {
+      margin-bottom: 2px;
+
+      color: #172326;
+
+      font-size: 13px;
+    }
+
+    .profile-header p {
+      color: #778386;
+
+      font-size: 7px;
+    }
+
+    .dashboard-menu {
+      display: flex;
+      flex-direction: column;
+
+      border: 1px solid #e7eae9;
+      border-radius: 10px;
+
+      overflow: hidden;
+    }
+
+    .dashboard-menu a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+
+      min-height: 48px;
+      padding: 0 14px;
+
+      border-bottom: 1px solid #edf0ef;
+
+      color: #526164;
+
+      font-size: 8px;
+      font-weight: 600;
+    }
+
+    .dashboard-menu a:last-child {
+      border-bottom: 0;
+    }
+
+    .dashboard-menu a:hover {
+      background: #f8fcfb;
+
+      color: #08665d;
+    }
+
+    .dashboard-menu-left {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .dashboard-menu-left i {
+      width: 18px;
+
+      color: #08665d;
+
+      text-align: center;
+    }
+
+    .dashboard-menu > a > i {
+      color: #b6bdbd;
+
+      font-size: 7px;
+    }
+
+    .logout-button {
+      width: 100%;
+      min-height: 43px;
+
+      margin-top: 13px;
+
+      border: 1px solid #e4e8e7;
+      border-radius: 9px;
+
+      background: white;
+
+      color: #647174;
+
+      font-family: inherit;
+      font-size: 8px;
+      font-weight: 700;
+
+      cursor: pointer;
+    }
+
+    .logout-button:hover {
+      border-color: #d8bcbc;
+
+      background: #fffafa;
+
+      color: #a44747;
+    }
+
+
+    /* ================================================
+       SECURITY
+    ================================================= */
+
+    .security-strip {
+      padding: 70px 0;
+
+      background: white;
+    }
+
+    .security-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 14px;
+    }
+
+    .security-card {
+      padding: 20px;
+
+      border: 1px solid #e4e8e7;
+      border-radius: 12px;
+
+      background: white;
+    }
+
+    .security-card i {
+      display: block;
+
+      margin-bottom: 12px;
+
+      color: #08665d;
+
+      font-size: 17px;
+    }
+
+    .security-card strong {
+      display: block;
+
+      margin-bottom: 5px;
+
+      color: #172326;
+
+      font-size: 9px;
+    }
+
+    .security-card p {
+      color: #778386;
+
+      font-size: 7px;
+      line-height: 1.7;
+    }
+
+
+    /* ================================================
+       RESPONSIVE
+    ================================================= */
+
+    @media(max-width:900px) {
+
+      .account-layout {
+        grid-template-columns: 1fr;
+        max-width: 650px;
+        margin: 0 auto;
+      }
+
+      .account-intro {
+        padding-right: 0;
+      }
+
+      .security-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+    }
+
+    @media(max-width:600px) {
+
+      .account-page {
+        padding: 45px 0 65px;
+      }
+
+      .account-intro h1 {
+        font-size: 34px;
+        letter-spacing: -1.3px;
+      }
+
+      .account-card-top {
+        padding: 22px 20px 0;
+      }
+
+      .account-tabs {
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+
+      .account-form,
+      .account-dashboard {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .register-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .register-grid .account-field.full {
+        grid-column: auto;
+      }
+
+      .security-grid {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================================================
+     HEADER
+================================================ -->
+
+<header
+  class="main-header"
+  id="mainHeader"
+>
+
+  <div class="container navbar">
+
+    <a
+      href="index.html"
+      class="brand"
+    >
+
+      <div class="brand-logo">
+        R
+      </div>
+
+      <div class="brand-name">
+
+        <strong>
+          rahayu
+        </strong>
+
+        <small>
+          Umrah Services
+        </small>
+
+      </div>
+
+    </a>
+
+
+    <nav class="desktop-menu">
+
+      <a
+        href="index.html"
+        class="nav-item"
+      >
+        Beranda
+      </a>
+
+      <a
+        href="panduan.html"
+        class="nav-item"
+      >
+        Panduan
+      </a>
+
+      <a
+        href="orders.html"
+        class="nav-item"
+      >
+        Pesanan Saya
+      </a>
+
+      <a
+        href="login.html"
+        class="nav-item active"
+      >
+        Akun
+      </a>
+
+    </nav>
+
+
+    <div class="nav-right">
+
+      <a
+        href="calculator.html"
+        class="nav-calculate"
+      >
+
+        <i class="fa-solid fa-calculator"></i>
+
+        Hitung Biaya
+
+      </a>
+
+
+      <button
+        class="mobile-menu-btn"
+        id="mobileMenuBtn"
+        aria-label="Menu"
+      >
+
+        <i class="fa-solid fa-bars"></i>
+
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div
+    class="mobile-menu"
+    id="mobileMenu"
+  >
+
+    <a href="index.html">
+
+      <i class="fa-solid fa-house"></i>
+      Beranda
+
+    </a>
+
+    <a href="visa.html">
+
+      <i class="fa-solid fa-passport"></i>
+      Visa
+
+    </a>
+
+    <a href="hotel.html">
+
+      <i class="fa-solid fa-hotel"></i>
+      Hotel
+
+    </a>
+
+    <a href="transport.html">
+
+      <i class="fa-solid fa-car-side"></i>
+      Transportasi
+
+    </a>
+
+    <a href="muthawwif.html">
+
+      <i class="fa-solid fa-person-praying"></i>
+      Muthawwif
+
+    </a>
+
+    <a href="calculator.html">
+
+      <i class="fa-solid fa-calculator"></i>
+      Hitung Biaya
+
+    </a>
+
+    <a href="orders.html">
+
+      <i class="fa-solid fa-receipt"></i>
+      Pesanan Saya
+
+    </a>
+
+  </div>
+
+</header>
+
+
+<main>
+
+
+<!-- ================================================
+     ACCOUNT
+================================================ -->
+
+<section class="account-page">
+
+  <div class="container account-layout">
+
+
+    <!-- LEFT -->
+
+    <div class="account-intro">
+
+      <div class="account-label">
+
+        <i class="fa-solid fa-user-shield"></i>
+
+        AKUN RAHAYU
+
+      </div>
+
+
+      <h1>
+        Perjalanan lebih mudah dalam satu akun.
+      </h1>
+
+
+      <p>
+        Simpan estimasi perjalanan dan akses
+        kembali kebutuhan Umrah Anda melalui
+        satu halaman.
+      </p>
+
+
+      <div class="account-features">
+
+
+        <div class="account-feature">
+
+          <div class="account-feature-icon">
+
+            <i class="fa-solid fa-receipt"></i>
+
+          </div>
+
+          Lihat estimasi dan pesanan Anda
+
+        </div>
+
+
+        <div class="account-feature">
+
+          <div class="account-feature-icon">
+
+            <i class="fa-solid fa-calculator"></i>
+
+          </div>
+
+          Akses kalkulator perjalanan
+
+        </div>
+
+
+        <div class="account-feature">
+
+          <div class="account-feature-icon">
+
+            <i class="fa-solid fa-layer-group"></i>
+
+          </div>
+
+          Visa, Hotel, Transport dan Muthawwif
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- RIGHT -->
+
+    <div class="account-card">
+
+
+      <div
+        id="guestArea"
+      >
+
+
+        <div class="account-card-top">
+
+          <div class="account-logo">
+            R
+          </div>
+
+          <h2>
+            Selamat datang
+          </h2>
+
+          <p>
+            Masuk atau buat akun demo Rahayu.
+          </p>
+
+        </div>
+
+
+        <!-- TABS -->
+
+        <div class="account-tabs">
+
+          <button
+            type="button"
+            class="account-tab active"
+            data-tab="login"
+          >
+            Masuk
+          </button>
+
+          <button
+            type="button"
+            class="account-tab"
+            data-tab="register"
+          >
+            Daftar
+          </button>
+
+        </div>
+
+
+        <!-- LOGIN -->
+
+        <form
+          class="account-form active"
+          id="loginForm"
+        >
+
+
+          <div
+            class="account-message"
+            id="loginMessage"
+          ></div>
+
+
+          <div class="account-field">
+
+            <label for="loginEmail">
+              Email
+            </label>
+
+            <div class="account-input-wrap">
+
+              <i class="fa-regular fa-envelope"></i>
+
+              <input
+                type="email"
+                id="loginEmail"
+                placeholder="nama@email.com"
+                required
+              >
+
+            </div>
+
+          </div>
+
+
+          <div class="account-field">
+
+            <label for="loginPassword">
+              Password demo
+            </label>
+
+            <div class="account-input-wrap">
+
+              <i class="fa-solid fa-lock"></i>
+
+              <input
+                type="password"
+                id="loginPassword"
+                placeholder="Masukkan password"
+                required
+              >
+
+              <button
+                type="button"
+                class="toggle-password"
+                data-target="loginPassword"
+                aria-label="Lihat password"
+              >
+
+                <i class="fa-regular fa-eye"></i>
+
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <div class="account-row">
+
+            <label class="remember">
+
+              <input
+                type="checkbox"
+                id="rememberLogin"
+              >
+
+              Ingat saya
+
+            </label>
+
+
+            <button
+              type="button"
+              class="account-small-link"
+              id="forgotPassword"
+            >
+              Lupa password?
+            </button>
+
+          </div>
+
+
+          <button
+            type="submit"
+            class="account-submit"
+          >
+
+            Masuk ke Rahayu
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+          </button>
+
+
+          <div class="account-notice">
+
+            <i class="fa-solid fa-triangle-exclamation"></i>
+
+            <span>
+              Ini masih prototype akun untuk
+              GitHub Pages. Jangan gunakan
+              password asli atau password yang
+              digunakan pada akun lain.
+            </span>
+
+          </div>
+
+        </form>
+
+
+        <!-- REGISTER -->
+
+        <form
+          class="account-form"
+          id="registerForm"
+        >
+
+
+          <div
+            class="account-message"
+            id="registerMessage"
+          ></div>
+
+
+          <div class="register-grid">
+
+
+            <div class="account-field">
+
+              <label for="registerName">
+                Nama
+              </label>
+
+              <div class="account-input-wrap">
+
+                <i class="fa-regular fa-user"></i>
+
+                <input
+                  type="text"
+                  id="registerName"
+                  placeholder="Nama lengkap"
+                  required
+                >
+
+              </div>
+
+            </div>
+
+
+            <div class="account-field">
+
+              <label for="registerPhone">
+                No. Telepon
+              </label>
+
+              <div class="account-input-wrap">
+
+                <i class="fa-solid fa-phone"></i>
+
+                <input
+                  type="tel"
+                  id="registerPhone"
+                  placeholder="05xxxxxxxx"
+                >
+
+              </div>
+
+            </div>
+
+
+            <div class="account-field full">
+
+              <label for="registerEmail">
+                Email
+              </label>
+
+              <div class="account-input-wrap">
+
+                <i class="fa-regular fa-envelope"></i>
+
+                <input
+                  type="email"
+                  id="registerEmail"
+                  placeholder="nama@email.com"
+                  required
+                >
+
+              </div>
+
+            </div>
+
+
+            <div class="account-field full">
+
+              <label for="registerPassword">
+                Password demo
+              </label>
+
+              <div class="account-input-wrap">
+
+                <i class="fa-solid fa-lock"></i>
+
+                <input
+                  type="password"
+                  id="registerPassword"
+                  minlength="6"
+                  placeholder="Minimal 6 karakter"
+                  required
+                >
+
+                <button
+                  type="button"
+                  class="toggle-password"
+                  data-target="registerPassword"
+                  aria-label="Lihat password"
+                >
+
+                  <i class="fa-regular fa-eye"></i>
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <button
+            type="submit"
+            class="account-submit"
+          >
+
+            Buat Akun Demo
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+          </button>
+
+
+          <div class="account-notice">
+
+            <i class="fa-solid fa-circle-info"></i>
+
+            <span>
+              Akun demo hanya tersimpan pada
+              browser perangkat ini dan bukan
+              sistem akun online Rahayu.
+            </span>
+
+          </div>
+
+        </form>
+
+      </div>
+
+
+      <!-- ==========================================
+           LOGGED IN
+      =========================================== -->
+
+      <div
+        class="account-dashboard"
+        id="accountDashboard"
+      >
+
+
+        <div class="profile-header">
+
+          <div
+            class="profile-avatar"
+            id="profileAvatar"
+          >
+            R
+          </div>
+
+          <div>
+
+            <small>
+              AKUN RAHAYU
+            </small>
+
+            <h3 id="profileName">
+              Pengguna
+            </h3>
+
+            <p id="profileEmail">
+              -
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="dashboard-menu">
+
+
+          <a href="orders.html">
+
+            <span class="dashboard-menu-left">
+
+              <i class="fa-solid fa-receipt"></i>
+
+              Pesanan Saya
+
+            </span>
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+          </a>
+
+
+          <a href="calculator.html">
+
+            <span class="dashboard-menu-left">
+
+              <i class="fa-solid fa-calculator"></i>
+
+              Hitung Biaya Umrah
+
+            </span>
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+          </a>
+
+
+          <a href="visa.html">
+
+            <span class="dashboard-menu-left">
+
+              <i class="fa-solid fa-passport"></i>
+
+              Visa Umrah
+
+            </span>
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+          </a>
+
+
+          <a href="hotel.html">
+
+            <span class="dashboard-menu-left">
+
+              <i class="fa-solid fa-hotel"></i>
+
+              Hotel
+
+            </span>
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+          </a>
+
+
+          <a href="transport.html">
+
+            <span class="dashboard-menu-left">
+
+              <i class="fa-solid fa-car-side"></i>
+
+              Transportasi
+
+            </span>
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+          </a>
+
+
+          <a href="muthawwif.html">
+
+            <span class="dashboard-menu-left">
+
+              <i class="fa-solid fa-person-praying"></i>
+
+              Muthawwif
+
+            </span>
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+          </a>
+
+        </div>
+
+
+        <button
+          type="button"
+          class="logout-button"
+          id="logoutButton"
+        >
+
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+
+          Keluar
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================================================
+     INFO
+================================================ -->
+
+<section class="security-strip">
+
+  <div class="container security-grid">
+
+
+    <div class="security-card">
+
+      <i class="fa-solid fa-receipt"></i>
+
+      <strong>
+        Pesanan Saya
+      </strong>
+
+      <p>
+        Simpan dan buka kembali estimasi
+        perjalanan pada perangkat yang sama.
+      </p>
+
+    </div>
+
+
+    <div class="security-card">
+
+      <i class="fa-solid fa-calculator"></i>
+
+      <strong>
+        Estimasi Biaya
+      </strong>
+
+      <p>
+        Hitung kebutuhan Visa, Hotel,
+        Transportasi dan Muthawwif.
+      </p>
+
+    </div>
+
+
+    <div class="security-card">
+
+      <i class="fa-solid fa-shield-halved"></i>
+
+      <strong>
+        Prototype
+      </strong>
+
+      <p>
+        Versi GitHub Pages belum menggunakan
+        server autentikasi atau database akun.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<!-- ================================================
+     FOOTER
+================================================ -->
+
+<footer class="footer">
+
+  <div class="container footer-grid">
+
+
+    <div class="footer-brand">
+
+      <a
+        href="index.html"
+        class="brand"
+      >
+
+        <div class="brand-logo">
+          R
+        </div>
+
+        <div class="brand-name footer-brand-name">
+
+          <strong>
+            rahayu
+          </strong>
+
+          <small>
+            Umrah Services
+          </small>
+
+        </div>
+
+      </a>
+
+      <p>
+        Platform layanan kebutuhan Umrah mandiri:
+        visa, hotel, transportasi dan muthawwif.
+      </p>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>
+        Layanan
+      </h3>
+
+      <a href="visa.html">
+        Visa Umrah
+      </a>
+
+      <a href="hotel.html">
+        Hotel
+      </a>
+
+      <a href="transport.html">
+        Transportasi
+      </a>
+
+      <a href="muthawwif.html">
+        Muthawwif
+      </a>
+
+      <a href="calculator.html">
+        Hitung Biaya
+      </a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>
+        Bantuan
+      </h3>
+
+      <a href="panduan.html">
+        Panduan
+      </a>
+
+      <a href="orders.html">
+        Pesanan Saya
+      </a>
+
+      <a href="login.html">
+        Akun
+      </a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>
+        Jelajahi
+      </h3>
+
+      <a href="index.html">
+        Beranda
+      </a>
+
+      <a href="index.html#layanan">
+        Semua Layanan
+      </a>
+
+      <a href="calculator.html">
+        Estimasi Umrah
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <div class="container footer-bottom">
+
+    <p>
+      ©
+      <span id="currentYear">
+        2026
+      </span>
+      Rahayu. All rights reserved.
+    </p>
+
+    <span>
+      Umrah Services
+    </span>
+
+  </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+
+<script>
+
+document.addEventListener(
+  "DOMContentLoaded",
+  function () {
+
+    const USER_KEY =
+      "rahayu_demo_user";
+
+    const SESSION_KEY =
+      "rahayu_demo_session";
+
+
+    const guestArea =
+      document.getElementById(
+        "guestArea"
+      );
+
+    const dashboard =
+      document.getElementById(
+        "accountDashboard"
+      );
+
+
+    /* ============================================
+       TABS
+    ============================================= */
+
+    const tabs =
+      document.querySelectorAll(
+        ".account-tab"
+      );
+
+    const forms =
+      document.querySelectorAll(
+        ".account-form"
+      );
+
+
+    tabs.forEach(
+      tab => {
+
+        tab.addEventListener(
+          "click",
+          function () {
+
+            const target =
+              this.dataset.tab;
+
+            tabs.forEach(
+              item =>
+                item.classList.remove(
+                  "active"
+                )
+            );
+
+            forms.forEach(
+              form =>
+                form.classList.remove(
+                  "active"
+                )
+            );
+
+            this.classList.add(
+              "active"
+            );
+
+            document
+              .getElementById(
+                target + "Form"
+              )
+              .classList.add(
+                "active"
+              );
+
+          }
+        );
+
+      }
+    );
+
+
+    /* ============================================
+       PASSWORD
+    ============================================= */
+
+    document
+      .querySelectorAll(
+        ".toggle-password"
+      )
+      .forEach(
+        button => {
+
+          button.addEventListener(
+            "click",
+            function () {
+
+              const input =
+                document.getElementById(
+                  this.dataset.target
+                );
+
+              const icon =
+                this.querySelector(
+                  "i"
+                );
+
+              if (
+                input.type ===
+                "password"
+              ) {
+
+                input.type =
+                  "text";
+
+                icon.className =
+                  "fa-regular fa-eye-slash";
+
+              }
+
+              else {
+
+                input.type =
+                  "password";
+
+                icon.className =
+                  "fa-regular fa-eye";
+
+              }
+
+            }
+          );
+
+        }
+      );
+
+
+    /* ============================================
+       MESSAGE
+    ============================================= */
+
+    function showMessage(
+      element,
+      message,
+      type
+    ) {
+
+      element.textContent =
+        message;
+
+      element.className =
+        "account-message active " +
+        type;
+
+    }
+
+
+    /* ============================================
+       REGISTER
+    ============================================= */
+
+    document
+      .getElementById(
+        "registerForm"
+      )
+      .addEventListener(
+        "submit",
+        function (event) {
+
+          event.preventDefault();
+
+
+          const name =
+            document
+              .getElementById(
+                "registerName"
+              )
+              .value
+              .trim();
+
+
+          const phone =
+            document
+              .getElementById(
+                "registerPhone"
+              )
+              .value
+              .trim();
+
+
+          const email =
+            document
+              .getElementById(
+                "registerEmail"
+              )
+              .value
+              .trim()
+              .toLowerCase();
+
+
+          const password =
+            document
+              .getElementById(
+                "registerPassword"
+              )
+              .value;
+
+
+          const message =
+            document.getElementById(
+              "registerMessage"
+            );
+
+
+          if (
+            !name ||
+            !email ||
+            password.length < 6
+          ) {
+
+            showMessage(
+              message,
+              "Lengkapi nama, email dan password minimal 6 karakter.",
+              "error"
+            );
+
+            return;
+
+          }
+
+
+          const user = {
+            name,
+            phone,
+            email,
+            password
+          };
+
+
+          localStorage.setItem(
+            USER_KEY,
+            JSON.stringify(user)
+          );
+
+
+          showMessage(
+            message,
+            "Akun demo berhasil dibuat. Silakan masuk.",
+            "success"
+          );
+
+
+          setTimeout(
+            function () {
+
+              document
+                .querySelector(
+                  '[data-tab="login"]'
+                )
+                .click();
+
+
+              document
+                .getElementById(
+                  "loginEmail"
+                )
+                .value =
+                email;
+
+            },
+            700
+          );
+
+        }
+      );
+
+
+    /* ============================================
+       LOGIN
+    ============================================= */
+
+    document
+      .getElementById(
+        "loginForm"
+      )
+      .addEventListener(
+        "submit",
+        function (event) {
+
+          event.preventDefault();
+
+
+          const email =
+            document
+              .getElementById(
+                "loginEmail"
+              )
+              .value
+              .trim()
+              .toLowerCase();
+
+
+          const password =
+            document
+              .getElementById(
+                "loginPassword"
+              )
+              .value;
+
+
+          const message =
+            document.getElementById(
+              "loginMessage"
+            );
+
+
+          const stored =
+            localStorage.getItem(
+              USER_KEY
+            );
+
+
+          if (!stored) {
+
+            showMessage(
+              message,
+              "Belum ada akun demo. Silakan daftar terlebih dahulu.",
+              "error"
+            );
+
+            return;
+
+          }
+
+
+          let user;
+
+
+          try {
+
+            user =
+              JSON.parse(
+                stored
+              );
+
+          }
+
+          catch (error) {
+
+            showMessage(
+              message,
+              "Data akun tidak dapat dibaca.",
+              "error"
+            );
+
+            return;
+
+          }
+
+
+          if (
+            user.email !== email ||
+            user.password !== password
+          ) {
+
+            showMessage(
+              message,
+              "Email atau password tidak sesuai.",
+              "error"
+            );
+
+            return;
+
+          }
+
+
+          localStorage.setItem(
+            SESSION_KEY,
+            JSON.stringify({
+              loggedIn: true,
+              email: user.email
+            })
+          );
+
+
+          showDashboard();
+
+        }
+      );
+
+
+    /* ============================================
+       DASHBOARD
+    ============================================= */
+
+    function showDashboard() {
+
+      const stored =
+        localStorage.getItem(
+          USER_KEY
+        );
+
+
+      if (!stored) {
+        return;
+      }
+
+
+      let user;
+
+
+      try {
+
+        user =
+          JSON.parse(
+            stored
+          );
+
+      }
+
+      catch (error) {
+        return;
+      }
+
+
+      guestArea.style.display =
+        "none";
+
+
+      dashboard.classList.add(
+        "active"
+      );
+
+
+      document
+        .getElementById(
+          "profileName"
+        )
+        .textContent =
+        user.name || "Pengguna";
+
+
+      document
+        .getElementById(
+          "profileEmail"
+        )
+        .textContent =
+        user.email || "-";
+
+
+      const firstLetter =
+        (
+          user.name ||
+          "R"
+        )
+        .charAt(0)
+        .toUpperCase();
+
+
+      document
+        .getElementById(
+          "profileAvatar"
+        )
+        .textContent =
+        firstLetter;
+
+    }
+
+
+    /* ============================================
+       LOGOUT
+    ============================================= */
+
+    document
+      .getElementById(
+        "logoutButton"
+      )
+      .addEventListener(
+        "click",
+        function () {
+
+          localStorage.removeItem(
+            SESSION_KEY
+          );
+
+
+          dashboard.classList.remove(
+            "active"
+          );
+
+
+          guestArea.style.display =
+            "block";
+
+
+          document
+            .getElementById(
+              "loginPassword"
+            )
+            .value =
+            "";
+
+        }
+      );
+
+
+    /* ============================================
+       FORGOT
+    ============================================= */
+
+    document
+      .getElementById(
+        "forgotPassword"
+      )
+      .addEventListener(
+        "click",
+        function () {
+
+          const message =
+            document.getElementById(
+              "loginMessage"
+            );
+
+
+          showMessage(
+            message,
+            "Reset password online belum tersedia pada versi prototype.",
+            "error"
+          );
+
+        }
+      );
+
+
+    /* ============================================
+       SESSION CHECK
+    ============================================= */
+
+    const session =
+      localStorage.getItem(
+        SESSION_KEY
+      );
+
+
+    if (session) {
+
+      try {
+
+        const data =
+          JSON.parse(
+            session
+          );
+
+
+        if (data.loggedIn) {
+
+          showDashboard();
+
+        }
+
+      }
+
+      catch (error) {}
+
+    }
+
+  }
+);
+
+</script>
+
+
+</body>
+</html>
