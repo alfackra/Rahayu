@@ -1,0 +1,3060 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Hitung Biaya Umrah | Rahayu</title>
+
+  <meta
+    name="description"
+    content="Kalkulator estimasi biaya Umrah mandiri Rahayu."
+  >
+
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+  >
+
+  <link rel="stylesheet" href="style.css">
+
+
+  <style>
+
+    /* =====================================================
+       CALCULATOR HERO
+    ===================================================== */
+
+    .calculator-hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+
+      margin-top: 24px;
+    }
+
+    .calculator-hero-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+
+      padding: 8px 11px;
+
+      border: 1px solid #dfe8e6;
+      border-radius: 8px;
+
+      background: white;
+
+      color: #647174;
+
+      font-size: 8px;
+      font-weight: 600;
+    }
+
+    .calculator-hero-badge i {
+      color: #159669;
+    }
+
+
+    /* =====================================================
+       MAIN
+    ===================================================== */
+
+    .calculator-section {
+      padding: 55px 0 95px;
+
+      background: #f7f8f7;
+    }
+
+    .calculator-layout {
+      display: grid;
+
+      grid-template-columns:
+        minmax(0,1.25fr)
+        minmax(300px,.75fr);
+
+      gap: 24px;
+
+      align-items: start;
+    }
+
+
+    /* =====================================================
+       FORM CARD
+    ===================================================== */
+
+    .calculator-card {
+      overflow: hidden;
+
+      border: 1px solid #e4e8e7;
+      border-radius: 16px;
+
+      background: white;
+
+      box-shadow:
+        0 8px 25px rgba(18,40,39,.06);
+    }
+
+    .calculator-card-header {
+      padding: 25px 27px;
+
+      border-bottom: 1px solid #edf0ef;
+    }
+
+    .calculator-card-header span {
+      display: block;
+
+      margin-bottom: 5px;
+
+      color: #08665d;
+
+      font-size: 8px;
+      font-weight: 800;
+
+      letter-spacing: 1.1px;
+    }
+
+    .calculator-card-header h2 {
+      margin-bottom: 5px;
+
+      color: #172326;
+
+      font-size: 21px;
+      font-weight: 800;
+    }
+
+    .calculator-card-header p {
+      color: #778386;
+
+      font-size: 9px;
+      line-height: 1.6;
+    }
+
+
+    /* =====================================================
+       SECTION
+    ===================================================== */
+
+    .calc-section {
+      padding: 24px 27px;
+
+      border-bottom: 1px solid #edf0ef;
+    }
+
+    .calc-section:last-child {
+      border-bottom: 0;
+    }
+
+    .calc-section-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+
+      margin-bottom: 18px;
+    }
+
+    .calc-section-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .calc-section-icon {
+      width: 35px;
+      height: 35px;
+
+      flex: 0 0 35px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 9px;
+
+      background: #eaf5f3;
+
+      color: #08665d;
+
+      font-size: 12px;
+    }
+
+    .calc-section-title strong {
+      display: block;
+
+      margin-bottom: 2px;
+
+      color: #172326;
+
+      font-size: 11px;
+    }
+
+    .calc-section-title span {
+      display: block;
+
+      color: #8b9698;
+
+      font-size: 7px;
+    }
+
+
+    /* =====================================================
+       SWITCH
+    ===================================================== */
+
+    .switch {
+      position: relative;
+
+      width: 40px;
+      height: 23px;
+
+      flex: 0 0 40px;
+    }
+
+    .switch input {
+      display: none;
+    }
+
+    .slider {
+      position: absolute;
+      inset: 0;
+
+      border-radius: 100px;
+
+      background: #dce2e1;
+
+      cursor: pointer;
+
+      transition: .2s ease;
+    }
+
+    .slider::before {
+      content: "";
+
+      position: absolute;
+
+      width: 17px;
+      height: 17px;
+
+      left: 3px;
+      top: 3px;
+
+      border-radius: 50%;
+
+      background: white;
+
+      box-shadow:
+        0 2px 5px rgba(0,0,0,.12);
+
+      transition: .2s ease;
+    }
+
+    .switch input:checked + .slider {
+      background: #08665d;
+    }
+
+    .switch input:checked + .slider::before {
+      transform: translateX(17px);
+    }
+
+
+    /* =====================================================
+       FORM
+    ===================================================== */
+
+    .calc-grid {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 12px;
+    }
+
+    .calc-field.full {
+      grid-column: 1 / -1;
+    }
+
+    .calc-field label {
+      display: block;
+
+      margin-bottom: 6px;
+
+      color: #526164;
+
+      font-size: 8px;
+      font-weight: 700;
+    }
+
+    .calc-field input,
+    .calc-field select {
+      width: 100%;
+      height: 44px;
+
+      padding: 0 11px;
+
+      outline: none;
+
+      border: 1px solid #e4e8e7;
+      border-radius: 9px;
+
+      background: #fbfcfc;
+
+      color: #172326;
+
+      font-family: inherit;
+      font-size: 9px;
+    }
+
+    .calc-field input:focus,
+    .calc-field select:focus {
+      border-color: #08665d;
+
+      background: white;
+
+      box-shadow:
+        0 0 0 3px rgba(8,102,93,.07);
+    }
+
+    .calc-field small {
+      display: block;
+
+      margin-top: 5px;
+
+      color: #8b9698;
+
+      font-size: 7px;
+      line-height: 1.5;
+    }
+
+
+    /* =====================================================
+       HOTEL CITY
+    ===================================================== */
+
+    .hotel-city-box {
+      padding: 15px;
+
+      border: 1px solid #e4e8e7;
+      border-radius: 11px;
+
+      background: #fbfcfc;
+    }
+
+    .hotel-city-title {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+
+      margin-bottom: 12px;
+
+      color: #172326;
+
+      font-size: 9px;
+      font-weight: 800;
+    }
+
+    .hotel-city-title i {
+      color: #08665d;
+    }
+
+
+    /* =====================================================
+       DISABLED
+    ===================================================== */
+
+    .calc-section.disabled .calc-section-body {
+      opacity: .35;
+
+      pointer-events: none;
+    }
+
+
+    /* =====================================================
+       SUMMARY
+    ===================================================== */
+
+    .calculator-summary {
+      position: sticky;
+
+      top: 95px;
+
+      overflow: hidden;
+
+      border: 1px solid #dfe5e4;
+      border-radius: 17px;
+
+      background: white;
+
+      box-shadow:
+        0 15px 45px rgba(18,40,39,.09);
+    }
+
+    .summary-top {
+      padding: 25px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #064d47,
+          #08665d
+        );
+
+      color: white;
+    }
+
+    .summary-top-label {
+      margin-bottom: 5px;
+
+      color: rgba(255,255,255,.68);
+
+      font-size: 7px;
+      font-weight: 700;
+
+      letter-spacing: 1px;
+    }
+
+    .summary-total {
+      margin-bottom: 3px;
+
+      font-size: 29px;
+      font-weight: 800;
+
+      letter-spacing: -1.2px;
+    }
+
+    .summary-top p {
+      color: rgba(255,255,255,.7);
+
+      font-size: 8px;
+    }
+
+    .summary-per-person {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+
+      margin-top: 17px;
+
+      padding-top: 15px;
+
+      border-top:
+        1px solid rgba(255,255,255,.14);
+    }
+
+    .summary-per-person span {
+      color: rgba(255,255,255,.7);
+
+      font-size: 8px;
+    }
+
+    .summary-per-person strong {
+      font-size: 16px;
+    }
+
+
+    /* BREAKDOWN */
+
+    .summary-body {
+      padding: 22px 24px;
+    }
+
+    .summary-body-title {
+      margin-bottom: 12px;
+
+      color: #172326;
+
+      font-size: 9px;
+      font-weight: 800;
+    }
+
+    .breakdown {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .breakdown-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+
+      padding: 9px 0;
+
+      border-bottom: 1px solid #edf0ef;
+
+      font-size: 8px;
+    }
+
+    .breakdown-row:last-child {
+      border-bottom: 0;
+    }
+
+    .breakdown-row span {
+      color: #778386;
+    }
+
+    .breakdown-row strong {
+      color: #172326;
+
+      text-align: right;
+    }
+
+    .breakdown-row.muted strong {
+      color: #8b9698;
+    }
+
+    .calculator-button {
+      width: 100%;
+      min-height: 48px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+
+      margin-top: 18px;
+
+      border: 0;
+      border-radius: 9px;
+
+      background: #08665d;
+
+      color: white;
+
+      font-size: 10px;
+      font-weight: 700;
+
+      cursor: pointer;
+    }
+
+    .calculator-button:hover {
+      background: #064d47;
+    }
+
+    .reset-button {
+      width: 100%;
+      min-height: 40px;
+
+      margin-top: 8px;
+
+      border: 1px solid #e4e8e7;
+      border-radius: 9px;
+
+      background: white;
+
+      color: #647174;
+
+      font-size: 8px;
+      font-weight: 700;
+
+      cursor: pointer;
+    }
+
+    .summary-warning {
+      display: flex;
+      align-items: flex-start;
+      gap: 7px;
+
+      margin-top: 15px;
+
+      padding: 10px;
+
+      border-radius: 8px;
+
+      background: #fcfaf5;
+
+      color: #756b58;
+
+      font-size: 7px;
+      line-height: 1.6;
+    }
+
+    .summary-warning i {
+      margin-top: 2px;
+
+      color: #a98645;
+    }
+
+
+    /* =====================================================
+       HOW
+    ===================================================== */
+
+    .calculator-info {
+      padding: 85px 0;
+
+      background: white;
+    }
+
+    .calculator-info-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4,1fr);
+
+      gap: 14px;
+
+      margin-top: 35px;
+    }
+
+    .calculator-info-card {
+      padding: 20px;
+
+      border: 1px solid #e4e8e7;
+      border-radius: 12px;
+    }
+
+    .calculator-info-card i {
+      display: block;
+
+      margin-bottom: 13px;
+
+      color: #08665d;
+
+      font-size: 18px;
+    }
+
+    .calculator-info-card strong {
+      display: block;
+
+      margin-bottom: 5px;
+
+      font-size: 10px;
+    }
+
+    .calculator-info-card p {
+      color: #778386;
+
+      font-size: 8px;
+      line-height: 1.65;
+    }
+
+
+    /* =====================================================
+       RESPONSIVE
+    ===================================================== */
+
+    @media(max-width:900px) {
+
+      .calculator-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .calculator-summary {
+        position: static;
+      }
+
+      .calculator-info-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+    }
+
+    @media(max-width:600px) {
+
+      .calculator-section {
+        padding: 40px 0 65px;
+      }
+
+      .calculator-card-header,
+      .calc-section {
+        padding-left: 19px;
+        padding-right: 19px;
+      }
+
+      .calc-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .calc-field.full {
+        grid-column: auto;
+      }
+
+      .calculator-info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .summary-total {
+        font-size: 25px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="main-header" id="mainHeader">
+
+  <div class="container navbar">
+
+
+    <a href="index.html" class="brand">
+
+      <div class="brand-logo">
+        R
+      </div>
+
+      <div class="brand-name">
+
+        <strong>
+          rahayu
+        </strong>
+
+        <small>
+          Umrah Services
+        </small>
+
+      </div>
+
+    </a>
+
+
+    <nav class="desktop-menu">
+
+      <a href="index.html" class="nav-item">
+        Beranda
+      </a>
+
+      <a href="panduan.html" class="nav-item">
+        Panduan
+      </a>
+
+      <a href="orders.html" class="nav-item">
+        Pesanan Saya
+      </a>
+
+      <a href="login.html" class="nav-item">
+        Akun
+      </a>
+
+    </nav>
+
+
+    <div class="nav-right">
+
+      <a
+        href="calculator.html"
+        class="nav-calculate"
+      >
+
+        <i class="fa-solid fa-calculator"></i>
+
+        Hitung Biaya
+
+      </a>
+
+
+      <button
+        class="mobile-menu-btn"
+        id="mobileMenuBtn"
+        aria-label="Menu"
+      >
+
+        <i class="fa-solid fa-bars"></i>
+
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div
+    class="mobile-menu"
+    id="mobileMenu"
+  >
+
+    <a href="index.html">
+
+      <i class="fa-solid fa-house"></i>
+
+      Beranda
+
+    </a>
+
+
+    <a href="visa.html">
+
+      <i class="fa-solid fa-passport"></i>
+
+      Visa
+
+    </a>
+
+
+    <a href="hotel.html">
+
+      <i class="fa-solid fa-hotel"></i>
+
+      Hotel
+
+    </a>
+
+
+    <a href="transport.html">
+
+      <i class="fa-solid fa-car-side"></i>
+
+      Transportasi
+
+    </a>
+
+
+    <a href="muthawwif.html">
+
+      <i class="fa-solid fa-person-praying"></i>
+
+      Muthawwif
+
+    </a>
+
+
+    <a href="orders.html">
+
+      <i class="fa-solid fa-receipt"></i>
+
+      Pesanan Saya
+
+    </a>
+
+  </div>
+
+</header>
+
+
+<main>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="page-header">
+
+  <div class="container">
+
+    <div class="page-header-content">
+
+
+      <div class="page-breadcrumb">
+
+        <a href="index.html">
+          Beranda
+        </a>
+
+        <i class="fa-solid fa-chevron-right"></i>
+
+        <span>
+          Hitung Biaya
+        </span>
+
+      </div>
+
+
+      <div class="page-label">
+
+        <i class="fa-solid fa-calculator"></i>
+
+        ESTIMASI UMRAH
+
+      </div>
+
+
+      <h1>
+        Hitung Biaya Umrah
+      </h1>
+
+
+      <p>
+        Buat estimasi kebutuhan perjalanan
+        berdasarkan jumlah jamaah, hotel,
+        transportasi dan pendamping.
+      </p>
+
+
+      <div class="calculator-hero-badges">
+
+
+        <div class="calculator-hero-badge">
+
+          <i class="fa-solid fa-passport"></i>
+
+          Visa
+
+        </div>
+
+
+        <div class="calculator-hero-badge">
+
+          <i class="fa-solid fa-hotel"></i>
+
+          Hotel
+
+        </div>
+
+
+        <div class="calculator-hero-badge">
+
+          <i class="fa-solid fa-car-side"></i>
+
+          Transport
+
+        </div>
+
+
+        <div class="calculator-hero-badge">
+
+          <i class="fa-solid fa-person-praying"></i>
+
+          Muthawwif
+
+        </div>
+
+
+        <div class="calculator-hero-badge">
+
+          <i class="fa-solid fa-plane"></i>
+
+          Tiket pesawat tidak termasuk
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     CALCULATOR
+===================================================== -->
+
+<section class="calculator-section">
+
+  <div class="container calculator-layout">
+
+
+    <!-- =================================================
+         LEFT
+    ================================================== -->
+
+    <div class="calculator-card">
+
+
+      <div class="calculator-card-header">
+
+        <span>
+          KALKULATOR RAHAYU
+        </span>
+
+        <h2>
+          Detail perjalanan
+        </h2>
+
+        <p>
+          Aktifkan atau nonaktifkan layanan
+          sesuai kebutuhan perjalanan Anda.
+        </p>
+
+      </div>
+
+
+      <!-- =================================================
+           BASIC
+      ================================================== -->
+
+      <div class="calc-section">
+
+        <div class="calc-section-head">
+
+          <div class="calc-section-title">
+
+            <div class="calc-section-icon">
+
+              <i class="fa-solid fa-users"></i>
+
+            </div>
+
+            <div>
+
+              <strong>
+                Data Rombongan
+              </strong>
+
+              <span>
+                Informasi dasar perjalanan
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="calc-section-body">
+
+          <div class="calc-grid">
+
+
+            <div class="calc-field">
+
+              <label for="calcPersons">
+                Jumlah Jamaah
+              </label>
+
+              <input
+                type="number"
+                id="calcPersons"
+                min="2"
+                value="2"
+              >
+
+            </div>
+
+
+            <div class="calc-field">
+
+              <label for="arrivalDate">
+                Tanggal Tiba di Saudi
+              </label>
+
+              <input
+                type="date"
+                id="arrivalDate"
+              >
+
+            </div>
+
+
+            <div class="calc-field">
+
+              <label for="firstCity">
+                Kota Pertama
+              </label>
+
+              <select id="firstCity">
+
+                <option value="makkah">
+                  Makkah
+                </option>
+
+                <option value="madinah">
+                  Madinah
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="calc-field">
+
+              <label for="hotelClass">
+                Kelas Hotel
+              </label>
+
+              <select id="hotelClass">
+
+                <option value="3">
+                  3 Bintang
+                </option>
+
+                <option
+                  value="4"
+                  selected
+                >
+                  4 Bintang
+                </option>
+
+                <option value="5">
+                  5 Bintang
+                </option>
+
+              </select>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- =================================================
+           VISA
+      ================================================== -->
+
+      <div
+        class="calc-section"
+        id="visaSection"
+      >
+
+        <div class="calc-section-head">
+
+          <div class="calc-section-title">
+
+            <div class="calc-section-icon">
+
+              <i class="fa-solid fa-passport"></i>
+
+            </div>
+
+            <div>
+
+              <strong>
+                Visa Umrah
+              </strong>
+
+              <span>
+                Rp2.550.000 / jamaah
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <label class="switch">
+
+            <input
+              type="checkbox"
+              id="includeVisa"
+              checked
+            >
+
+            <span class="slider"></span>
+
+          </label>
+
+        </div>
+
+
+        <div class="calc-section-body">
+
+          <div class="calc-grid">
+
+
+            <div class="calc-field full">
+
+              <label for="externalApproval">
+                Approval Hotel Eksternal
+              </label>
+
+              <select id="externalApproval">
+
+                <option value="0">
+                  Tidak
+                </option>
+
+                <option value="490000">
+                  Ya · + Rp490.000
+                </option>
+
+              </select>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- =================================================
+           HOTEL
+      ================================================== -->
+
+      <div
+        class="calc-section"
+        id="hotelSection"
+      >
+
+        <div class="calc-section-head">
+
+          <div class="calc-section-title">
+
+            <div class="calc-section-icon">
+
+              <i class="fa-solid fa-hotel"></i>
+
+            </div>
+
+            <div>
+
+              <strong>
+                Hotel
+              </strong>
+
+              <span>
+                Makkah & Madinah
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <label class="switch">
+
+            <input
+              type="checkbox"
+              id="includeHotel"
+              checked
+            >
+
+            <span class="slider"></span>
+
+          </label>
+
+        </div>
+
+
+        <div class="calc-section-body">
+
+
+          <div class="calc-grid">
+
+
+            <div class="calc-field">
+
+              <label for="roomType">
+                Tipe Kamar
+              </label>
+
+              <select id="roomType">
+
+                <option value="2">
+                  Double · 2 orang
+                </option>
+
+                <option value="3">
+                  Triple · 3 orang
+                </option>
+
+                <option
+                  value="4"
+                  selected
+                >
+                  Quad · 4 orang
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="calc-field">
+
+              <label for="roomCount">
+                Jumlah Kamar
+              </label>
+
+              <input
+                type="number"
+                id="roomCount"
+                min="1"
+                value="1"
+              >
+
+            </div>
+
+
+            <!-- MAKKAH -->
+
+            <div class="calc-field full">
+
+              <div class="hotel-city-box">
+
+
+                <div class="hotel-city-title">
+
+                  <i class="fa-solid fa-kaaba"></i>
+
+                  Hotel Makkah
+
+                </div>
+
+
+                <div class="calc-grid">
+
+
+                  <div class="calc-field">
+
+                    <label for="makkahNights">
+                      Jumlah Malam
+                    </label>
+
+                    <input
+                      type="number"
+                      id="makkahNights"
+                      min="0"
+                      value="4"
+                    >
+
+                  </div>
+
+
+                  <div class="calc-field">
+
+                    <label for="makkahRate">
+                      Estimasi / Kamar / Malam
+                    </label>
+
+                    <input
+                      type="number"
+                      id="makkahRate"
+                      min="0"
+                      value="1500000"
+                    >
+
+                    <small>
+                      Dapat diganti sesuai quotation hotel.
+                    </small>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <!-- MADINAH -->
+
+            <div class="calc-field full">
+
+              <div class="hotel-city-box">
+
+
+                <div class="hotel-city-title">
+
+                  <i class="fa-solid fa-mosque"></i>
+
+                  Hotel Madinah
+
+                </div>
+
+
+                <div class="calc-grid">
+
+
+                  <div class="calc-field">
+
+                    <label for="madinahNights">
+                      Jumlah Malam
+                    </label>
+
+                    <input
+                      type="number"
+                      id="madinahNights"
+                      min="0"
+                      value="3"
+                    >
+
+                  </div>
+
+
+                  <div class="calc-field">
+
+                    <label for="madinahRate">
+                      Estimasi / Kamar / Malam
+                    </label>
+
+                    <input
+                      type="number"
+                      id="madinahRate"
+                      min="0"
+                      value="1500000"
+                    >
+
+                    <small>
+                      Dapat diganti sesuai quotation hotel.
+                    </small>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- =================================================
+           TRANSPORT
+      ================================================== -->
+
+      <div
+        class="calc-section"
+        id="transportSection"
+      >
+
+        <div class="calc-section-head">
+
+          <div class="calc-section-title">
+
+            <div class="calc-section-icon">
+
+              <i class="fa-solid fa-car-side"></i>
+
+            </div>
+
+            <div>
+
+              <strong>
+                Transportasi
+              </strong>
+
+              <span>
+                Harga per rombongan
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <label class="switch">
+
+            <input
+              type="checkbox"
+              id="includeTransport"
+              checked
+            >
+
+            <span class="slider"></span>
+
+          </label>
+
+        </div>
+
+
+        <div class="calc-section-body">
+
+          <div class="calc-grid">
+
+
+            <div class="calc-field full">
+
+              <label for="transportPackage">
+                Paket Transport
+              </label>
+
+              <select id="transportPackage">
+
+                <option value="0">
+                  Pilih sendiri / belum dihitung
+                </option>
+
+                <option value="1430000">
+                  Jeddah Airport → Makkah · Rp1.430.000
+                </option>
+
+                <option value="2600000">
+                  Jeddah Airport → Madinah · Rp2.600.000
+                </option>
+
+                <option value="980000">
+                  Madinah Airport → Hotel · Rp980.000
+                </option>
+
+                <option value="2430000">
+                  Makkah → Madinah · Rp2.430.000
+                </option>
+
+                <option value="580000">
+                  Hotel → Stasiun Haramain · Rp580.000
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="calc-field full">
+
+              <label for="additionalTransport">
+                Tambahan Transport
+              </label>
+
+              <input
+                type="number"
+                id="additionalTransport"
+                min="0"
+                value="0"
+                placeholder="Contoh: 2430000"
+              >
+
+              <small>
+                Masukkan tambahan rute bila perjalanan
+                membutuhkan lebih dari satu kendaraan/rute.
+              </small>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- =================================================
+           MUTHAWWIF
+      ================================================== -->
+
+      <div
+        class="calc-section"
+        id="muthawwifSection"
+      >
+
+        <div class="calc-section-head">
+
+          <div class="calc-section-title">
+
+            <div class="calc-section-icon">
+
+              <i class="fa-solid fa-person-praying"></i>
+
+            </div>
+
+            <div>
+
+              <strong>
+                Muthawwif
+              </strong>
+
+              <span>
+                Rp1.470.000 / hari / rombongan
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <label class="switch">
+
+            <input
+              type="checkbox"
+              id="includeMuthawwif"
+            >
+
+            <span class="slider"></span>
+
+          </label>
+
+        </div>
+
+
+        <div class="calc-section-body">
+
+          <div class="calc-grid">
+
+
+            <div class="calc-field">
+
+              <label for="muthawwifCalcDays">
+                Jumlah Hari
+              </label>
+
+              <input
+                type="number"
+                id="muthawwifCalcDays"
+                min="3"
+                value="3"
+              >
+
+            </div>
+
+
+            <div class="calc-field">
+
+              <label for="muthawwifArea">
+                Area
+              </label>
+
+              <select id="muthawwifArea">
+
+                <option value="makkah-madinah">
+                  Makkah & Madinah
+                </option>
+
+                <option value="makkah">
+                  Makkah
+                </option>
+
+                <option value="madinah">
+                  Madinah
+                </option>
+
+              </select>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- =================================================
+           BUDGET
+      ================================================== -->
+
+      <div class="calc-section">
+
+        <div class="calc-section-head">
+
+          <div class="calc-section-title">
+
+            <div class="calc-section-icon">
+
+              <i class="fa-solid fa-wallet"></i>
+
+            </div>
+
+            <div>
+
+              <strong>
+                Target Budget
+              </strong>
+
+              <span>
+                Opsional
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="calc-section-body">
+
+          <div class="calc-grid">
+
+
+            <div class="calc-field full">
+
+              <label for="targetBudget">
+                Budget per Jamaah
+              </label>
+
+              <input
+                type="number"
+                id="targetBudget"
+                min="0"
+                value="0"
+                placeholder="Contoh: 12000000"
+              >
+
+              <small>
+                Kalkulator akan membandingkan estimasi
+                biaya dengan target budget Anda.
+              </small>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =================================================
+         SUMMARY
+    ================================================== -->
+
+    <aside class="calculator-summary">
+
+
+      <div class="summary-top">
+
+
+        <div class="summary-top-label">
+          ESTIMASI TOTAL ROMBONGAN
+        </div>
+
+
+        <div
+          class="summary-total"
+          id="grandTotal"
+        >
+          Rp0
+        </div>
+
+
+        <p id="summaryGroupText">
+          Untuk 2 jamaah
+        </p>
+
+
+        <div class="summary-per-person">
+
+          <span>
+            Estimasi / jamaah
+          </span>
+
+          <strong id="perPersonTotal">
+            Rp0
+          </strong>
+
+        </div>
+
+      </div>
+
+
+      <div class="summary-body">
+
+
+        <div class="summary-body-title">
+          Rincian biaya
+        </div>
+
+
+        <div
+          class="breakdown"
+          id="costBreakdown"
+        ></div>
+
+
+        <div
+          class="summary-warning"
+          id="budgetMessage"
+        >
+
+          <i class="fa-solid fa-circle-info"></i>
+
+          <span>
+            Masukkan target budget jika ingin
+            membandingkan estimasi per jamaah.
+          </span>
+
+        </div>
+
+
+        <button
+          type="button"
+          class="calculator-button"
+          id="saveEstimate"
+        >
+
+          <i class="fa-solid fa-receipt"></i>
+
+          Lanjutkan Estimasi
+
+        </button>
+
+
+        <button
+          type="button"
+          class="reset-button"
+          id="resetCalculator"
+        >
+
+          Reset Kalkulator
+
+        </button>
+
+      </div>
+
+    </aside>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     INFO
+===================================================== -->
+
+<section class="calculator-info">
+
+  <div class="container">
+
+
+    <div class="section-title">
+
+      <span>
+        CARA KERJA
+      </span>
+
+      <h2>
+        Satu kalkulator untuk kebutuhan utama
+      </h2>
+
+      <p>
+        Estimasi dibuat agar lebih mudah melihat
+        gambaran biaya sebelum melakukan pemesanan.
+      </p>
+
+    </div>
+
+
+    <div class="calculator-info-grid">
+
+
+      <div class="calculator-info-card">
+
+        <i class="fa-solid fa-users"></i>
+
+        <strong>
+          Tentukan Jamaah
+        </strong>
+
+        <p>
+          Masukkan jumlah orang dalam rombongan.
+          Visa dihitung berdasarkan jumlah jamaah.
+        </p>
+
+      </div>
+
+
+      <div class="calculator-info-card">
+
+        <i class="fa-solid fa-hotel"></i>
+
+        <strong>
+          Masukkan Hotel
+        </strong>
+
+        <p>
+          Atur jumlah kamar, malam dan tarif
+          berdasarkan quotation hotel Anda.
+        </p>
+
+      </div>
+
+
+      <div class="calculator-info-card">
+
+        <i class="fa-solid fa-car-side"></i>
+
+        <strong>
+          Pilih Transport
+        </strong>
+
+        <p>
+          Tambahkan rute perjalanan yang
+          dibutuhkan selama di Saudi.
+        </p>
+
+      </div>
+
+
+      <div class="calculator-info-card">
+
+        <i class="fa-solid fa-calculator"></i>
+
+        <strong>
+          Lihat Total
+        </strong>
+
+        <p>
+          Sistem menghitung total rombongan
+          sekaligus estimasi biaya per jamaah.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+  <div class="container footer-grid">
+
+
+    <div class="footer-brand">
+
+      <a href="index.html" class="brand">
+
+        <div class="brand-logo">
+          R
+        </div>
+
+        <div class="brand-name footer-brand-name">
+
+          <strong>
+            rahayu
+          </strong>
+
+          <small>
+            Umrah Services
+          </small>
+
+        </div>
+
+      </a>
+
+
+      <p>
+        Platform layanan kebutuhan Umrah mandiri:
+        visa, hotel, transportasi dan muthawwif.
+      </p>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>
+        Layanan
+      </h3>
+
+      <a href="visa.html">
+        Visa Umrah
+      </a>
+
+      <a href="hotel.html">
+        Hotel
+      </a>
+
+      <a href="transport.html">
+        Transportasi
+      </a>
+
+      <a href="muthawwif.html">
+        Muthawwif
+      </a>
+
+      <a href="calculator.html">
+        Hitung Biaya
+      </a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>
+        Bantuan
+      </h3>
+
+      <a href="panduan.html">
+        Panduan
+      </a>
+
+      <a href="orders.html">
+        Pesanan Saya
+      </a>
+
+      <a href="login.html">
+        Akun
+      </a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>
+        Informasi
+      </h3>
+
+      <a href="index.html">
+        Tentang Rahayu
+      </a>
+
+      <a href="panduan.html">
+        Syarat & Ketentuan
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <div class="container footer-reference">
+
+    <i class="fa-solid fa-circle-info"></i>
+
+    <p>
+      Hasil kalkulator merupakan estimasi.
+      Harga aktual dapat berubah berdasarkan
+      tanggal perjalanan, hotel, ketersediaan
+      dan ketentuan layanan.
+    </p>
+
+  </div>
+
+
+  <div class="container footer-bottom">
+
+    <p>
+      ©
+      <span id="currentYear">
+        2026
+      </span>
+      Rahayu. All rights reserved.
+    </p>
+
+    <span>
+      Umrah Services
+    </span>
+
+  </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+
+<script>
+
+document.addEventListener(
+  "DOMContentLoaded",
+  function () {
+
+
+    /* =====================================================
+       PRICES
+    ===================================================== */
+
+    const VISA_PRICE =
+      2550000;
+
+    const MUTHAWWIF_PRICE =
+      1470000;
+
+
+    /* =====================================================
+       ELEMENTS
+    ===================================================== */
+
+    const persons =
+      document.getElementById(
+        "calcPersons"
+      );
+
+    const includeVisa =
+      document.getElementById(
+        "includeVisa"
+      );
+
+    const includeHotel =
+      document.getElementById(
+        "includeHotel"
+      );
+
+    const includeTransport =
+      document.getElementById(
+        "includeTransport"
+      );
+
+    const includeMuthawwif =
+      document.getElementById(
+        "includeMuthawwif"
+      );
+
+
+    const visaSection =
+      document.getElementById(
+        "visaSection"
+      );
+
+    const hotelSection =
+      document.getElementById(
+        "hotelSection"
+      );
+
+    const transportSection =
+      document.getElementById(
+        "transportSection"
+      );
+
+    const muthawwifSection =
+      document.getElementById(
+        "muthawwifSection"
+      );
+
+
+    const externalApproval =
+      document.getElementById(
+        "externalApproval"
+      );
+
+
+    const roomType =
+      document.getElementById(
+        "roomType"
+      );
+
+    const roomCount =
+      document.getElementById(
+        "roomCount"
+      );
+
+    const makkahNights =
+      document.getElementById(
+        "makkahNights"
+      );
+
+    const makkahRate =
+      document.getElementById(
+        "makkahRate"
+      );
+
+    const madinahNights =
+      document.getElementById(
+        "madinahNights"
+      );
+
+    const madinahRate =
+      document.getElementById(
+        "madinahRate"
+      );
+
+
+    const transportPackage =
+      document.getElementById(
+        "transportPackage"
+      );
+
+    const additionalTransport =
+      document.getElementById(
+        "additionalTransport"
+      );
+
+
+    const muthawwifDays =
+      document.getElementById(
+        "muthawwifCalcDays"
+      );
+
+
+    const targetBudget =
+      document.getElementById(
+        "targetBudget"
+      );
+
+
+    const grandTotal =
+      document.getElementById(
+        "grandTotal"
+      );
+
+    const perPersonTotal =
+      document.getElementById(
+        "perPersonTotal"
+      );
+
+    const breakdown =
+      document.getElementById(
+        "costBreakdown"
+      );
+
+    const summaryGroupText =
+      document.getElementById(
+        "summaryGroupText"
+      );
+
+    const budgetMessage =
+      document.getElementById(
+        "budgetMessage"
+      );
+
+
+    /* =====================================================
+       FORMAT
+    ===================================================== */
+
+    function rupiah(number) {
+
+      return new Intl.NumberFormat(
+        "id-ID",
+        {
+          style: "currency",
+          currency: "IDR",
+          minimumFractionDigits: 0
+        }
+      ).format(number);
+
+    }
+
+
+    function numberValue(element) {
+
+      const value =
+        parseInt(
+          element.value
+        );
+
+      return isNaN(value)
+        ? 0
+        : value;
+
+    }
+
+
+    /* =====================================================
+       ENABLE / DISABLE
+    ===================================================== */
+
+    function updateSectionState() {
+
+      visaSection.classList.toggle(
+        "disabled",
+        !includeVisa.checked
+      );
+
+      hotelSection.classList.toggle(
+        "disabled",
+        !includeHotel.checked
+      );
+
+      transportSection.classList.toggle(
+        "disabled",
+        !includeTransport.checked
+      );
+
+      muthawwifSection.classList.toggle(
+        "disabled",
+        !includeMuthawwif.checked
+      );
+
+    }
+
+
+    /* =====================================================
+       CALCULATION
+    ===================================================== */
+
+    function calculate() {
+
+
+      let totalPersons =
+        Math.max(
+          2,
+          numberValue(persons)
+        );
+
+
+      if (
+        numberValue(persons) < 2
+      ) {
+
+        persons.value =
+          2;
+
+      }
+
+
+      /* VISA */
+
+      let visaCost = 0;
+
+      if (
+        includeVisa.checked
+      ) {
+
+        visaCost =
+          totalPersons *
+          VISA_PRICE;
+
+        visaCost +=
+          numberValue(
+            externalApproval
+          );
+
+      }
+
+
+      /* HOTEL */
+
+      let hotelCost = 0;
+
+      let makkahHotelCost = 0;
+
+      let madinahHotelCost = 0;
+
+
+      if (
+        includeHotel.checked
+      ) {
+
+
+        const rooms =
+          Math.max(
+            1,
+            numberValue(
+              roomCount
+            )
+          );
+
+
+        makkahHotelCost =
+          Math.max(
+            0,
+            numberValue(
+              makkahNights
+            )
+          )
+          *
+          Math.max(
+            0,
+            numberValue(
+              makkahRate
+            )
+          )
+          *
+          rooms;
+
+
+        madinahHotelCost =
+          Math.max(
+            0,
+            numberValue(
+              madinahNights
+            )
+          )
+          *
+          Math.max(
+            0,
+            numberValue(
+              madinahRate
+            )
+          )
+          *
+          rooms;
+
+
+        hotelCost =
+          makkahHotelCost +
+          madinahHotelCost;
+
+      }
+
+
+      /* TRANSPORT */
+
+      let transportCost = 0;
+
+
+      if (
+        includeTransport.checked
+      ) {
+
+        transportCost =
+          numberValue(
+            transportPackage
+          )
+          +
+          Math.max(
+            0,
+            numberValue(
+              additionalTransport
+            )
+          );
+
+      }
+
+
+      /* MUTHAWWIF */
+
+      let muthawwifCost = 0;
+
+
+      if (
+        includeMuthawwif.checked
+      ) {
+
+
+        let days =
+          Math.max(
+            3,
+            numberValue(
+              muthawwifDays
+            )
+          );
+
+
+        if (
+          numberValue(
+            muthawwifDays
+          ) < 3
+        ) {
+
+          muthawwifDays.value =
+            3;
+
+        }
+
+
+        muthawwifCost =
+          days *
+          MUTHAWWIF_PRICE;
+
+      }
+
+
+      /* GRAND TOTAL */
+
+      const total =
+        visaCost +
+        hotelCost +
+        transportCost +
+        muthawwifCost;
+
+
+      const perPerson =
+        Math.ceil(
+          total /
+          totalPersons
+        );
+
+
+      /* DISPLAY */
+
+      grandTotal.textContent =
+        rupiah(total);
+
+
+      perPersonTotal.textContent =
+        rupiah(perPerson);
+
+
+      summaryGroupText.textContent =
+        `Untuk ${totalPersons} jamaah`;
+
+
+      /* BREAKDOWN */
+
+      let rows = "";
+
+
+      if (
+        includeVisa.checked
+      ) {
+
+        rows += `
+
+          <div class="breakdown-row">
+
+            <span>
+              Visa · ${totalPersons} jamaah
+            </span>
+
+            <strong>
+              ${rupiah(visaCost)}
+            </strong>
+
+          </div>
+
+        `;
+
+      }
+
+
+      if (
+        includeHotel.checked
+      ) {
+
+        rows += `
+
+          <div class="breakdown-row">
+
+            <span>
+              Hotel Makkah
+            </span>
+
+            <strong>
+              ${rupiah(makkahHotelCost)}
+            </strong>
+
+          </div>
+
+
+          <div class="breakdown-row">
+
+            <span>
+              Hotel Madinah
+            </span>
+
+            <strong>
+              ${rupiah(madinahHotelCost)}
+            </strong>
+
+          </div>
+
+        `;
+
+      }
+
+
+      if (
+        includeTransport.checked
+      ) {
+
+        rows += `
+
+          <div class="breakdown-row">
+
+            <span>
+              Transportasi
+            </span>
+
+            <strong>
+              ${rupiah(transportCost)}
+            </strong>
+
+          </div>
+
+        `;
+
+      }
+
+
+      if (
+        includeMuthawwif.checked
+      ) {
+
+        rows += `
+
+          <div class="breakdown-row">
+
+            <span>
+              Muthawwif
+            </span>
+
+            <strong>
+              ${rupiah(muthawwifCost)}
+            </strong>
+
+          </div>
+
+        `;
+
+      }
+
+
+      if (!rows) {
+
+        rows = `
+
+          <div class="breakdown-row muted">
+
+            <span>
+              Belum ada layanan dipilih
+            </span>
+
+            <strong>
+              Rp0
+            </strong>
+
+          </div>
+
+        `;
+
+      }
+
+
+      breakdown.innerHTML =
+        rows;
+
+
+      /* BUDGET */
+
+      const budget =
+        Math.max(
+          0,
+          numberValue(
+            targetBudget
+          )
+        );
+
+
+      if (budget <= 0) {
+
+        budgetMessage.innerHTML = `
+
+          <i class="fa-solid fa-circle-info"></i>
+
+          <span>
+            Masukkan target budget jika ingin
+            membandingkan estimasi per jamaah.
+          </span>
+
+        `;
+
+      }
+
+      else if (
+        perPerson <= budget
+      ) {
+
+        const difference =
+          budget -
+          perPerson;
+
+
+        budgetMessage.innerHTML = `
+
+          <i
+            class="fa-solid fa-circle-check"
+            style="color:#159669"
+          ></i>
+
+          <span>
+            Estimasi masih di bawah target budget
+            sekitar <strong>${rupiah(difference)}</strong>
+            per jamaah.
+          </span>
+
+        `;
+
+      }
+
+      else {
+
+        const difference =
+          perPerson -
+          budget;
+
+
+        budgetMessage.innerHTML = `
+
+          <i
+            class="fa-solid fa-triangle-exclamation"
+            style="color:#b88727"
+          ></i>
+
+          <span>
+            Estimasi melebihi target budget sekitar
+            <strong>${rupiah(difference)}</strong>
+            per jamaah.
+          </span>
+
+        `;
+
+      }
+
+
+      /* RETURN DATA */
+
+      return {
+
+        persons:
+          totalPersons,
+
+        visa:
+          visaCost,
+
+        hotel:
+          hotelCost,
+
+        transport:
+          transportCost,
+
+        muthawwif:
+          muthawwifCost,
+
+        total:
+          total,
+
+        perPerson:
+          perPerson
+
+      };
+
+    }
+
+
+    /* =====================================================
+       AUTO ROOM CALCULATION
+    ===================================================== */
+
+    function suggestRooms() {
+
+      const totalPersons =
+        Math.max(
+          2,
+          numberValue(
+            persons
+          )
+        );
+
+
+      const capacity =
+        Math.max(
+          1,
+          numberValue(
+            roomType
+          )
+        );
+
+
+      const recommendedRooms =
+        Math.ceil(
+          totalPersons /
+          capacity
+        );
+
+
+      roomCount.value =
+        recommendedRooms;
+
+    }
+
+
+    /* =====================================================
+       INPUT EVENTS
+    ===================================================== */
+
+    const allInputs =
+      document.querySelectorAll(
+        ".calculator-card input, .calculator-card select"
+      );
+
+
+    allInputs.forEach(
+      element => {
+
+        element.addEventListener(
+          "input",
+          function () {
+
+            updateSectionState();
+
+            calculate();
+
+          }
+        );
+
+
+        element.addEventListener(
+          "change",
+          function () {
+
+            updateSectionState();
+
+            calculate();
+
+          }
+        );
+
+      }
+    );
+
+
+    persons.addEventListener(
+      "change",
+      function () {
+
+        suggestRooms();
+
+        calculate();
+
+      }
+    );
+
+
+    roomType.addEventListener(
+      "change",
+      function () {
+
+        suggestRooms();
+
+        calculate();
+
+      }
+    );
+
+
+    /* =====================================================
+       SAVE / CONTINUE
+    ===================================================== */
+
+    document
+      .getElementById(
+        "saveEstimate"
+      )
+      .addEventListener(
+        "click",
+        function () {
+
+
+          const data =
+            calculate();
+
+
+          const params =
+            new URLSearchParams();
+
+
+          params.set(
+            "service",
+            "estimate"
+          );
+
+
+          params.set(
+            "persons",
+            data.persons
+          );
+
+
+          params.set(
+            "visa",
+            data.visa
+          );
+
+
+          params.set(
+            "hotel",
+            data.hotel
+          );
+
+
+          params.set(
+            "transport",
+            data.transport
+          );
+
+
+          params.set(
+            "muthawwif",
+            data.muthawwif
+          );
+
+
+          params.set(
+            "total",
+            data.total
+          );
+
+
+          params.set(
+            "perperson",
+            data.perPerson
+          );
+
+
+          const arrivalDate =
+            document.getElementById(
+              "arrivalDate"
+            ).value;
+
+
+          const firstCity =
+            document.getElementById(
+              "firstCity"
+            ).value;
+
+
+          const hotelClass =
+            document.getElementById(
+              "hotelClass"
+            ).value;
+
+
+          if (arrivalDate) {
+
+            params.set(
+              "arrival",
+              arrivalDate
+            );
+
+          }
+
+
+          params.set(
+            "firstcity",
+            firstCity
+          );
+
+
+          params.set(
+            "hotelclass",
+            hotelClass
+          );
+
+
+          window.location.href =
+            "orders.html?" +
+            params.toString();
+
+        }
+      );
+
+
+    /* =====================================================
+       RESET
+    ===================================================== */
+
+    document
+      .getElementById(
+        "resetCalculator"
+      )
+      .addEventListener(
+        "click",
+        function () {
+
+
+          persons.value =
+            2;
+
+
+          document
+            .getElementById(
+              "arrivalDate"
+            ).value =
+            "";
+
+
+          document
+            .getElementById(
+              "firstCity"
+            ).value =
+            "makkah";
+
+
+          document
+            .getElementById(
+              "hotelClass"
+            ).value =
+            "4";
+
+
+          includeVisa.checked =
+            true;
+
+
+          includeHotel.checked =
+            true;
+
+
+          includeTransport.checked =
+            true;
+
+
+          includeMuthawwif.checked =
+            false;
+
+
+          externalApproval.value =
+            "0";
+
+
+          roomType.value =
+            "4";
+
+
+          roomCount.value =
+            "1";
+
+
+          makkahNights.value =
+            "4";
+
+
+          madinahNights.value =
+            "3";
+
+
+          makkahRate.value =
+            "1500000";
+
+
+          madinahRate.value =
+            "1500000";
+
+
+          transportPackage.value =
+            "0";
+
+
+          additionalTransport.value =
+            "0";
+
+
+          muthawwifDays.value =
+            "3";
+
+
+          targetBudget.value =
+            "0";
+
+
+          updateSectionState();
+
+          calculate();
+
+        }
+      );
+
+
+    /* =====================================================
+       INITIAL
+    ===================================================== */
+
+    suggestRooms();
+
+    updateSectionState();
+
+    calculate();
+
+  }
+);
+
+</script>
+
+
+</body>
+
+</html>
