@@ -721,7 +721,7 @@ const RAHAYU_PRICES = {
 
     pricePerPerson: 2550000,
 
-    minimumPersons: 2,
+    minimumPersons: 1,
 
     externalHotelApproval: 490000
 
