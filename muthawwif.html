@@ -1,0 +1,2383 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Muthawwif Umrah | Rahayu</title>
+
+  <meta
+    name="description"
+    content="Layanan pendamping Muthawwif untuk jamaah Umrah mandiri di Makkah dan Madinah."
+  >
+
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+  >
+
+  <link rel="stylesheet" href="style.css">
+
+
+  <style>
+
+    /* =====================================================
+       HERO INFO
+    ===================================================== */
+
+    .muthawwif-hero-price {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 18px;
+
+      margin-top: 26px;
+    }
+
+    .muthawwif-price-box {
+      padding: 15px 19px;
+
+      border: 1px solid rgba(8,102,93,.12);
+      border-radius: 13px;
+
+      background: #fff;
+
+      box-shadow:
+        0 8px 25px rgba(18,40,39,.05);
+    }
+
+    .muthawwif-price-box small {
+      display: block;
+
+      margin-bottom: 3px;
+
+      color: #8b9698;
+
+      font-size: 8px;
+      font-weight: 600;
+    }
+
+    .muthawwif-price-box strong {
+      color: #08665d;
+
+      font-size: 24px;
+      font-weight: 800;
+
+      letter-spacing: -1px;
+    }
+
+    .muthawwif-price-box span {
+      color: #8b9698;
+
+      font-size: 8px;
+    }
+
+    .muthawwif-minimum {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+
+      color: #647174;
+
+      font-size: 9px;
+    }
+
+    .muthawwif-minimum i {
+      color: #159669;
+    }
+
+
+    /* =====================================================
+       BOOKING
+    ===================================================== */
+
+    .muthawwif-booking {
+      padding: 65px 0 90px;
+
+      background: #f7f8f7;
+    }
+
+    .muthawwif-layout {
+      display: grid;
+
+      grid-template-columns:
+        minmax(0,1.2fr)
+        minmax(290px,.8fr);
+
+      gap: 24px;
+
+      align-items: start;
+    }
+
+    .muthawwif-form-card,
+    .muthawwif-summary {
+      padding: 28px;
+
+      border: 1px solid #e4e8e7;
+      border-radius: 16px;
+
+      background: #fff;
+
+      box-shadow:
+        0 8px 25px rgba(18,40,39,.06);
+    }
+
+    .muthawwif-form-title {
+      margin-bottom: 24px;
+    }
+
+    .muthawwif-form-title span {
+      display: block;
+
+      margin-bottom: 5px;
+
+      color: #08665d;
+
+      font-size: 8px;
+      font-weight: 800;
+
+      letter-spacing: 1.1px;
+    }
+
+    .muthawwif-form-title h2 {
+      margin-bottom: 6px;
+
+      color: #172326;
+
+      font-size: 21px;
+      font-weight: 800;
+    }
+
+    .muthawwif-form-title p {
+      color: #778386;
+
+      font-size: 9px;
+      line-height: 1.65;
+    }
+
+
+    /* =====================================================
+       FORM
+    ===================================================== */
+
+    .muthawwif-form-grid {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 13px;
+    }
+
+    .muthawwif-field {
+      margin-bottom: 13px;
+    }
+
+    .muthawwif-field.full {
+      grid-column: 1 / -1;
+    }
+
+    .muthawwif-field label {
+      display: block;
+
+      margin-bottom: 6px;
+
+      color: #526164;
+
+      font-size: 8px;
+      font-weight: 700;
+    }
+
+    .muthawwif-field input,
+    .muthawwif-field select,
+    .muthawwif-field textarea {
+      width: 100%;
+
+      outline: none;
+
+      border: 1px solid #e4e8e7;
+      border-radius: 9px;
+
+      background: #fbfcfc;
+
+      color: #172326;
+
+      font-family: inherit;
+      font-size: 10px;
+
+      transition: .2s ease;
+    }
+
+    .muthawwif-field input,
+    .muthawwif-field select {
+      height: 46px;
+
+      padding: 0 12px;
+    }
+
+    .muthawwif-field textarea {
+      min-height: 100px;
+
+      padding: 12px;
+
+      resize: vertical;
+    }
+
+    .muthawwif-field input:focus,
+    .muthawwif-field select:focus,
+    .muthawwif-field textarea:focus {
+      border-color: #08665d;
+
+      background: white;
+
+      box-shadow:
+        0 0 0 3px rgba(8,102,93,.07);
+    }
+
+
+    /* =====================================================
+       DAY COUNTER
+    ===================================================== */
+
+    .day-counter {
+      display: grid;
+
+      grid-template-columns:
+        45px 1fr 45px;
+
+      gap: 7px;
+    }
+
+    .day-counter-button {
+      height: 46px;
+
+      display: grid;
+      place-items: center;
+
+      border: 1px solid #e4e8e7;
+      border-radius: 9px;
+
+      background: white;
+
+      color: #08665d;
+
+      cursor: pointer;
+    }
+
+    .day-counter-button:hover {
+      border-color: #08665d;
+
+      background: #eaf5f3;
+    }
+
+    #muthawwifDays {
+      text-align: center;
+
+      font-weight: 800;
+    }
+
+
+    /* =====================================================
+       SERVICE OPTION
+    ===================================================== */
+
+    .service-options {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 9px;
+
+      margin-top: 3px;
+    }
+
+    .service-option {
+      position: relative;
+
+      padding: 15px;
+
+      border: 1px solid #e4e8e7;
+      border-radius: 11px;
+
+      background: #fbfcfc;
+
+      cursor: pointer;
+
+      transition: .2s ease;
+    }
+
+    .service-option:hover {
+      border-color: rgba(8,102,93,.4);
+    }
+
+    .service-option.active {
+      border: 1.5px solid #08665d;
+
+      background: #f7fcfa;
+    }
+
+    .service-option-icon {
+      width: 37px;
+      height: 37px;
+
+      display: grid;
+      place-items: center;
+
+      margin-bottom: 10px;
+
+      border-radius: 9px;
+
+      background: #eaf5f3;
+
+      color: #08665d;
+    }
+
+    .service-option strong {
+      display: block;
+
+      margin-bottom: 3px;
+
+      color: #172326;
+
+      font-size: 9px;
+    }
+
+    .service-option span {
+      display: block;
+
+      color: #8b9698;
+
+      font-size: 7px;
+      line-height: 1.5;
+    }
+
+
+    /* =====================================================
+       SUMMARY
+    ===================================================== */
+
+    .muthawwif-summary {
+      position: sticky;
+
+      top: 95px;
+    }
+
+    .summary-label {
+      margin-bottom: 4px;
+
+      color: #8b9698;
+
+      font-size: 8px;
+      font-weight: 700;
+
+      letter-spacing: .8px;
+    }
+
+    .muthawwif-total {
+      margin-bottom: 4px;
+
+      color: #08665d;
+
+      font-size: 29px;
+      font-weight: 800;
+
+      letter-spacing: -1px;
+    }
+
+    .summary-caption {
+      margin-bottom: 21px;
+
+      color: #8b9698;
+
+      font-size: 8px;
+    }
+
+    .summary-list {
+      display: flex;
+      flex-direction: column;
+
+      margin-bottom: 20px;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+
+      padding: 9px 0;
+
+      border-bottom: 1px solid #edf0ef;
+
+      font-size: 8px;
+    }
+
+    .summary-row span {
+      color: #778386;
+    }
+
+    .summary-row strong {
+      color: #172326;
+
+      text-align: right;
+    }
+
+    .muthawwif-order-button {
+      width: 100%;
+      min-height: 48px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+
+      border: 0;
+      border-radius: 9px;
+
+      background: #08665d;
+
+      color: #fff;
+
+      font-size: 10px;
+      font-weight: 700;
+
+      cursor: pointer;
+    }
+
+    .muthawwif-order-button:hover {
+      background: #064d47;
+    }
+
+    .summary-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 7px;
+
+      margin-top: 15px;
+
+      padding: 11px;
+
+      border-radius: 8px;
+
+      background: #f7f8f7;
+
+      color: #778386;
+
+      font-size: 7px;
+      line-height: 1.6;
+    }
+
+    .summary-note i {
+      margin-top: 2px;
+
+      color: #08665d;
+    }
+
+
+    /* =====================================================
+       INCLUDED
+    ===================================================== */
+
+    .included-section {
+      padding: 90px 0;
+
+      background: white;
+    }
+
+    .included-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3,1fr);
+
+      gap: 15px;
+
+      margin-top: 35px;
+    }
+
+    .included-card {
+      padding: 22px;
+
+      border: 1px solid #e4e8e7;
+      border-radius: 13px;
+
+      background: white;
+    }
+
+    .included-icon {
+      width: 40px;
+      height: 40px;
+
+      display: grid;
+      place-items: center;
+
+      margin-bottom: 14px;
+
+      border-radius: 10px;
+
+      background: #eaf5f3;
+
+      color: #08665d;
+
+      font-size: 14px;
+    }
+
+    .included-card h3 {
+      margin-bottom: 6px;
+
+      color: #172326;
+
+      font-size: 11px;
+    }
+
+    .included-card p {
+      color: #778386;
+
+      font-size: 8px;
+      line-height: 1.7;
+    }
+
+
+    /* =====================================================
+       PROGRAM
+    ===================================================== */
+
+    .program-section {
+      padding: 80px 0;
+
+      background: #f7f8f7;
+    }
+
+    .program-layout {
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 18px;
+
+      margin-top: 35px;
+    }
+
+    .program-card {
+      padding: 24px;
+
+      border: 1px solid #e4e8e7;
+      border-radius: 14px;
+
+      background: white;
+    }
+
+    .program-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      margin-bottom: 17px;
+    }
+
+    .program-icon {
+      width: 38px;
+      height: 38px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 9px;
+
+      background: #eaf5f3;
+
+      color: #08665d;
+    }
+
+    .program-head span {
+      display: block;
+
+      margin-bottom: 2px;
+
+      color: #8b9698;
+
+      font-size: 7px;
+    }
+
+    .program-head h3 {
+      font-size: 12px;
+    }
+
+    .program-list {
+      display: flex;
+      flex-direction: column;
+
+      gap: 10px;
+    }
+
+    .program-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+
+      color: #647174;
+
+      font-size: 8px;
+      line-height: 1.6;
+    }
+
+    .program-list i {
+      margin-top: 3px;
+
+      color: #159669;
+
+      font-size: 7px;
+    }
+
+
+    /* =====================================================
+       RESPONSIVE
+    ===================================================== */
+
+    @media(max-width:900px) {
+
+      .muthawwif-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .muthawwif-summary {
+        position: static;
+      }
+
+      .included-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+    }
+
+    @media(max-width:600px) {
+
+      .muthawwif-booking {
+        padding: 45px 0 65px;
+      }
+
+      .muthawwif-form-card,
+      .muthawwif-summary {
+        padding: 20px;
+      }
+
+      .muthawwif-form-grid,
+      .service-options,
+      .included-grid,
+      .program-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .muthawwif-field.full {
+        grid-column: auto;
+      }
+
+      .muthawwif-hero-price {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .muthawwif-price-box {
+        width: 100%;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header
+  class="main-header"
+  id="mainHeader"
+>
+
+  <div class="container navbar">
+
+
+    <a
+      href="index.html"
+      class="brand"
+    >
+
+      <div class="brand-logo">
+        R
+      </div>
+
+      <div class="brand-name">
+
+        <strong>
+          rahayu
+        </strong>
+
+        <small>
+          Umrah Services
+        </small>
+
+      </div>
+
+    </a>
+
+
+    <nav class="desktop-menu">
+
+      <a
+        href="index.html"
+        class="nav-item"
+      >
+        Beranda
+      </a>
+
+      <a
+        href="panduan.html"
+        class="nav-item"
+      >
+        Panduan
+      </a>
+
+      <a
+        href="orders.html"
+        class="nav-item"
+      >
+        Pesanan Saya
+      </a>
+
+      <a
+        href="login.html"
+        class="nav-item"
+      >
+        Akun
+      </a>
+
+    </nav>
+
+
+    <div class="nav-right">
+
+      <a
+        href="calculator.html"
+        class="nav-calculate"
+      >
+
+        <i class="fa-solid fa-calculator"></i>
+
+        Hitung Biaya
+
+      </a>
+
+
+      <button
+        class="mobile-menu-btn"
+        id="mobileMenuBtn"
+        aria-label="Menu"
+      >
+
+        <i class="fa-solid fa-bars"></i>
+
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div
+    class="mobile-menu"
+    id="mobileMenu"
+  >
+
+    <a href="index.html">
+
+      <i class="fa-solid fa-house"></i>
+
+      Beranda
+
+    </a>
+
+
+    <a href="visa.html">
+
+      <i class="fa-solid fa-passport"></i>
+
+      Visa
+
+    </a>
+
+
+    <a href="hotel.html">
+
+      <i class="fa-solid fa-hotel"></i>
+
+      Hotel
+
+    </a>
+
+
+    <a href="transport.html">
+
+      <i class="fa-solid fa-car-side"></i>
+
+      Transportasi
+
+    </a>
+
+
+    <a href="orders.html">
+
+      <i class="fa-solid fa-receipt"></i>
+
+      Pesanan Saya
+
+    </a>
+
+
+    <a
+      href="calculator.html"
+      class="mobile-calculate"
+    >
+
+      <i class="fa-solid fa-calculator"></i>
+
+      Hitung Biaya
+
+    </a>
+
+  </div>
+
+</header>
+
+
+<main>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="page-header">
+
+  <div class="container">
+
+    <div class="page-header-content">
+
+
+      <div class="page-breadcrumb">
+
+        <a href="index.html">
+          Beranda
+        </a>
+
+        <i class="fa-solid fa-chevron-right"></i>
+
+        <span>
+          Muthawwif
+        </span>
+
+      </div>
+
+
+      <div class="page-label">
+
+        <i class="fa-solid fa-person-praying"></i>
+
+        PENDAMPING UMRAH
+
+      </div>
+
+
+      <h1>
+        Muthawwif
+      </h1>
+
+
+      <p>
+        Pendamping perjalanan untuk membantu
+        jamaah selama pelaksanaan ibadah dan
+        kegiatan Umrah di Makkah dan Madinah.
+      </p>
+
+
+      <div class="muthawwif-hero-price">
+
+
+        <div class="muthawwif-price-box">
+
+          <small>
+            Harga referensi
+          </small>
+
+          <strong>
+            Rp1.470.000
+          </strong>
+
+          <span>
+            / hari / rombongan
+          </span>
+
+        </div>
+
+
+        <div class="muthawwif-minimum">
+
+          <i class="fa-solid fa-circle-check"></i>
+
+          Minimum pemesanan 3 hari
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     BOOKING
+===================================================== -->
+
+<section class="muthawwif-booking">
+
+  <div class="container muthawwif-layout">
+
+
+    <!-- LEFT -->
+
+    <div class="muthawwif-form-card">
+
+
+      <div class="muthawwif-form-title">
+
+        <span>
+          PESAN MUTHAWWIF
+        </span>
+
+        <h2>
+          Detail kebutuhan pendamping
+        </h2>
+
+        <p>
+          Masukkan jumlah hari dan informasi
+          rombongan untuk melihat estimasi biaya.
+        </p>
+
+      </div>
+
+
+      <form id="muthawwifForm">
+
+
+        <div class="muthawwif-form-grid">
+
+
+          <!-- DAYS -->
+
+          <div class="muthawwif-field">
+
+            <label for="muthawwifDays">
+              Jumlah Hari
+            </label>
+
+
+            <div class="day-counter">
+
+
+              <button
+                type="button"
+                class="day-counter-button"
+                id="decreaseDays"
+              >
+
+                <i class="fa-solid fa-minus"></i>
+
+              </button>
+
+
+              <input
+                type="number"
+                id="muthawwifDays"
+                value="3"
+                min="3"
+              >
+
+
+              <button
+                type="button"
+                class="day-counter-button"
+                id="increaseDays"
+              >
+
+                <i class="fa-solid fa-plus"></i>
+
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- JAMAAH -->
+
+          <div class="muthawwif-field">
+
+            <label for="muthawwifPersons">
+              Jumlah Jamaah
+            </label>
+
+            <input
+              type="number"
+              id="muthawwifPersons"
+              value="10"
+              min="1"
+            >
+
+          </div>
+
+
+          <!-- START DATE -->
+
+          <div class="muthawwif-field">
+
+            <label for="muthawwifDate">
+              Tanggal Mulai
+            </label>
+
+            <input
+              type="date"
+              id="muthawwifDate"
+            >
+
+          </div>
+
+
+          <!-- LANGUAGE -->
+
+          <div class="muthawwif-field">
+
+            <label for="muthawwifLanguage">
+              Bahasa
+            </label>
+
+            <select id="muthawwifLanguage">
+
+              <option value="indonesia">
+                Bahasa Indonesia
+              </option>
+
+              <option value="arabic">
+                Bahasa Arab
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <!-- CITY -->
+
+          <div class="muthawwif-field full">
+
+            <label>
+              Area Pendampingan
+            </label>
+
+
+            <div class="service-options">
+
+
+              <div
+                class="service-option active"
+                data-area="makkah-madinah"
+              >
+
+                <div class="service-option-icon">
+
+                  <i class="fa-solid fa-kaaba"></i>
+
+                </div>
+
+                <strong>
+                  Makkah & Madinah
+                </strong>
+
+                <span>
+                  Pendampingan perjalanan
+                  di dua kota.
+                </span>
+
+              </div>
+
+
+              <div
+                class="service-option"
+                data-area="makkah"
+              >
+
+                <div class="service-option-icon">
+
+                  <i class="fa-solid fa-kaaba"></i>
+
+                </div>
+
+                <strong>
+                  Makkah
+                </strong>
+
+                <span>
+                  Pendampingan kegiatan
+                  selama di Makkah.
+                </span>
+
+              </div>
+
+
+              <div
+                class="service-option"
+                data-area="madinah"
+              >
+
+                <div class="service-option-icon">
+
+                  <i class="fa-solid fa-mosque"></i>
+
+                </div>
+
+                <strong>
+                  Madinah
+                </strong>
+
+                <span>
+                  Pendampingan kegiatan
+                  selama di Madinah.
+                </span>
+
+              </div>
+
+
+              <div
+                class="service-option"
+                data-area="custom"
+              >
+
+                <div class="service-option-icon">
+
+                  <i class="fa-solid fa-route"></i>
+
+                </div>
+
+                <strong>
+                  Custom
+                </strong>
+
+                <span>
+                  Sesuaikan dengan itinerary
+                  rombongan.
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- NOTES -->
+
+          <div class="muthawwif-field full">
+
+            <label for="muthawwifNotes">
+              Catatan
+            </label>
+
+            <textarea
+              id="muthawwifNotes"
+              placeholder="Contoh: membutuhkan pendamping saat Umrah pertama, ziarah Madinah, atau kebutuhan lainnya."
+            ></textarea>
+
+          </div>
+
+        </div>
+
+
+        <button
+          type="submit"
+          class="submit-btn"
+        >
+
+          <i class="fa-solid fa-calculator"></i>
+
+          Hitung Biaya
+
+        </button>
+
+      </form>
+
+    </div>
+
+
+    <!-- =================================================
+         SUMMARY
+    ================================================== -->
+
+    <aside class="muthawwif-summary">
+
+
+      <div class="summary-label">
+        ESTIMASI TOTAL
+      </div>
+
+
+      <div
+        class="muthawwif-total"
+        id="muthawwifTotal"
+      >
+        Rp4.410.000
+      </div>
+
+
+      <div class="summary-caption">
+        Harga per rombongan
+      </div>
+
+
+      <div class="summary-list">
+
+
+        <div class="summary-row">
+
+          <span>
+            Tarif
+          </span>
+
+          <strong>
+            Rp1.470.000 / hari
+          </strong>
+
+        </div>
+
+
+        <div class="summary-row">
+
+          <span>
+            Durasi
+          </span>
+
+          <strong id="summaryDays">
+            3 hari
+          </strong>
+
+        </div>
+
+
+        <div class="summary-row">
+
+          <span>
+            Jamaah
+          </span>
+
+          <strong id="summaryPersons">
+            10 jamaah
+          </strong>
+
+        </div>
+
+
+        <div class="summary-row">
+
+          <span>
+            Area
+          </span>
+
+          <strong id="summaryArea">
+            Makkah & Madinah
+          </strong>
+
+        </div>
+
+
+        <div class="summary-row">
+
+          <span>
+            Biaya / jamaah
+          </span>
+
+          <strong id="summaryPerPerson">
+            Rp441.000
+          </strong>
+
+        </div>
+
+      </div>
+
+
+      <button
+        type="button"
+        class="muthawwif-order-button"
+        id="muthawwifOrderButton"
+      >
+
+        Tambah ke Pesanan
+
+        <i class="fa-solid fa-arrow-right"></i>
+
+      </button>
+
+
+      <div class="summary-note">
+
+        <i class="fa-solid fa-circle-info"></i>
+
+        <span>
+          Harga merupakan referensi per rombongan,
+          bukan per jamaah. Biaya per jamaah hanya
+          ditampilkan untuk membantu perhitungan.
+        </span>
+
+      </div>
+
+    </aside>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     INCLUDED
+===================================================== -->
+
+<section class="included-section">
+
+  <div class="container">
+
+
+    <div class="section-title">
+
+      <span>
+        LAYANAN
+      </span>
+
+      <h2>
+        Pendampingan selama perjalanan
+      </h2>
+
+      <p>
+        Kebutuhan pendampingan dapat disesuaikan
+        dengan itinerary dan kondisi rombongan.
+      </p>
+
+    </div>
+
+
+    <div class="included-grid">
+
+
+      <div class="included-card">
+
+        <div class="included-icon">
+
+          <i class="fa-solid fa-kaaba"></i>
+
+        </div>
+
+        <h3>
+          Pendampingan Umrah
+        </h3>
+
+        <p>
+          Membantu jamaah memahami alur
+          perjalanan dan pelaksanaan kegiatan
+          Umrah sesuai program.
+        </p>
+
+      </div>
+
+
+      <div class="included-card">
+
+        <div class="included-icon">
+
+          <i class="fa-solid fa-mosque"></i>
+
+        </div>
+
+        <h3>
+          Makkah & Madinah
+        </h3>
+
+        <p>
+          Pendampingan dapat dilakukan di
+          Makkah, Madinah, atau keduanya
+          sesuai kebutuhan rombongan.
+        </p>
+
+      </div>
+
+
+      <div class="included-card">
+
+        <div class="included-icon">
+
+          <i class="fa-solid fa-users"></i>
+
+        </div>
+
+        <h3>
+          Satu Rombongan
+        </h3>
+
+        <p>
+          Tarif dihitung per rombongan per hari,
+          sehingga dapat dibagi sesuai jumlah
+          jamaah dalam grup.
+        </p>
+
+      </div>
+
+
+      <div class="included-card">
+
+        <div class="included-icon">
+
+          <i class="fa-solid fa-map-location-dot"></i>
+
+        </div>
+
+        <h3>
+          Koordinasi Perjalanan
+        </h3>
+
+        <p>
+          Membantu koordinasi kegiatan sesuai
+          jadwal dan itinerary perjalanan
+          rombongan.
+        </p>
+
+      </div>
+
+
+      <div class="included-card">
+
+        <div class="included-icon">
+
+          <i class="fa-solid fa-language"></i>
+
+        </div>
+
+        <h3>
+          Bahasa
+        </h3>
+
+        <p>
+          Pilihan kebutuhan bahasa dapat
+          disesuaikan saat melakukan
+          pemesanan.
+        </p>
+
+      </div>
+
+
+      <div class="included-card">
+
+        <div class="included-icon">
+
+          <i class="fa-solid fa-calendar-check"></i>
+
+        </div>
+
+        <h3>
+          Jadwal Fleksibel
+        </h3>
+
+        <p>
+          Waktu pendampingan menyesuaikan
+          program perjalanan dan konfirmasi
+          ketersediaan.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     PROGRAM EXAMPLE
+===================================================== -->
+
+<section class="program-section">
+
+  <div class="container">
+
+
+    <div class="section-title">
+
+      <span>
+        CONTOH PROGRAM
+      </span>
+
+      <h2>
+        Pendampingan Makkah & Madinah
+      </h2>
+
+      <p>
+        Contoh kegiatan berikut dapat
+        disesuaikan dengan itinerary jamaah.
+      </p>
+
+    </div>
+
+
+    <div class="program-layout">
+
+
+      <div class="program-card">
+
+
+        <div class="program-head">
+
+          <div class="program-icon">
+
+            <i class="fa-solid fa-kaaba"></i>
+
+          </div>
+
+          <div>
+
+            <span>
+              MAKKAH
+            </span>
+
+            <h3>
+              Pendampingan Makkah
+            </h3>
+
+          </div>
+
+        </div>
+
+
+        <ul class="program-list">
+
+          <li>
+
+            <i class="fa-solid fa-check"></i>
+
+            <span>
+              Koordinasi persiapan kegiatan
+              Umrah sesuai itinerary.
+            </span>
+
+          </li>
+
+
+          <li>
+
+            <i class="fa-solid fa-check"></i>
+
+            <span>
+              Pendampingan rombongan menuju
+              area Masjidil Haram.
+            </span>
+
+          </li>
+
+
+          <li>
+
+            <i class="fa-solid fa-check"></i>
+
+            <span>
+              Bantuan koordinasi kegiatan
+              rombongan selama berada di Makkah.
+            </span>
+
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="program-card">
+
+
+        <div class="program-head">
+
+          <div class="program-icon">
+
+            <i class="fa-solid fa-mosque"></i>
+
+          </div>
+
+          <div>
+
+            <span>
+              MADINAH
+            </span>
+
+            <h3>
+              Pendampingan Madinah
+            </h3>
+
+          </div>
+
+        </div>
+
+
+        <ul class="program-list">
+
+          <li>
+
+            <i class="fa-solid fa-check"></i>
+
+            <span>
+              Koordinasi kegiatan jamaah
+              selama berada di Madinah.
+            </span>
+
+          </li>
+
+
+          <li>
+
+            <i class="fa-solid fa-check"></i>
+
+            <span>
+              Pendampingan kegiatan sesuai
+              itinerary yang telah disepakati.
+            </span>
+
+          </li>
+
+
+          <li>
+
+            <i class="fa-solid fa-check"></i>
+
+            <span>
+              Membantu koordinasi rombongan
+              sebelum melanjutkan perjalanan.
+            </span>
+
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="final-cta">
+
+  <div class="container final-cta-inner">
+
+
+    <div>
+
+      <span>
+        RENCANAKAN UMRAH
+      </span>
+
+      <h2>
+        Hitung seluruh kebutuhan perjalanan
+      </h2>
+
+      <p>
+        Gabungkan Visa, Hotel, Transportasi
+        dan Muthawwif dalam satu estimasi biaya.
+      </p>
+
+    </div>
+
+
+    <div class="final-cta-buttons">
+
+      <a
+        href="calculator.html"
+        class="primary-btn"
+      >
+
+        <i class="fa-solid fa-calculator"></i>
+
+        Hitung Biaya
+
+      </a>
+
+
+      <a
+        href="transport.html"
+        class="outline-light-btn"
+      >
+
+        Transportasi
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+  <div class="container footer-grid">
+
+
+    <div class="footer-brand">
+
+      <a
+        href="index.html"
+        class="brand"
+      >
+
+        <div class="brand-logo">
+          R
+        </div>
+
+        <div class="brand-name footer-brand-name">
+
+          <strong>
+            rahayu
+          </strong>
+
+          <small>
+            Umrah Services
+          </small>
+
+        </div>
+
+      </a>
+
+
+      <p>
+        Platform layanan kebutuhan Umrah mandiri:
+        visa, hotel, transportasi dan muthawwif.
+      </p>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>
+        Layanan
+      </h3>
+
+      <a href="visa.html">
+        Visa Umrah
+      </a>
+
+      <a href="hotel.html">
+        Hotel
+      </a>
+
+      <a href="transport.html">
+        Transportasi
+      </a>
+
+      <a href="muthawwif.html">
+        Muthawwif
+      </a>
+
+      <a href="calculator.html">
+        Hitung Biaya
+      </a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>
+        Bantuan
+      </h3>
+
+      <a href="panduan.html">
+        Panduan
+      </a>
+
+      <a href="orders.html">
+        Pesanan Saya
+      </a>
+
+      <a href="login.html">
+        Akun
+      </a>
+
+    </div>
+
+
+    <div class="footer-column">
+
+      <h3>
+        Informasi
+      </h3>
+
+      <a href="index.html">
+        Tentang Rahayu
+      </a>
+
+      <a href="panduan.html">
+        Syarat & Ketentuan
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <div class="container footer-reference">
+
+    <i class="fa-solid fa-circle-info"></i>
+
+    <p>
+      Harga yang ditampilkan merupakan referensi
+      dan dapat berubah mengikuti tanggal,
+      kebutuhan serta ketersediaan layanan.
+    </p>
+
+  </div>
+
+
+  <div class="container footer-bottom">
+
+    <p>
+      ©
+      <span id="currentYear">
+        2026
+      </span>
+      Rahayu. All rights reserved.
+    </p>
+
+    <span>
+      Umrah Services
+    </span>
+
+  </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+
+<script>
+
+document.addEventListener(
+  "DOMContentLoaded",
+  function () {
+
+
+    /* =========================================
+       ELEMENTS
+    ========================================== */
+
+    const daysInput =
+      document.getElementById(
+        "muthawwifDays"
+      );
+
+    const personsInput =
+      document.getElementById(
+        "muthawwifPersons"
+      );
+
+    const minusButton =
+      document.getElementById(
+        "decreaseDays"
+      );
+
+    const plusButton =
+      document.getElementById(
+        "increaseDays"
+      );
+
+    const totalElement =
+      document.getElementById(
+        "muthawwifTotal"
+      );
+
+    const summaryDays =
+      document.getElementById(
+        "summaryDays"
+      );
+
+    const summaryPersons =
+      document.getElementById(
+        "summaryPersons"
+      );
+
+    const summaryArea =
+      document.getElementById(
+        "summaryArea"
+      );
+
+    const summaryPerPerson =
+      document.getElementById(
+        "summaryPerPerson"
+      );
+
+    const areaOptions =
+      document.querySelectorAll(
+        ".service-option"
+      );
+
+    const orderButton =
+      document.getElementById(
+        "muthawwifOrderButton"
+      );
+
+
+    const PRICE_PER_DAY =
+      1470000;
+
+
+    let selectedArea =
+      "makkah-madinah";
+
+
+    /* =========================================
+       FORMAT RUPIAH
+    ========================================== */
+
+    function rupiah(number) {
+
+      return new Intl.NumberFormat(
+        "id-ID",
+        {
+          style: "currency",
+          currency: "IDR",
+          minimumFractionDigits: 0
+        }
+      ).format(number);
+
+    }
+
+
+    /* =========================================
+       AREA NAME
+    ========================================== */
+
+    function getAreaName(area) {
+
+      const names = {
+
+        "makkah-madinah":
+          "Makkah & Madinah",
+
+        "makkah":
+          "Makkah",
+
+        "madinah":
+          "Madinah",
+
+        "custom":
+          "Custom"
+
+      };
+
+      return names[area] || area;
+
+    }
+
+
+    /* =========================================
+       UPDATE
+    ========================================== */
+
+    function updateCalculation() {
+
+
+      let days =
+        parseInt(
+          daysInput.value
+        ) || 3;
+
+
+      if (days < 3) {
+
+        days = 3;
+
+        daysInput.value =
+          3;
+
+      }
+
+
+      let persons =
+        parseInt(
+          personsInput.value
+        ) || 1;
+
+
+      if (persons < 1) {
+
+        persons = 1;
+
+        personsInput.value =
+          1;
+
+      }
+
+
+      const total =
+        days *
+        PRICE_PER_DAY;
+
+
+      const perPerson =
+        Math.ceil(
+          total / persons
+        );
+
+
+      /*
+         TOTAL
+      */
+
+      totalElement.textContent =
+        rupiah(total);
+
+
+      /*
+         DETAILS
+      */
+
+      summaryDays.textContent =
+        days + " hari";
+
+
+      summaryPersons.textContent =
+        persons + " jamaah";
+
+
+      summaryArea.textContent =
+        getAreaName(
+          selectedArea
+        );
+
+
+      summaryPerPerson.textContent =
+        rupiah(perPerson);
+
+    }
+
+
+    /* =========================================
+       MINUS
+    ========================================== */
+
+    minusButton.addEventListener(
+      "click",
+      function () {
+
+
+        let days =
+          parseInt(
+            daysInput.value
+          ) || 3;
+
+
+        days =
+          Math.max(
+            3,
+            days - 1
+          );
+
+
+        daysInput.value =
+          days;
+
+
+        updateCalculation();
+
+      }
+    );
+
+
+    /* =========================================
+       PLUS
+    ========================================== */
+
+    plusButton.addEventListener(
+      "click",
+      function () {
+
+
+        let days =
+          parseInt(
+            daysInput.value
+          ) || 3;
+
+
+        days += 1;
+
+
+        daysInput.value =
+          days;
+
+
+        updateCalculation();
+
+      }
+    );
+
+
+    /* =========================================
+       INPUT EVENTS
+    ========================================== */
+
+    daysInput.addEventListener(
+      "input",
+      updateCalculation
+    );
+
+
+    personsInput.addEventListener(
+      "input",
+      updateCalculation
+    );
+
+
+    /* =========================================
+       AREA
+    ========================================== */
+
+    areaOptions.forEach(
+      option => {
+
+
+        option.addEventListener(
+          "click",
+          function () {
+
+
+            areaOptions.forEach(
+              item => {
+
+                item.classList.remove(
+                  "active"
+                );
+
+              }
+            );
+
+
+            this.classList.add(
+              "active"
+            );
+
+
+            selectedArea =
+              this.dataset.area;
+
+
+            updateCalculation();
+
+          }
+        );
+
+      }
+    );
+
+
+    /* =========================================
+       FORM
+    ========================================== */
+
+    const form =
+      document.getElementById(
+        "muthawwifForm"
+      );
+
+
+    form.addEventListener(
+      "submit",
+      function (event) {
+
+        event.preventDefault();
+
+        updateCalculation();
+
+      }
+    );
+
+
+    /* =========================================
+       ORDER
+    ========================================== */
+
+    orderButton.addEventListener(
+      "click",
+      function () {
+
+
+        const days =
+          Math.max(
+            3,
+            parseInt(
+              daysInput.value
+            ) || 3
+          );
+
+
+        const persons =
+          Math.max(
+            1,
+            parseInt(
+              personsInput.value
+            ) || 1
+          );
+
+
+        const date =
+          document.getElementById(
+            "muthawwifDate"
+          ).value;
+
+
+        const language =
+          document.getElementById(
+            "muthawwifLanguage"
+          ).value;
+
+
+        const notes =
+          document.getElementById(
+            "muthawwifNotes"
+          ).value;
+
+
+        const total =
+          days *
+          PRICE_PER_DAY;
+
+
+        const params =
+          new URLSearchParams();
+
+
+        params.set(
+          "service",
+          "muthawwif"
+        );
+
+
+        params.set(
+          "days",
+          days
+        );
+
+
+        params.set(
+          "persons",
+          persons
+        );
+
+
+        params.set(
+          "area",
+          selectedArea
+        );
+
+
+        params.set(
+          "language",
+          language
+        );
+
+
+        params.set(
+          "price",
+          total
+        );
+
+
+        if (date) {
+
+          params.set(
+            "date",
+            date
+          );
+
+        }
+
+
+        if (notes) {
+
+          params.set(
+            "notes",
+            notes
+          );
+
+        }
+
+
+        window.location.href =
+          "orders.html?" +
+          params.toString();
+
+      }
+    );
+
+
+    /* =========================================
+       INITIAL
+    ========================================== */
+
+    updateCalculation();
+
+  }
+);
+
+</script>
+
+
+</body>
+</html>
